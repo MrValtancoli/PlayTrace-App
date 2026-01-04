@@ -1,0 +1,100 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement for PlayTrace
+title: "[FEATURE] "
+labels: ["enhancement", "needs-review"]
+assignees:
+  - robertovaltancoli
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please describe your idea below.
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Category
+      description: What type of feature is this?
+      options:
+        - Tagging & Events
+        - Timer & Time Management
+        - Export & Data Format
+        - UI/UX Improvement
+        - Integration with other tools
+        - Analytics & Statistics
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? Who benefits from it?
+      placeholder: |
+        As a video analyst, I need to tag specific players during events because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this feature to work?
+      placeholder: |
+        Add a player selector when tagging an event...
+        When exporting, include player ID in the JSON...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Are there other ways to solve this problem?
+      placeholder: Describe any alternative solutions or workarounds you've considered
+
+  - type: dropdown
+    id: user-role
+    attributes:
+      label: Your Role
+      description: This helps us prioritize features for different users
+      options:
+        - Coach
+        - Video Analyst
+        - Scout
+        - Player Development
+        - Researcher/Academic
+        - Hobbyist/Fan
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this to you?
+      options:
+        - Critical - I can't use PlayTrace effectively without it
+        - High - Would significantly improve my workflow
+        - Medium - Nice to have, would use it often
+        - Low - Minor improvement
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Mockups, screenshots, examples from other apps, etc.
+      placeholder: Add any other context, screenshots, or examples here
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: This feature aligns with PlayTrace's goal of precise match tagging
+          required: false

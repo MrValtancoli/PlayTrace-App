@@ -1,0 +1,86 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior in PlayTrace
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees:
+  - robertovaltancoli
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this bug! Please fill out the information below to help us fix it.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: When I tap the pause button during injury time...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Start a new match
+        2. Add 2 minutes injury time
+        3. Tap pause button
+        4. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+      placeholder: Timer should pause and resume correctly
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: Timer resets to 00:00
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: PlayTrace Version
+      description: Which version are you using? (Check in app settings)
+      placeholder: "v1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device & Android Version
+      description: What device and Android version?
+      placeholder: "Samsung Galaxy S21, Android 13"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Screenshots, exported files, or anything else that might help
+      placeholder: Add any other context about the problem here
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I am using the latest version of PlayTrace
+          required: false

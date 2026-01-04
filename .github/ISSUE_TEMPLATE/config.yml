@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Discussion
+    url: https://github.com/robertovaltancoli/playtrace/discussions
+    about: Ask questions, share ideas, or discuss PlayTrace with the community
+  - name: 🎓 User Guide
+    url: https://github.com/robertovaltancoli/playtrace/wiki
+    about: Check the documentation and tutorials (coming soon)
+  - name: ⭐ Star this project
+    url: https://github.com/robertovaltancoli/playtrace
+    about: If you find PlayTrace useful, give it a star!

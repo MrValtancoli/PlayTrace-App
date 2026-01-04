@@ -1,0 +1,65 @@
+name: 📚 Documentation Improvement
+description: Suggest improvements to documentation, guides, or examples
+title: "[DOCS] "
+labels: ["documentation"]
+assignees:
+  - robertovaltancoli
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve PlayTrace documentation! 
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What kind of documentation needs improvement?
+      options:
+        - README
+        - Installation Guide
+        - User Guide / Tutorial
+        - Code Comments
+        - API / Export Format Documentation
+        - FAQ
+        - Contributing Guidelines
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Current Issue
+      description: What's missing, unclear, or incorrect in the current documentation?
+      placeholder: |
+        The README doesn't explain how to customize tag buttons...
+        The CSV export format isn't documented...
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Improvement
+      description: How should we improve it?
+      placeholder: |
+        Add a section explaining the tag configuration process with screenshots...
+        Create a table showing all CSV columns with descriptions...
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: File/Section Location
+      description: Where is this documentation? (if applicable)
+      placeholder: "README.md line 45, or docs/user-guide.md"
+
+  - type: checkboxes
+    id: willing-to-help
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm willing to submit a PR to fix this
+          required: false
