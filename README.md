@@ -63,6 +63,19 @@ Exports include match info, configuration, and all tagged events with full timin
 - [ ] Multi-language support
 
 -->
+## 🤝 Contributing
+
+We welcome contributions from the football analysis community!
+
+**New to the project?** Check out our [Welcome Contributors issue](https://github.com/MrValtancoli/PlayTrace-App/issues/1) for good first tasks.
+
+**Want to contribute?** Read our [Contributing Guide](CONTRIBUTING.md) to get started.
+
+Areas where we especially need help:
+- 🌍 Translations (Spanish, Portuguese, French, German)
+- 📚 Documentation & tutorials
+- 🧪 Testing on different Android devices
+- 💡 Feature suggestions from coaches and analysts
 
 ## 📄 License
 
