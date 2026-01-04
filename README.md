@@ -4,6 +4,9 @@
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
 [![Built with](https://img.shields.io/badge/Built%20with-B4A-blue.svg)](https://www.b4x.com/b4a.html)
 ![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)
+![GitHub stars](https://img.shields.io/github/stars/MrValtancoli/PlayTrace-App)
+![License](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 Free, open-source Android app for real-time football match tagging. Perfect for coaches, video analysts, and scouts who need precise event timing data.
 
