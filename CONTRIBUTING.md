@@ -58,16 +58,16 @@ We especially welcome contributions in:
 
 ## 📋 Development Roadmap
 
-Check the [Project Board](https://github.com/robertovaltancoli/playtrace/projects) to see:
+Check the [Project Board](https://github.com/MrValtancoli/PlayTrace-App/projects) to see:
 - Current priorities
 - Available tasks
 - Features in development
 
 ## ❓ Questions?
 
-- Open a [Discussion](https://github.com/robertovaltancoli/playtrace/discussions)
+- Open a [Discussion](https://github.com/MrValtancoli/PlayTrace-App/discussions)
 - Check existing issues
-- Reach out to [@robertovaltancoli](https://github.com/robertovaltancoli)
+- Reach out to [@MrValtancoli](https://github.com/MrValtancoli)
 
 ## 📜 Code of Conduct
 

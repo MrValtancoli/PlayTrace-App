@@ -1,11 +1,11 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
   - name: 💬 General Discussion
-    url: https://github.com/robertovaltancoli/playtrace/discussions
+    url: https://github.com/MrValtancoli/PlayTrace-App/discussions
     about: Ask questions, share ideas, or discuss PlayTrace with the community
   - name: 🎓 User Guide
-    url: https://github.com/robertovaltancoli/playtrace/wiki
+    url: https://github.com/MrValtancoli/PlayTrace-App/wiki
     about: Check the documentation and tutorials (coming soon)
   - name: ⭐ Star this project
-    url: https://github.com/robertovaltancoli/playtrace
+    url: https://github.com/MrValtancoli/PlayTrace-App
     about: If you find PlayTrace useful, give it a star!

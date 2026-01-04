@@ -3,7 +3,7 @@ description: Suggest a new feature or enhancement for PlayTrace
 title: "[FEATURE] "
 labels: ["enhancement", "needs-review"]
 assignees:
-  - robertovaltancoli
+  - MrValtancoli
 body:
   - type: markdown
     attributes:

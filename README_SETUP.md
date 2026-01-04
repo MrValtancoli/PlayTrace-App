@@ -115,6 +115,6 @@ Crea queste labels nella tua repo (Settings → Labels):
 **Prossimi step dopo l'installazione:**
 1. Abilita GitHub Discussions per Q&A
 2. Crea il primo issue "Welcome contributors" con label `good-first-issue`
-3. Aggiungi badge al README: `![GitHub issues](https://img.shields.io/github/issues/robertovaltancoli/playtrace)`
+3. Aggiungi badge al README: `![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)`
 
 Buon lavoro con PlayTrace! ⚽

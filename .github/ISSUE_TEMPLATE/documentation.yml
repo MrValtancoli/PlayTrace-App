@@ -3,7 +3,7 @@ description: Suggest improvements to documentation, guides, or examples
 title: "[DOCS] "
 labels: ["documentation"]
 assignees:
-  - robertovaltancoli
+  - MrValtancoli
 body:
   - type: markdown
     attributes:
