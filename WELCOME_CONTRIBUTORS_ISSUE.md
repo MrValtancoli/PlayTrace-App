@@ -66,11 +66,13 @@ Not sure where to start? Here are some areas we need help with:
 
 ## 📋 Labels Explained
 
-- `good-first-issue` - Perfect for newcomers
-- `help-wanted` - We need community help on this
-- `documentation` - Docs improvements
-- `enhancement` - New features
+- `good first issue` - Perfect for newcomers
+- `help wanted` - Extra attention is needed
+- `documentation` - Improvements or additions to documentation
+- `enhancement` - New feature or request
 - `bug` - Something isn't working
+- `duplicate` - This issue or pull request already exists
+- `wontfix` - This will not be worked on
 
 ## ❓ Need Help?
 
