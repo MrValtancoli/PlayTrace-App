@@ -1,7 +1,7 @@
 name: ✨ Feature Request
 description: Suggest a new feature or enhancement for PlayTrace
 title: "[FEATURE] "
-labels: ["enhancement", "needs-review"]
+labels: ["enhancement"]
 assignees:
   - MrValtancoli
 body:

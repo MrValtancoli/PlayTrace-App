@@ -10,10 +10,9 @@ PlayTrace is a free, open-source Android app for real-time football match taggin
 
 1. **Star the repository** ⭐ if you find it useful
 2. **Read the [CONTRIBUTING.md](CONTRIBUTING.md)** to understand our workflow
-3. **Pick an issue** labeled `good first issue` to start contributing
+3. **Pick an issue** labeled `good-first-issue` to start contributing
 4. **Join the discussion** - feel free to ask questions in issues or discussions
 
-<!--
 ## 🎁 Good First Issues
 
 Here are some easy tasks perfect for first-time contributors:
@@ -45,7 +44,6 @@ Here are some easy tasks perfect for first-time contributors:
 - [ ] Improve error messages
 - [ ] Add unit tests for time calculations
 
--->
 ## 🤝 What We're Looking For
 
 We welcome contributions from:
