@@ -74,11 +74,11 @@ We welcome contributions from the football analysis community!
 
 **Want to contribute?** Read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
-Areas where we especially need help:
+Areas where we especially need help (look for `help wanted` label):
 - 🌍 Translations (Spanish, Portuguese, French, German)
-- 📚 Documentation & tutorials
+- 📚 Documentation & tutorials (`documentation` label)
 - 🧪 Testing on different Android devices
-- 💡 Feature suggestions from coaches and analysts
+- 💡 Feature suggestions from coaches and analysts (`enhancement` label)
 
 ## 📄 License
 
