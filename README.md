@@ -1,94 +1,93 @@
-# ⚽ PlayTrace - Analyze The Game
+# ⚽ PlayTrace - Analise o Jogo
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
-[![Built with](https://img.shields.io/badge/Built%20with-B4A-blue.svg)](https://www.b4x.com/b4a.html)
+[![Licença: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Plataforma](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
+[![Construído com](https://img.shields.io/badge/Built%20with-B4A-blue.svg)](https://www.b4x.com/b4a.html)
 ![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)
 ![GitHub stars](https://img.shields.io/github/stars/MrValtancoli/PlayTrace-App)
-![License](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+![Licença](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
+[![PRs Bem Vindos](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-Free, open-source Android app for real-time football match tagging. Perfect for coaches, video analysts, and scouts who need precise event timing data.
+App Android gratuito e open-source para marcação de partidas em tempo real. Perfeito para treinadores, analistas de video e olheiros que necessitam de mais precisão em marcar tempos.
 
-## ✨ Features
+## ✨ Características
 
-- ⏱️ **Match timer** with pause/resume and injury time tracking
-- 🏷️ **Customizable tag buttons**
-- 📊 **4 time reference formats** for every event
-- 📤 **Export to JSON/CSV** with share functionality
-- ⚙️ **Configurable match info**
-- 📴 **Works offline** - no internet required
+- ⏱️ **Timer de partidas** com pause/resume e marcador de tempo de lesão
+- 🏷️ **Botões customizáveis**
+- 📊 **4 formatos de referência de tempo** para todos os eventos
+- 📤 **Exporte para JSON/CSV** com compartilhamento
+- ⚙️ **Informações de partida configuráveis**
+- 📴 **Funciona offline** - sem necessidade de internet
 
-## ⏱️ Time References
+## ⏱️ Referências de Tempo
 
-Each tagged event records 4 different timestamps:
+Cada evento marcado registra 4 carimbos de data/hora diferentes:
 
-| Format | Example | Description |
+| Formato | Exemplo | Descrição |
 |--------|---------|-------------|
-| `timestamp_absolute` | 30/12/25 15:23:45 | Real-world timestamp |
-| `time_period` | 23:45 1T | Time within current period |
-| `time_match` | 68:30 (2T) | Match time with period indicator |
-| `time_continuous` | 72:30 | Continuous time including injury time |
+| `timestamp_absolute` | 30/12/25 15:23:45 | Carimbo de data/hora real |
+| `time_period` | 23:45 1T | Tempo dentro do período atual |
+| `time_match` | 68:30 (2T) | Tempo da partida com indicador de período |
+| `time_continuous` | 72:30 | Tempo contínuo, incluindo acréscimos |
 
-<!-- Questa parte quando sarò pronto!
-## 📲 Installation
+<!-- Esta parte será adicionada quando estiver pronta!
+## 📲 Instalação
 
-### Download APK
-Download the latest release from [Releases](https://github.com/MrValtancoli/PlayTrace-App/releases).
+### Baixar APK
+Baixe a versão mais recente em [Releases](https://github.com/MrValtancoli/PlayTrace-App/releases).
 
-### Build from Source
-1. Install [B4A](https://www.b4x.com/b4a.html)
-2. Clone this repository
-3. Open `PlayTrace.b4a` in B4A
-4. Run on device or emulator
+### Compilar a partir do código-fonte
+1. Instale o [B4A](https://www.b4x.com/b4a.html)
+2. Clone este repositório
+3. Abra `PlayTrace.b4a` no B4A
+4. Execute no dispositivo ou emulador
 
-## 🎮 Quick Start
+## 🎮 Início Rápido
 
-1. **Set match info** (Menu → Match Info)
-2. **Start 1st Half** → **START** to begin timer
-3. **Tap tag buttons** to record events
-4. **End 1st Half** → **Start 2nd Half** when ready
-5. **End Match** → Export to JSON or CSV
+1. **Defina as informações da partida** (Menu → Informações da Partida)
+2. **Inicie o 1º Tempo** → **INICIAR** para começar o cronômetro
+3. **Toque nos botões de marcação** para registrar os eventos
+4. **Termine o 1º Tempo** → **Iniciar 2º Tempo** quando estiver pronto
+5. **Termine a Partida** → Exporte para JSON ou CSV
 
-## 📤 Export
+## 📤 Exportação
 
-Exports include match info, configuration, and all tagged events with full timing data.
+As exportações incluem informações da partida, configuração e todos os eventos marcados com dados completos de tempo.
 
-**JSON** - Structured format, ideal for data analysis with Python/R  
-**CSV** - Spreadsheet-ready, opens directly in Excel
+**JSON** - Formato estruturado, ideal para análise de dados com Python/R
+**CSV** - Pronto para planilhas, abre diretamente no Excel
 
-## 🗺️ Roadmap
+## 🗺️ Roteiro
 
-- [ ] Team assignment (Home/Away)
-- [ ] Player tagging
-- [ ] Pitch zone selection
-- [ ] Video timestamp sync
-- [ ] Multi-language support
+- [ ] Atribuição de times (Casa/Visitante)
+- [ ] Marcação de jogadores
+- [ ] Seleção de zona do campo
+- [ ] Sincronização de carimbo de data/hora de vídeo
+- [ ] Suporte a vários idiomas
 
--->
-## 🤝 Contributing
+## 🤝 Contribuindo
 
-We welcome contributions from the football analysis community!
+Aceitamos contribuições da comunidade de análise de futebol!
 
-**New to the project?** Check out our [Welcome Contributors issue](https://github.com/MrValtancoli/PlayTrace-App/issues/1) for good first tasks.
+**É novo no projeto?** Confira nossa [issue de Boas-vindas aos Contribuidores](https://github.com/MrValtancoli/PlayTrace-App/issues/1) para encontrar boas tarefas para começar.
 
-**Want to contribute?** Read our [Contributing Guide](CONTRIBUTING.md) to get started.
+**Quer contribuir?** Leia nosso [Guia de Contribuição](CONTRIBUTING.md) para começar.
 
-Areas where we especially need help (look for `help wanted` label):
-- 🌍 Translations (Spanish, Portuguese, French, German)
-- 📚 Documentation & tutorials (`documentation` label)
-- 🧪 Testing on different Android devices
-- 💡 Feature suggestions from coaches and analysts (`enhancement` label)
+Áreas onde precisamos de ajuda (procure pela etiqueta `help wanted`):
+- 🌍 Traduções (espanhol, português, francês, alemão)
+- 📚 Documentação e tutoriais (etiqueta `documentation`)
+- 🧪 Testes em diferentes dispositivos Android
+- 💡 Sugestões de recursos de treinadores e analistas (etiqueta `enhancement`)
 
-## 📄 License
+## 📄 Licença
 
-[MIT License](LICENSE) - Free to use, modify, and distribute.
+[Licença MIT](LICENSE) - Livre para usar, modificar e distribuir.
 
-## 👤 Author
+## 👤 Autor
 
-**Roberto Valtancoli**  
+**Roberto Valtancoli**
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/robertovaltancoli)
 
 ---
 
-⭐ Star this repo if you find it useful!
+⭐ Dê uma estrela neste repositório se você o achar útil!
