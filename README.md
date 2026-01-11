@@ -7,6 +7,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/MrValtancoli/PlayTrace-App)
 ![License](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+🌐 **Translations:** [Português](README.pt.md) | [Italiano](README.it.md)
 
 Free, open-source Android app for real-time football match tagging. Perfect for coaches, video analysts, and scouts who need precise event timing data.
 
@@ -88,6 +89,12 @@ Areas where we especially need help (look for `help wanted` label):
 
 **Roberto Valtancoli**  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/robertovaltancoli)
+
+## 🙏 Contributors
+
+Thanks to everyone who helps make PlayTrace better!
+
+- [@Lucasqrz1](https://github.com/Lucasqrz1) — Portuguese translation
 
 ---
 
