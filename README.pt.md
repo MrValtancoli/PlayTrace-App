@@ -65,6 +65,8 @@ As exportações incluem informações da partida, configuração e todos os eve
 - [ ] Sincronização de carimbo de data/hora de vídeo
 - [ ] Suporte a vários idiomas
 
+-->
+
 ## 🤝 Contribuindo
 
 Aceitamos contribuições da comunidade de análise de futebol!
@@ -87,6 +89,9 @@ Aceitamos contribuições da comunidade de análise de futebol!
 
 **Roberto Valtancoli**
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/robertovaltancoli)
+
+---
+*Tradução por [@Lucasqrz1](https://github.com/Lucasqrz1)*
 
 ---
 
