@@ -1,24 +1,31 @@
 # ⚽ PlayTrace - Analyze The Game
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
-[![Built with](https://img.shields.io/badge/Built%20with-B4A-blue.svg)](https://www.b4x.com/b4a.html)
+[![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-green.svg)](https://reactnative.dev/)
+[![Built with](https://img.shields.io/badge/Built%20with-Expo-000020.svg)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg)](https://www.typescriptlang.org/)
 ![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)
 ![GitHub stars](https://img.shields.io/github/stars/MrValtancoli/PlayTrace-App)
 ![License](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 🌐 **Translations:** [Português](README.pt.md) | [Italiano](README.it.md)
 
-Free, open-source Android app for real-time football match tagging. Perfect for coaches, video analysts, and scouts who need precise event timing data.
+Free, open-source mobile app for real-time football match tagging. Perfect for
+coaches, video analysts, and scouts who need precise event timing data.
+
+> **Status:** early work in progress. The app is being rebuilt with React Native
+> and Expo for iOS and Android. Installation instructions will be added once the
+> first build is validated.
 
 ## ✨ Features
 
-- ⏱️ **Match timer** with pause/resume and injury time tracking
-- 🏷️ **Customizable tag buttons**
-- 📊 **4 time reference formats** for every event
+- ⏱️ **Match timer** with pause/resume, 1st/2nd half flow, and injury time entry
+- 🏷️ **Customizable tag buttons** (name, color, enable/disable)
+- 📊 **4 time reference formats** recorded for every event
 - 📤 **Export to JSON/CSV** with share functionality
-- ⚙️ **Configurable match info**
-- 📴 **Works offline** - no internet required
+- ⚙️ **Configurable match info** (competition, date, venue, teams, half duration)
+- 📴 **Works offline** — no internet required
 
 ## ⏱️ Time References
 
@@ -31,32 +38,16 @@ Each tagged event records 4 different timestamps:
 | `time_match` | 68:30 (2T) | Match time with period indicator |
 | `time_continuous` | 72:30 | Continuous time including injury time |
 
-<!-- Questa parte quando sarò pronto!
-## 📲 Installation
-
-### Download APK
-Download the latest release from [Releases](https://github.com/MrValtancoli/PlayTrace-App/releases).
-
-### Build from Source
-1. Install [B4A](https://www.b4x.com/b4a.html)
-2. Clone this repository
-3. Open `PlayTrace.b4a` in B4A
-4. Run on device or emulator
-
-## 🎮 Quick Start
-
-1. **Set match info** (Menu → Match Info)
-2. **Start 1st Half** → **START** to begin timer
-3. **Tap tag buttons** to record events
-4. **End 1st Half** → **Start 2nd Half** when ready
-5. **End Match** → Export to JSON or CSV
+Export field names use snake_case on purpose, to match the published PlayTrace
+export specification 1:1.
 
 ## 📤 Export
 
-Exports include match info, configuration, and all tagged events with full timing data.
+Exports include match info, tag configuration, and all tagged events with full
+timing data.
 
-**JSON** - Structured format, ideal for data analysis with Python/R  
-**CSV** - Spreadsheet-ready, opens directly in Excel
+**JSON** — structured format, ideal for data analysis with Python/R
+**CSV** — spreadsheet-ready, opens directly in Excel
 
 ## 🗺️ Roadmap
 
@@ -66,7 +57,6 @@ Exports include match info, configuration, and all tagged events with full timin
 - [ ] Video timestamp sync
 - [ ] Multi-language support
 
--->
 ## 🤝 Contributing
 
 We welcome contributions from the football analysis community!
@@ -75,10 +65,10 @@ We welcome contributions from the football analysis community!
 
 **Want to contribute?** Read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
-Areas where we especially need help (look for `help wanted` label):
+Areas where we especially need help (look for the `help wanted` label):
 - 🌍 Translations (Spanish, Portuguese, French, German)
 - 📚 Documentation & tutorials (`documentation` label)
-- 🧪 Testing on different Android devices
+- 🧪 Testing on different iOS and Android devices
 - 💡 Feature suggestions from coaches and analysts (`enhancement` label)
 
 ## 📄 License
@@ -87,7 +77,7 @@ Areas where we especially need help (look for `help wanted` label):
 
 ## 👤 Author
 
-**Roberto Valtancoli**  
+**Roberto Valtancoli**
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/robertovaltancoli)
 
 ## 🙏 Contributors
