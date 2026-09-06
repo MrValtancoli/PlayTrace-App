@@ -38,14 +38,16 @@ Il tuo Project Board ha 4 colonne:
 
 ### 1️⃣ Arriva una nuova Issue
 
-**Esempio**: User crea issue "Timer si blocca su Android 8"
+**Esempio**: User crea issue "Timer si blocca su iOS 17"
 
 **Actions:**
 1. Leggi e riproduci il bug
-2. Applica label: `bug`
-3. Decidi se è prioritaria
-4. Se sì → Aggiungi al Project Board in "To Do"
-5. Se è critica → Commenta "Grazie! Priorità alta, lo risolvo presto"
+2. Verifica se il problema è su una sola piattaforma o su entrambe: con React
+   Native è la prima domanda da farsi, e cambia completamente la diagnosi
+3. Applica label: `bug`
+4. Decidi se è prioritaria
+5. Se sì → Aggiungi al Project Board in "To Do"
+6. Se è critica → Commenta "Grazie! Priorità alta, lo risolvo presto"
 
 ---
 
@@ -83,7 +85,7 @@ Il tuo Project Board ha 4 colonne:
 
 **Se risolto:**
 1. Testa la soluzione
-2. Committa con messaggio: `fix: resolve timer crash on Android 8 (#15)`
+2. Committa con messaggio: `fix: resolve timer crash on iOS 17 (#15)`
 3. Sposta issue in "Done"
 4. Chiudi issue con commento: "Fixed in v1.1.0"
 
@@ -171,6 +173,9 @@ Board: To Do
 Commento: "Would love help with this! See CONTRIBUTING.md for translation guide"
 ```
 
+*Nota: il portoghese è già stato tradotto da @Lucasqrz1. Le lingue ancora
+scoperte sono spagnolo, francese e tedesco.*
+
 ### Issue #12: "Export to Excel format"
 ```
 Labels: enhancement
@@ -185,6 +190,26 @@ Labels: bug
 Board: To Do → In Progress → Done
 Commento: "Reproduced! Working on a fix now" → "Fixed in PR #19"
 ```
+
+## 📚 Manutenzione della documentazione
+
+I file di documentazione sono collegati fra loro: modificarne uno spesso obbliga
+a toccarne altri. Questa è la parte che si dimentica per prima.
+
+| Se modifichi... | Verifica anche... |
+|-----------------|-------------------|
+| `README.md` | `README.it.md` e `README.pt.md` (stessa struttura, contenuto tradotto) |
+| Stato di una feature | `FEATURES.md` — è l'unico posto che traccia Done / In Progress / Planned |
+| Setup di sviluppo | `CONTRIBUTING.md` **e** le note per sviluppatori in fondo a `FEATURES.md` |
+| `WELCOME_CONTRIBUTORS_ISSUE.md` | Il corpo della **issue #1 pinnata** su GitHub: il file nel repo e la issue sono due copie separate, aggiornarne una non aggiorna l'altra |
+| Requisiti di piattaforma o di ambiente | `.github/ISSUE_TEMPLATE/bug_report.yml` (i campi Device / versione OS) |
+
+**Regola pratica**: quando apri una PR di documentazione, elenca nella
+descrizione quali degli altri file restano da allineare. Non serve farlo tutto
+subito, serve non perdere traccia.
+
+Per le traduzioni non sei tenuto a tradurre tu: apri una issue con label
+`documentation` + `help wanted` e tagga chi ha già contribuito quella lingua.
 
 ## 🛠️ Automazioni utili
 
