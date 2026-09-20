@@ -1,7 +1,7 @@
 # ⚽ PlayTrace - Analise o Jogo
 
 [![Licença: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Plataforma](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-green.svg)](https://reactnative.dev/)
+[![Plataforma](https://img.shields.io/badge/Platform-Android-green.svg)](https://reactnative.dev/)
 [![Construído com](https://img.shields.io/badge/Built%20with-Expo-000020.svg)](https://expo.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg)](https://www.typescriptlang.org/)
 ![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)
@@ -15,9 +15,27 @@ App móvel gratuito e open-source para marcação de partidas em tempo real.
 Perfeito para treinadores, analistas de vídeo e olheiros que necessitam de mais
 precisão em marcar tempos.
 
-> **Status:** trabalho em andamento. O app está sendo reconstruído com React
-> Native e Expo para iOS e Android. As instruções de instalação serão
-> adicionadas assim que a primeira build for validada.
+> **Status:** v1.0.0 lançada para Android. O código é multiplataforma, mas o
+> iOS ainda não foi validado. O app foi testado em um único aparelho físico —
+> relatos de bugs são muito bem-vindos.
+
+## 📲 Download
+
+Baixe o APK mais recente na
+[página de releases](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) e abra-o no seu
+aparelho Android. O Android vai pedir autorização para instalar de fontes
+desconhecidas, o que é esperado para um app distribuído fora da Play Store.
+
+## 🛠️ Executando a partir do código-fonte
+
+Requer Node.js LTS (>= 20.19.4).
+
+```bash
+npm ci
+npx expo start
+```
+
+Depois abra o projeto no Expo Go, ou pressione `a` para um emulador Android.
 
 ## ✨ Características
 
@@ -54,6 +72,8 @@ todos os eventos marcados com dados completos de tempo.
 
 - [ ] Atribuição de times (Casa/Visitante)
 - [ ] Marcação de jogadores
+- [ ] Compartilhar um conjunto de tags entre aparelhos
+- [ ] Layouts em modo paisagem e para tablets
 - [ ] Seleção de zona do campo
 - [ ] Sincronização de carimbo de data/hora de vídeo
 - [ ] Suporte a vários idiomas

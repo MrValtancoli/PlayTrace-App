@@ -1,7 +1,7 @@
 # ⚽ PlayTrace - Analyze The Game
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-green.svg)](https://reactnative.dev/)
+[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://reactnative.dev/)
 [![Built with](https://img.shields.io/badge/Built%20with-Expo-000020.svg)](https://expo.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg)](https://www.typescriptlang.org/)
 ![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)
@@ -14,9 +14,16 @@
 Free, open-source mobile app for real-time football match tagging. Perfect for
 coaches, video analysts, and scouts who need precise event timing data.
 
-> **Status:** pre-release. The core tagging loop (match setup, tags, timer,
-> export) is implemented with React Native and Expo, but has not yet been
-> validated on physical devices. No installable build is published yet.
+> **Status:** v1.0.0 released for Android. The codebase is cross-platform,
+> but iOS is not validated yet. The app has been tested on a single physical
+> device — bug reports are very welcome.
+
+## 📲 Download
+
+Grab the latest APK from the
+[releases page](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) and open it on your
+Android device. Android will ask you to allow installation from unknown
+sources, which is expected for an app distributed outside the Play Store.
 
 ## 🛠️ Running from source
 
@@ -65,6 +72,8 @@ timing data.
 
 - [ ] Team assignment (Home/Away)
 - [ ] Player tagging
+- [ ] Sharing a tag set between devices
+- [ ] Landscape and tablet layouts
 - [ ] Pitch zone selection
 - [ ] Video timestamp sync
 - [ ] Multi-language support

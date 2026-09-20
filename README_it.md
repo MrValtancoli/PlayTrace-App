@@ -1,7 +1,7 @@
 # ⚽ PlayTrace - Analyze The Game
 
 [![Licenza: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Piattaforma](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-green.svg)](https://reactnative.dev/)
+[![Piattaforma](https://img.shields.io/badge/Platform-Android-green.svg)](https://reactnative.dev/)
 [![Sviluppato con](https://img.shields.io/badge/Built%20with-Expo-000020.svg)](https://expo.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg)](https://www.typescriptlang.org/)
 ![GitHub issues](https://img.shields.io/github/issues/MrValtancoli/PlayTrace-App)
@@ -15,9 +15,27 @@ App mobile gratuita e open-source per il tagging di partite di calcio in
 real-time. Perfetta per allenatori, videoanalisti, scout e chiunque voglia avere
 dati precisi.
 
-> **Stato del progetto:** lavori in corso. L'app è in fase di riscrittura con
-> React Native ed Expo per iOS e Android. Le istruzioni di installazione saranno
-> aggiunte una volta validata la prima build.
+> **Stato del progetto:** rilasciata la v1.0.0 per Android. Il codice è
+> multipiattaforma, ma iOS non è ancora validato. L'app è stata provata su un
+> solo dispositivo fisico: le segnalazioni di bug sono molto gradite.
+
+## 📲 Download
+
+Scarica l'ultimo APK dalla
+[pagina delle release](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) e aprilo sul
+tuo dispositivo Android. Android chiederà di autorizzare l'installazione da
+origini sconosciute: è normale per un'app distribuita fuori dal Play Store.
+
+## 🛠️ Eseguire dai sorgenti
+
+Richiede Node.js LTS (>= 20.19.4).
+
+```bash
+npm ci
+npx expo start
+```
+
+Poi apri il progetto in Expo Go, oppure premi `a` per un emulatore Android.
 
 ## ✨ Funzionalità
 
@@ -54,6 +72,8 @@ tag e tutti gli eventi taggati con i dati temporali completi.
 
 - [ ] Assegnazione squadra (Casa/Trasferta)
 - [ ] Tagging dei giocatori
+- [ ] Condivisione di un set di tag fra dispositivi
+- [ ] Layout orizzontale e per tablet
 - [ ] Selezione della zona di campo
 - [ ] Sincronizzazione con i timestamp video
 - [ ] Supporto multilingua
