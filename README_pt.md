@@ -9,7 +9,7 @@
 ![Licença](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
 [![PRs Bem Vindos](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-🌐 **Traduções:** [English](README.md) | [Italiano](README.it.md)
+🌐 **Traduções:** [English](README.md) | [Italiano](README_it.md)
 
 App móvel gratuito e open-source para marcação de partidas em tempo real.
 Perfeito para treinadores, analistas de vídeo e olheiros que necessitam de mais
@@ -71,6 +71,8 @@ Aceitamos contribuições da comunidade de análise de futebol!
 - 📚 Documentação e tutoriais (etiqueta `documentation`)
 - 🧪 Testes em diferentes dispositivos iOS e Android
 - 💡 Sugestões de recursos de treinadores e analistas (etiqueta `enhancement`)
+
+**Usa um assistente de IA?** Sem problema — veja a seção [AI-assisted contributions](CONTRIBUTING.md#-ai-assisted-contributions).
 
 ## 📄 Licença
 

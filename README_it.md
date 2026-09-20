@@ -9,7 +9,7 @@
 ![Licenza](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-🌐 **Traduzioni:** [English](README.md) | [Português](README.pt.md)
+🌐 **Traduzioni:** [English](README.md) | [Português](README_pt.md)
 
 App mobile gratuita e open-source per il tagging di partite di calcio in
 real-time. Perfetta per allenatori, videoanalisti, scout e chiunque voglia avere
@@ -71,6 +71,8 @@ Aree in cui abbiamo particolare bisogno (cerca l'etichetta `help wanted`):
 - 📚 Documentazione & tutorial (etichetta `documentation`)
 - 🧪 Test su dispositivi iOS e Android differenti
 - 💡 Suggerimenti di funzionalità da parte di allenatori ed analisti (etichetta `enhancement`)
+
+**Usi un assistente AI?** Nessun problema — leggi la sezione [AI-assisted contributions](CONTRIBUTING.md#-ai-assisted-contributions).
 
 ## 📄 Licenza
 
