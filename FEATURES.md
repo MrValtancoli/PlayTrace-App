@@ -12,6 +12,18 @@ the codebase but has not yet been validated on physical devices.
 
 **Status legend:** ✅ Done · 🔄 In Progress · 📅 Planned
 
+## 🎯 v1.0 scope
+
+v1.0 ships on **Android only** and covers the core tagging loop: match setup,
+16 configurable tags, the match timer with injury time, and JSON/CSV export.
+
+Events are not attributed to a team or a player. Tags always refer to the team
+being analysed, which is what the analyst configures before kick-off. Team
+assignment and player tagging are deferred to v1.1 and will be added as new
+optional export fields, never by renaming or repurposing existing ones.
+
+iOS support is built into the codebase but is not validated for v1.0.
+
 ## ⏱️ Timing (Match Management)
 
 *Core functionality to ensure high-precision data for football analysis.*
@@ -29,8 +41,8 @@ the codebase but has not yet been validated on physical devices.
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
 | **Customizable Board** | ✅ Done | Ability to configure buttons for different events (shots, fouls, etc.). | High |
-| **Player Tagging** | 📅 Planned | Associating events with specific jersey numbers or player names. | High |
-| **Team Assignment** | 📅 Planned | Quick distinction between Home and Away team events. | High |
+| **Player Tagging** | 📅 v1.1 | Associating events with specific jersey numbers or player names. | High |
+| **Team Assignment** | 📅 v1.1 | Home/Away attribution. Out of v1.0: tags refer to the analysed team. | High |
 | **Pitch Zoning** | 📅 Planned | Selection of the pitch area where the action occurred. | Medium |
 
 ## 📤 Data & Export
@@ -53,8 +65,8 @@ the codebase but has not yet been validated on physical devices.
 | **Localization** | 🔄 In Progress | Interface translation into multiple languages (docs: EN, IT, PT). | High |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
-| **iOS Support Validation** | 📅 Planned | Verify layout, share sheet, and timing behavior on iOS devices. | High |
-| **Automated Tests** | 📅 Planned | Unit tests for the time calculations and export formatting. | Medium |
+| **iOS Support Validation** | 📅 post-1.0 | Verify layout, share sheet, and timing behavior on iOS devices. | Medium |
+| **Automated Tests** | 🔄 In Progress | Unit tests for the time calculations and export formatting. | High |
 
 ---
 

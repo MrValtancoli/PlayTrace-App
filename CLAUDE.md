@@ -29,11 +29,15 @@ npx expo start          # dev server
 npx expo start --android
 npx expo start --ios
 npm run typecheck       # tsc --noEmit
-npx tsx scripts/verify-timeformat.ts   # check time formats vs the export spec
+npm test                # jest: time formats and export schema
 ```
 
 Node LTS >= 20.19.4 is required by Expo SDK 57.
 There is no lint setup yet — do not reference `npm run lint`.
+
+Tests live in `src/**/__tests__`. The time-format and export cases encode the
+published export specification: if one fails, the export contract moved and
+that is a breaking change, not a test to update.
 
 ## Core domain rules
 
