@@ -43,3 +43,8 @@ yarn-error.*
 # claude code local settings
 .claude/settings.local.json
 .claude/*.local.*
+
+# build artifacts — publish these as GitHub Release assets, never commit them
+*.apk
+*.aab
+*.ipa

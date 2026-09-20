@@ -55,6 +55,7 @@ iOS support is built into the codebase but is not validated for v1.0.
 | **Match Configuration** | ✅ Done | Management of metadata: teams, date, competition, and venue. | Medium |
 | **Offline Engine** | ✅ Done | Full functionality without requiring an internet connection. | High |
 | **Local Persistence** | ✅ Done | Match state survives app restarts and backgrounding. | High |
+| **Tag Set Export/Import** | 📅 v1.1 | Share a tag configuration between devices as a file, so an analyst can set up once and hand the same board to a colleague. Separate from the match export: it carries configuration, not events. | High |
 
 ## 🎨 UI/UX & Quality
 
@@ -65,6 +66,7 @@ iOS support is built into the codebase but is not validated for v1.0.
 | **Localization** | 🔄 In Progress | Interface translation into multiple languages (docs: EN, IT, PT). | High |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
+| **Device Rotation** | 📅 v1.1 | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
 | **iOS Support Validation** | 📅 post-1.0 | Verify layout, share sheet, and timing behavior on iOS devices. | Medium |
 | **Automated Tests** | 🔄 In Progress | Unit tests for the time calculations and export formatting. | High |
 
