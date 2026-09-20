@@ -47,8 +47,8 @@ I nomi dei campi esportati usano lo snake_case volutamente, per corrispondere
 Le esportazioni includono le informazioni sulla partita, la configurazione dei
 tag e tutti gli eventi taggati con i dati temporali completi.
 
-**JSON** — formato strutturato, ideale per l'analisi dati con Python/R
-**CSV** — pronto per i fogli di calcolo, si apre direttamente in Excel
+- **JSON** — formato strutturato, ideale per l'analisi dati con Python/R
+- **CSV** — pronto per i fogli di calcolo, si apre direttamente in Excel
 
 ## 🗺️ Roadmap
 
