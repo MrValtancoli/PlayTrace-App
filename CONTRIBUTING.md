@@ -67,6 +67,32 @@ snake_case and must match the published PlayTrace export specification exactly.
 People analyze this data in Python and R — renaming a field breaks their
 scripts.
 
+## 🤖 AI-Assisted Contributions
+
+AI coding assistants are welcome here. Parts of PlayTrace itself are written
+with Claude Code — the repository includes a `CLAUDE.md` with project context.
+
+One condition, and it is not negotiable: **you are accountable for what you
+submit as if you had typed every line yourself.** That means you have read it,
+you understand it, you can explain why it works, and you have run it on a real
+device or emulator. If a reviewer asks what a function does and the answer is
+"the model wrote it", the PR will be closed.
+
+Practical rules:
+
+- Test your changes before opening a PR. Generated code that compiles is not
+  the same as code that works.
+- Do not open AI-generated PRs on issues labelled `good first issue`. Those
+  exist so new contributors can learn the codebase, and automating them
+  removes the point.
+- Keep PRs focused. A large generated diff touching unrelated files is harder
+  to review than three small ones.
+- Disclosure is appreciated but not required. If you want to mention it, a line
+  in the PR description is enough.
+
+This applies to documentation and translations too: a machine translation you
+cannot read yourself is not a contribution we can verify.
+
 ## 🎯 Priority Areas
 
 We especially welcome contributions in:
