@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Palette, ThemeMode, useTheme } from '../constants/theme';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
@@ -25,6 +26,8 @@ const THEME_OPTIONS: { mode: ThemeMode; label: string }[] = [
 export function HomeScreen({ navigation }: Props) {
   const c = useTheme();
   const styles = useMemo(() => makeStyles(c), [c]);
+  // The Home screen hides the navigation header, so it owns its top inset.
+  const insets = useSafeAreaInsets();
   const themeMode = useConfigStore((s) => s.themeMode);
   const setThemeMode = useConfigStore((s) => s.setThemeMode);
   const matchConfig = useConfigStore((s) => s.matchConfig);
@@ -34,7 +37,13 @@ export function HomeScreen({ navigation }: Props) {
   const matchActive = phase !== 'idle';
 
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
+    <ScrollView
+      style={styles.screen}
+      contentContainerStyle={[
+        styles.content,
+        { paddingTop: insets.top + 56 },
+      ]}
+    >
       <Text style={styles.logo}>⚽ PlayTrace</Text>
       <Text style={styles.tagline}>Real-time football match tagging</Text>
 
@@ -123,7 +132,7 @@ const makeStyles = (c: Palette) =>
   },
   content: {
     padding: 20,
-    paddingTop: 32,
+    // paddingTop is applied inline, on top of the safe-area inset.
   },
   logo: {
     color: c.text,
@@ -135,7 +144,8 @@ const makeStyles = (c: Palette) =>
     color: c.textMuted,
     fontSize: 14,
     textAlign: 'center',
-    marginBottom: 24,
+    marginTop: 4,
+    marginBottom: 44,
   },
   card: {
     backgroundColor: c.card,

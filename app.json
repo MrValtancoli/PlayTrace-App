@@ -8,9 +8,12 @@
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#0E1612",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "it.zonacalciolab.playtrace"
     },
     "android": {
+      "package": "it.zonacalciolab.playtrace",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#00BF63",
         "foregroundImage": "./assets/android-icon-foreground.png",
