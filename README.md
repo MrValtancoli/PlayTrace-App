@@ -14,9 +14,21 @@
 Free, open-source mobile app for real-time football match tagging. Perfect for
 coaches, video analysts, and scouts who need precise event timing data.
 
-> **Status:** early work in progress. The app is being rebuilt with React Native
-> and Expo for iOS and Android. Installation instructions will be added once the
-> first build is validated.
+> **Status:** pre-release. The core tagging loop (match setup, tags, timer,
+> export) is implemented with React Native and Expo, but has not yet been
+> validated on physical devices. No installable build is published yet.
+
+## 🛠️ Running from source
+
+Requires Node.js LTS (>= 20.19.4).
+
+```bash
+npm ci
+npx expo start
+```
+
+Then open the project in Expo Go, or press `a` / `i` for an Android emulator or
+iOS simulator.
 
 ## ✨ Features
 

@@ -1,3 +1,5 @@
+@AGENTS.md
+
 # PlayTrace — Analyze The Game
 
 Free, open-source app for real-time football match event tagging.
@@ -12,21 +14,26 @@ Do not reintroduce B4A patterns, code, or documentation references.
 
 ## Stack
 
-- React Native + Expo, TypeScript (strict)
-- Local persistence: <!-- VERIFICA: AsyncStorage / expo-sqlite / MMKV -->
-- Navigation: <!-- VERIFICA: expo-router / react-navigation -->
+- React Native + Expo (SDK 57, RN 0.86), TypeScript (strict)
+- State: Zustand, with `persist` middleware on both stores
+- Local persistence: AsyncStorage (`@react-native-async-storage/async-storage`)
+- Navigation: React Navigation, native stack (not expo-router)
+- Entry point: `index.ts` -> `App.tsx` (not file-based routing)
 - No backend. No network calls. The app must work fully offline.
 
 ## Commands
 
 ```bash
-npm install
+npm ci                  # install from the lockfile
 npx expo start          # dev server
 npx expo start --android
 npx expo start --ios
-npm run typecheck       # <!-- VERIFICA: script esistente -->
-npm run lint            # <!-- VERIFICA -->
+npm run typecheck       # tsc --noEmit
+npx tsx scripts/verify-timeformat.ts   # check time formats vs the export spec
 ```
+
+Node LTS >= 20.19.4 is required by Expo SDK 57.
+There is no lint setup yet — do not reference `npm run lint`.
 
 ## Core domain rules
 
