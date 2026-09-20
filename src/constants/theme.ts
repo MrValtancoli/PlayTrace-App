@@ -17,9 +17,9 @@ export interface Palette {
   /** Second-level surface: secondary buttons. */
   cardAlt: string;
   border: string;
-  /** Brand green. Primary actions. */
+  /** Brand green (#00BF63, taken from the app icon). Primary actions. */
   accent: string;
-  /** Darker green, for switch tracks and pressed states. */
+  /** Darker green, for switch tracks, borders and pressed states. */
   accentDark: string;
   /** Text drawn on top of `accent`. */
   onAccent: string;
@@ -43,8 +43,8 @@ export const DARK: Palette = {
   card: '#1A241E',
   cardAlt: '#22302A',
   border: '#2E3D35',
-  accent: '#22C55E',
-  accentDark: '#15803D',
+  accent: '#00BF63',
+  accentDark: '#00913F',
   onAccent: '#0B0F0D',
   danger: '#EF4444',
   warning: '#F59E0B',
@@ -60,10 +60,11 @@ export const LIGHT: Palette = {
   card: '#FFFFFF',
   cardAlt: '#E3EDE6',
   border: '#CBDBD1',
-  // Darker than the dark-theme green: #22C55E on white fails contrast.
-  accent: '#00863D',
-  accentDark: '#00602C',
-  onAccent: '#FFFFFF',
+  // Same brand green in both themes. Its luminance carries dark text at
+  // ~8.6:1, so onAccent stays dark here too rather than flipping to white.
+  accent: '#00BF63',
+  accentDark: '#00913F',
+  onAccent: '#0B0F0D',
   danger: '#C62828',
   warning: '#9A5B00',
   text: '#10201A',
