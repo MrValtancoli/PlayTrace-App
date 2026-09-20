@@ -47,8 +47,8 @@ corresponder 1:1 à especificação de exportação publicada do PlayTrace.
 As exportações incluem informações da partida, a configuração das marcações e
 todos os eventos marcados com dados completos de tempo.
 
-**JSON** — formato estruturado, ideal para análise de dados com Python/R
-**CSV** — pronto para planilhas, abre diretamente no Excel
+- **JSON** — formato estruturado, ideal para análise de dados com Python/R
+- **CSV** — pronto para planilhas, abre diretamente no Excel
 
 ## 🗺️ Roteiro
 
