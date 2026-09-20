@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Palette, useTheme } from '../constants/theme';
 import { formatMMSS, formatTimeContinuous, formatTimePeriod } from '../services/timeFormat';
 import { useConfigStore } from '../store/configStore';
-import { useMatchStore } from '../store/matchStore';
+import { resolveFirstHalfSeconds, useMatchStore } from '../store/matchStore';
 
 const PHASE_LABELS: Record<string, string> = {
   idle: 'Ready',
@@ -22,6 +22,7 @@ export function TimerDisplay() {
   const isRunning = useMatchStore((s) => s.isRunning);
   const elapsed = useMatchStore((s) => s.elapsed);
   const injuryTime1 = useMatchStore((s) => s.injuryTime1);
+  const firstHalfElapsed = useMatchStore((s) => s.firstHalfElapsed);
   const halfDuration = useConfigStore((s) => s.matchConfig.halfDuration);
 
   const inPlay = phase === 'first_half' || phase === 'second_half';
@@ -45,7 +46,12 @@ export function TimerDisplay() {
       )}
       {inPlay && period === 2 && (
         <Text style={styles.continuous}>
-          Total: {formatTimeContinuous(elapsed, period, halfDuration, injuryTime1)}
+          Total:{' '}
+          {formatTimeContinuous(
+            elapsed,
+            period,
+            resolveFirstHalfSeconds({ firstHalfElapsed, injuryTime1 }, halfDuration)
+          )}
         </Text>
       )}
     </View>

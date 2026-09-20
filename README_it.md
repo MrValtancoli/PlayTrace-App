@@ -55,7 +55,7 @@ Ogni evento taggato registra 4 diversi timestamp:
 | `timestamp_absolute` | 30/12/25 15:23:45 | Timestamp reale |
 | `time_period` | 23:45 1T | Tempo nel periodo corrente |
 | `time_match` | 68:30 (2T) | Tempo di gioco con indicatore di periodo |
-| `time_continuous` | 72:30 | Tempo continuo inclusi i minuti di recupero |
+| `time_continuous` | 72:30 | Posizione nel video montato senza intervallo |
 
 I nomi dei campi esportati usano lo snake_case volutamente, per corrispondere
 1:1 alla specifica di esportazione PlayTrace pubblicata.

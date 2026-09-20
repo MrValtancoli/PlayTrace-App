@@ -40,25 +40,26 @@ describe('the four time references, per the export spec', () => {
   it('1st half at 23:45', () => {
     expect(formatTimePeriod(1425, 1, 45)).toBe('23:45 1T');
     expect(formatTimeMatch(1425, 1, 45)).toBe('23:45 (1T)');
-    expect(formatTimeContinuous(1425, 1, 45, 0)).toBe('23:45');
+    expect(formatTimeContinuous(1425, 1, 0)).toBe('23:45');
   });
 
   it('1st half injury time at 47:00', () => {
     expect(formatTimePeriod(2820, 1, 45)).toBe('45+2 1T');
     expect(formatTimeMatch(2820, 1, 45)).toBe('47:00 (1T)');
-    expect(formatTimeContinuous(2820, 1, 45, 0)).toBe('47:00');
+    expect(formatTimeContinuous(2820, 1, 0)).toBe('47:00');
   });
 
   it('2nd half at 23:30 with 3 minutes of 1st-half injury time', () => {
     expect(formatTimePeriod(1410, 2, 45)).toBe('23:30 2T');
     expect(formatTimeMatch(1410, 2, 45)).toBe('68:30 (2T)');
-    expect(formatTimeContinuous(1410, 2, 45, 3)).toBe('71:30');
+    // 1st half measured at 48:00 -> 2880 s
+    expect(formatTimeContinuous(1410, 2, 2880)).toBe('71:30');
   });
 
   it('2nd half at 35:45 with 3 minutes of 1st-half injury time', () => {
     expect(formatTimePeriod(2145, 2, 45)).toBe('35:45 2T');
     expect(formatTimeMatch(2145, 2, 45)).toBe('80:45 (2T)');
-    expect(formatTimeContinuous(2145, 2, 45, 3)).toBe('83:45');
+    expect(formatTimeContinuous(2145, 2, 2880)).toBe('83:45');
   });
 });
 
@@ -83,12 +84,26 @@ describe('injury-time boundary in formatTimePeriod', () => {
 });
 
 describe('formatTimeContinuous', () => {
-  it('ignores 1st-half injury time while still in the 1st half', () => {
-    expect(formatTimeContinuous(600, 1, 45, 5)).toBe('10:00');
+  it('ignores the first-half duration while still in the 1st half', () => {
+    expect(formatTimeContinuous(600, 1, 3000)).toBe('10:00');
   });
 
-  it('adds half duration and 1st-half injury time in the 2nd half', () => {
-    expect(formatTimeContinuous(0, 2, 45, 5)).toBe('50:00');
+  it('starts the 2nd half at the measured first-half duration', () => {
+    expect(formatTimeContinuous(0, 2, 3000)).toBe('50:00');
+  });
+
+  // Regression for #26. A half whistled at 47:47 with a declared +2 used to
+  // produce a 47:00 base, putting every second-half event 47 s out of step
+  // with the edited video.
+  it('uses the measured duration, not half duration plus declared injury', () => {
+    const measured = 47 * 60 + 47;
+    expect(formatTimeContinuous(0, 2, measured)).toBe('47:47');
+    expect(formatTimeContinuous(1410, 2, measured)).toBe('71:17');
+  });
+
+  it('clamps a negative or fractional first half', () => {
+    expect(formatTimeContinuous(60, 2, -5)).toBe('01:00');
+    expect(formatTimeContinuous(0, 2, 2867.9)).toBe('47:47');
   });
 });
 

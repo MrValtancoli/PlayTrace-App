@@ -49,16 +49,24 @@ export function formatTimeMatch(
 }
 
 /**
- * Total elapsed time including 1st-half injury time: "71:30".
- * time_continuous = half_duration + injury_1st + time_in_2nd (per spec).
+ * Position inside a continuous recording of the match: cut the video at the
+ * first second of play, drop the interval, join the halves, and this is where
+ * the event sits in the player.
+ *
+ * The second half therefore starts at the first half's *measured* duration,
+ * not at `half_duration + declared injury time`. The declared injury time is a
+ * whole number of minutes, but a half ends when the referee whistles, so the
+ * nominal figure is off by up to a minute — see issue #26.
+ *
+ * @param firstHalfSec seconds actually played in the first half; ignored while
+ *                     still in the first period.
  */
 export function formatTimeContinuous(
   elapsedSec: number,
   period: Period,
-  halfDurationMin: number,
-  injuryTime1Min: number
+  firstHalfSec: number
 ): string {
-  const base = period === 2 ? (halfDurationMin + injuryTime1Min) * 60 : 0;
+  const base = period === 2 ? Math.max(0, Math.floor(firstHalfSec)) : 0;
   return `${formatMMSS(base + elapsedSec)}`;
 }
 

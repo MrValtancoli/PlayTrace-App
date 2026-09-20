@@ -41,7 +41,7 @@ export function HomeScreen({ navigation }: Props) {
       style={styles.screen}
       contentContainerStyle={[
         styles.content,
-        { paddingTop: insets.top + 56 },
+        { paddingTop: insets.top + 56, paddingBottom: insets.bottom + 24 },
       ]}
     >
       <Text style={styles.logo}>⚽ PlayTrace</Text>

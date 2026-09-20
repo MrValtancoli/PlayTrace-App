@@ -55,7 +55,7 @@ Each tagged event records 4 different timestamps:
 | `timestamp_absolute` | 30/12/25 15:23:45 | Real-world timestamp |
 | `time_period` | 23:45 1T | Time within current period |
 | `time_match` | 68:30 (2T) | Match time with period indicator |
-| `time_continuous` | 72:30 | Continuous time including injury time |
+| `time_continuous` | 72:30 | Position in a continuously edited video |
 
 Export field names use snake_case on purpose, to match the published PlayTrace
 export specification 1:1.

@@ -24,6 +24,13 @@ interface MatchState {
   elapsed: number;
   injuryTime1: number; // minutes, declared at end of 1st half
   injuryTime2: number; // minutes, declared at end of match
+  /**
+   * Seconds actually played in the 1st half, captured when it ends. This is
+   * the base for time_continuous in the 2nd half; the declared injury minutes
+   * are reported in the export but never used to compute time. Null until the
+   * 1st half ends, and on matches persisted before this field existed.
+   */
+  firstHalfElapsed: number | null;
   events: EventRecord[];
 
   startFirstHalf: () => void;
@@ -52,6 +59,18 @@ function computeElapsed(s: {
   );
 }
 
+/**
+ * The 2nd-half base for time_continuous. Falls back to the old nominal figure
+ * for matches that were already in progress when firstHalfElapsed was added,
+ * so an upgrade mid-match does not produce a wild jump.
+ */
+export function resolveFirstHalfSeconds(
+  s: { firstHalfElapsed: number | null; injuryTime1: number },
+  halfDurationMin: number
+): number {
+  return s.firstHalfElapsed ?? (halfDurationMin + s.injuryTime1) * 60;
+}
+
 export const useMatchStore = create<MatchState>()(
   persist(
     (set, get) => ({
@@ -64,6 +83,7 @@ export const useMatchStore = create<MatchState>()(
       elapsed: 0,
       injuryTime1: 0,
       injuryTime2: 0,
+      firstHalfElapsed: null,
       events: [],
 
       startFirstHalf: () =>
@@ -77,6 +97,7 @@ export const useMatchStore = create<MatchState>()(
           elapsed: 0,
           injuryTime1: 0,
           injuryTime2: 0,
+          firstHalfElapsed: null,
           events: [],
         }),
 
@@ -113,6 +134,8 @@ export const useMatchStore = create<MatchState>()(
           isRunning: false,
           pauseStartedAt: null,
           injuryTime1: Math.max(0, injuryMinutes),
+          // Captured before the clock is reset for the 2nd half.
+          firstHalfElapsed: computeElapsed(get()),
         }),
 
       endMatch: (injuryMinutes) =>
@@ -134,6 +157,7 @@ export const useMatchStore = create<MatchState>()(
           elapsed: 0,
           injuryTime1: 0,
           injuryTime2: 0,
+          firstHalfElapsed: null,
           events: [],
         }),
 
@@ -146,6 +170,7 @@ export const useMatchStore = create<MatchState>()(
         const halfDuration =
           useConfigStore.getState().matchConfig.halfDuration;
         const elapsedSec = computeElapsed(s);
+        const firstHalfSec = resolveFirstHalfSeconds(s, halfDuration);
 
         const event: EventRecord = {
           tag_id: tag.id,
@@ -156,8 +181,7 @@ export const useMatchStore = create<MatchState>()(
           time_continuous: formatTimeContinuous(
             elapsedSec,
             s.period,
-            halfDuration,
-            s.injuryTime1
+            firstHalfSec
           ),
         };
 

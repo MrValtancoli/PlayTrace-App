@@ -54,10 +54,16 @@ persisted state, not from in-memory counters.
 | `timestamp_absolute` | 30/12/25 15:23:45 | Real-world wall clock |
 | `time_period` | 23:45 1T | Time within the current period |
 | `time_match` | 68:30 (2T) | Match time with period indicator |
-| `time_continuous` | 72:30 | Continuous time including injury time |
+| `time_continuous` | 72:30 | Position in a continuously edited video |
 
 All four must be present on every event. Never derive one lazily at export time
 in a way that loses precision.
+
+`time_continuous` is the position inside a recording cut at the first second of
+play with the interval removed. The second half is therefore based on the
+first half's **measured** duration, captured when it ends — never on
+`half_duration + declared injury time`, which is a whole-minute approximation
+and drifts from the video by up to a minute.
 
 **Tags.** 16 customizable tag buttons, configured before or during a match.
 

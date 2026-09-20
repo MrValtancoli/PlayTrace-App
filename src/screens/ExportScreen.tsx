@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Palette, useTheme } from '../constants/theme';
 import { exportAndShare } from '../services/exportService';
 import { useConfigStore } from '../store/configStore';
@@ -15,6 +16,7 @@ import { EventRecord } from '../types';
 
 export function ExportScreen() {
   const c = useTheme();
+  const insets = useSafeAreaInsets();
   const styles = useMemo(() => makeStyles(c), [c]);
 
   const events = useMatchStore((s) => s.events);
@@ -93,7 +95,10 @@ export function ExportScreen() {
         data={events}
         keyExtractor={(_, i) => String(i)}
         renderItem={renderItem}
-        contentContainerStyle={styles.list}
+        contentContainerStyle={[
+          styles.list,
+          { paddingBottom: insets.bottom + 24 },
+        ]}
         ListEmptyComponent={
           <Text style={styles.empty}>No events tagged yet.</Text>
         }
@@ -154,7 +159,7 @@ const makeStyles = (c: Palette) =>
   },
   list: {
     paddingHorizontal: 16,
-    paddingBottom: 24,
+    // paddingBottom is applied inline, on top of the safe-area inset.
   },
   eventRow: {
     flexDirection: 'row',

@@ -8,6 +8,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TAG_COLOR_PALETTE } from '../constants/defaultTags';
 import { Palette, useTheme } from '../constants/theme';
 import { useConfigStore } from '../store/configStore';
@@ -15,6 +16,7 @@ import { TagConfig } from '../types';
 
 export function TagConfigScreen() {
   const c = useTheme();
+  const insets = useSafeAreaInsets();
   const styles = useMemo(() => makeStyles(c), [c]);
 
   const tags = useConfigStore((s) => s.tags);
@@ -59,7 +61,10 @@ export function TagConfigScreen() {
         data={tags}
         keyExtractor={(t) => String(t.id)}
         renderItem={renderItem}
-        contentContainerStyle={styles.list}
+        contentContainerStyle={[
+          styles.list,
+          { paddingBottom: insets.bottom + 16 },
+        ]}
         ListHeaderComponent={
           <Text style={styles.note}>
             Tap the color dot to change color. Changes are saved automatically.

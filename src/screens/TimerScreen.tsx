@@ -8,6 +8,7 @@ import {
   Vibration,
   View,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { InjuryTimeModal } from '../components/InjuryTimeModal';
 import { TagGrid } from '../components/TagGrid';
 import { TimerDisplay } from '../components/TimerDisplay';
@@ -24,6 +25,7 @@ export function TimerScreen({ navigation }: Props) {
 
   const c = useTheme();
   const styles = useMemo(() => makeStyles(c), [c]);
+  const insets = useSafeAreaInsets();
 
   const phase = useMatchStore((s) => s.phase);
   const isRunning = useMatchStore((s) => s.isRunning);
@@ -58,7 +60,13 @@ export function TimerScreen({ navigation }: Props) {
   };
 
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
+    <ScrollView
+      style={styles.screen}
+      contentContainerStyle={[
+        styles.content,
+        { paddingBottom: insets.bottom + 32 },
+      ]}
+    >
       <TimerDisplay />
 
       <View style={styles.controls}>
@@ -183,7 +191,7 @@ const makeStyles = (c: Palette) =>
   },
   content: {
     padding: 16,
-    paddingBottom: 32,
+    // paddingBottom is applied inline, on top of the safe-area inset.
   },
   controls: {
     flexDirection: 'row',

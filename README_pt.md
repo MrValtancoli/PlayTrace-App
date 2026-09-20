@@ -55,7 +55,7 @@ Cada evento marcado registra 4 carimbos de data/hora diferentes:
 | `timestamp_absolute` | 30/12/25 15:23:45 | Carimbo de data/hora real |
 | `time_period` | 23:45 1T | Tempo dentro do período atual |
 | `time_match` | 68:30 (2T) | Tempo da partida com indicador de período |
-| `time_continuous` | 72:30 | Tempo contínuo, incluindo acréscimos |
+| `time_continuous` | 72:30 | Posição no vídeo montado, sem o intervalo |
 
 Os nomes dos campos exportados usam snake_case propositalmente, para
 corresponder 1:1 à especificação de exportação publicada do PlayTrace.
