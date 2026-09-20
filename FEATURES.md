@@ -23,6 +23,7 @@ assignment and player tagging are deferred to v1.1 and will be added as new
 optional export fields, never by renaming or repurposing existing ones.
 
 iOS support is built into the codebase but is not validated for v1.0.
+Validation on Apple hardware is in progress and will land in a later release.
 
 ## ⏱️ Timing (Match Management)
 
@@ -67,7 +68,7 @@ iOS support is built into the codebase but is not validated for v1.0.
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
 | **Device Rotation** | 📅 v1.1 | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
-| **iOS Support Validation** | 📅 post-1.0 | Verify layout, share sheet, and timing behavior on iOS devices. | Medium |
+| **iOS Support Validation** | 🔄 In Progress | Verify layout, share sheet, and timing behavior on iOS devices. The codebase already builds for iOS; what is missing is validation on real hardware. | High |
 | **Automated Tests** | 🔄 In Progress | Unit tests for the time calculations and export formatting. | High |
 
 ---
