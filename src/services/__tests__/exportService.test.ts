@@ -1,5 +1,6 @@
 import { buildCSV, buildJSON, ExportInput } from '../exportService';
 import { EventRecord, MatchConfig, TagConfig } from '../../types';
+import appConfig from '../../../app.json';
 
 const matchConfig: MatchConfig = {
   competition: 'Serie A',
@@ -85,6 +86,10 @@ describe('buildJSON', () => {
     expect(root.metadata.total_events).toBe(2);
     // 45 + 45 + 3 + 5 = 98 minutes
     expect(root.metadata.match_duration).toBe('98:00');
+  });
+
+  it('reports the app version from app.json', () => {
+    expect(root.metadata.app_version).toBe(appConfig.expo.version);
   });
 });
 

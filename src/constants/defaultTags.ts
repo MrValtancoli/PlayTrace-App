@@ -1,6 +1,8 @@
 import { TagConfig } from '../types';
+import appConfig from '../../app.json';
 
-export const APP_VERSION = '1.0.0';
+// Read from app.json so the exported app_version always matches the build.
+export const APP_VERSION: string = appConfig.expo.version;
 
 export const TAG_COLOR_PALETTE = [
   '#00FF00',

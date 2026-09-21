@@ -29,16 +29,16 @@ Use the [Documentation template](.github/ISSUE_TEMPLATE/documentation.yml) for:
 - New tutorials
 - Translation improvements
 
-Note that the README exists in several languages (`README.md`, `README.it.md`,
-`README.pt.md`). If you change one, please flag in your PR which of the others
+Note that the README exists in several languages (`README.md`, `README_it.md`,
+`README_pt.md`). If you change one, please flag in your PR which of the others
 still need the same change — you don't have to translate them yourself.
 
 ### 💻 Code Contributions
 
 **Development Setup:**
-1. Install [Node.js](https://nodejs.org/) (LTS release) and npm
+1. Install [Node.js](https://nodejs.org/) LTS (>= 20.19.4, required by Expo SDK 57) and npm
 2. Fork this repository and clone your fork
-3. Run `npm install` to install dependencies
+3. Run `npm ci` to install the exact dependency versions from the lockfile
 4. Run `npx expo start` to launch the development server
 5. Open the app with [Expo Go](https://expo.dev/go) on your phone (scan the QR
    code), or press `a` / `i` to launch an Android emulator or iOS simulator
