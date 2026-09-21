@@ -15,9 +15,10 @@ App móvel gratuito e open-source para marcação de partidas em tempo real.
 Perfeito para treinadores, analistas de vídeo e olheiros que necessitam de mais
 precisão em marcar tempos.
 
-> **Status:** v1.0.0 lançada para Android. O código é multiplataforma, mas o
-> iOS ainda não foi validado. O app foi testado em um único aparelho físico —
-> relatos de bugs são muito bem-vindos.
+> **Status:** disponível para Android — baixe a
+> [versão mais recente](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
+> O código é multiplataforma, mas o iOS ainda não foi validado. O app foi
+> testado em um único aparelho físico — relatos de bugs são muito bem-vindos.
 
 ## 📲 Download
 

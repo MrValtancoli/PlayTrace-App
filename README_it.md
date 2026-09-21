@@ -15,9 +15,11 @@ App mobile gratuita e open-source per il tagging di partite di calcio in
 real-time. Perfetta per allenatori, videoanalisti, scout e chiunque voglia avere
 dati precisi.
 
-> **Stato del progetto:** rilasciata la v1.0.0 per Android. Il codice è
-> multipiattaforma, ma iOS non è ancora validato. L'app è stata provata su un
-> solo dispositivo fisico: le segnalazioni di bug sono molto gradite.
+> **Stato del progetto:** disponibile per Android — scarica
+> l'[ultima versione](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
+> Il codice è multipiattaforma, ma iOS non è ancora validato. L'app è stata
+> provata su un solo dispositivo fisico: le segnalazioni di bug sono molto
+> gradite.
 
 ## 📲 Download
 

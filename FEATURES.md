@@ -64,12 +64,12 @@ Validation on Apple hardware is in progress and will land in a later release.
 
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
-| **Localization** | 🔄 In Progress | Interface translation into multiple languages (docs: EN, IT, PT). | High |
+| **Localization** | 📅 Planned | Translate the app interface, which is English only today. The documentation is already available in English, Italian and Portuguese. | High |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
 | **Device Rotation** | 📅 v1.1 | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
 | **iOS Support Validation** | 🔄 In Progress | Verify layout, share sheet, and timing behavior on iOS devices. The codebase already builds for iOS; what is missing is validation on real hardware. | High |
-| **Automated Tests** | 🔄 In Progress | Unit tests for the time calculations and export formatting. | High |
+| **Automated Tests** | ✅ Done | Jest suite covering the four time references and the JSON/CSV export schema, run with `npm test`. | High |
 
 ---
 

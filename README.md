@@ -14,9 +14,10 @@
 Free, open-source mobile app for real-time football match tagging. Perfect for
 coaches, video analysts, and scouts who need precise event timing data.
 
-> **Status:** v1.0.0 released for Android. The codebase is cross-platform,
-> but iOS is not validated yet. The app has been tested on a single physical
-> device — bug reports are very welcome.
+> **Status:** released for Android — get the
+> [latest version](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
+> The codebase is cross-platform, but iOS is not validated yet. The app has
+> been tested on a single physical device — bug reports are very welcome.
 
 ## 📲 Download
 
