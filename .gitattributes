@@ -1,0 +1,14 @@
+# Normalize line endings: LF in the repository and in every working tree,
+# regardless of each machine's core.autocrlf setting.
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.mp4 binary
