@@ -42,8 +42,8 @@ Validation on Apple hardware is in progress and will land in a later release.
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
 | **Customizable Board** | ✅ Done | Ability to configure buttons for different events (shots, fouls, etc.). | High |
-| **Player Tagging** | 📅 v1.1 | Associating events with specific jersey numbers or player names. | High |
-| **Team Assignment** | 📅 v1.1 | Home/Away attribution. Out of v1.0: tags refer to the analysed team. | High |
+| **Player Tagging** | 📅 v1.1 ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)) | Associating events with specific jersey numbers or player names. | High |
+| **Team Assignment** | 📅 v1.1 ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32)) | Home/Away attribution. Out of v1.0: tags refer to the analysed team. | High |
 | **Pitch Zoning** | 📅 Planned | Selection of the pitch area where the action occurred. | Medium |
 
 ## 📤 Data & Export
@@ -56,7 +56,7 @@ Validation on Apple hardware is in progress and will land in a later release.
 | **Match Configuration** | ✅ Done | Management of metadata: teams, date, competition, and venue. | Medium |
 | **Offline Engine** | ✅ Done | Full functionality without requiring an internet connection. | High |
 | **Local Persistence** | ✅ Done | Match state survives app restarts and backgrounding. | High |
-| **Tag Set Export/Import** | 📅 v1.1 | Share a tag configuration between devices as a file, so an analyst can set up once and hand the same board to a colleague. Separate from the match export: it carries configuration, not events. | High |
+| **Tag Set Export/Import** | 📅 v1.1 ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34)) | Share a tag configuration between devices as a file, so an analyst can set up once and hand the same board to a colleague. Separate from the match export: it carries configuration, not events. | High |
 
 ## 🎨 UI/UX & Quality
 
@@ -67,7 +67,7 @@ Validation on Apple hardware is in progress and will land in a later release.
 | **Localization** | 📅 Planned | Translate the app interface, which is English only today. The documentation is already available in English, Italian and Portuguese. | High |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
-| **Device Rotation** | 📅 v1.1 | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
+| **Device Rotation** | 📅 v1.1 ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35)) | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
 | **iOS Support Validation** | 🔄 In Progress | Verify layout, share sheet, and timing behavior on iOS devices. The codebase already builds for iOS; what is missing is validation on real hardware. | High |
 | **Automated Tests** | ✅ Done | Jest suite covering the four time references and the JSON/CSV export schema, run with `npm test`. | High |
 
