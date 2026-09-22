@@ -1,0 +1,108 @@
+{
+  "language": {
+    "name": "Italiano"
+  },
+  "nav": {
+    "matchInfo": "Dati partita",
+    "tagConfig": "Configurazione tag",
+    "match": "Partita",
+    "export": "Esporta"
+  },
+  "home": {
+    "tagline": "Tagging in tempo reale delle partite di calcio",
+    "noCompetition": "Nessuna competizione impostata",
+    "halves": "Tempi da {{minutes}}'",
+    "events_one": "{{count}} evento",
+    "events_other": "{{count}} eventi",
+    "goToMatch": "Vai alla partita",
+    "backToMatch": "Torna alla partita",
+    "matchInfo": "Dati partita",
+    "tagConfig": "Tag",
+    "export": "Esporta",
+    "appearance": "Aspetto",
+    "language": "Lingua",
+    "phase": {
+      "idle": "Nessuna partita in corso",
+      "first_half": "Partita in corso — 1° tempo",
+      "half_time": "Partita in corso — intervallo",
+      "second_half": "Partita in corso — 2° tempo",
+      "ended": "Partita terminata — pronta per l'esportazione"
+    }
+  },
+  "theme": {
+    "system": "Sistema",
+    "light": "Chiaro",
+    "dark": "Scuro"
+  },
+  "matchSetup": {
+    "autosave": "Le modifiche vengono salvate automaticamente.",
+    "competition": "Competizione",
+    "competitionPlaceholder": "es. Serie A",
+    "date": "Data (AAAA-MM-GG)",
+    "venue": "Stadio",
+    "venuePlaceholder": "es. San Siro",
+    "homeTeam": "Squadra di casa",
+    "awayTeam": "Squadra ospite",
+    "halfDuration": "Durata di un tempo (minuti)"
+  },
+  "tagConfig": {
+    "hint": "Tocca il pallino per cambiare colore. Le modifiche vengono salvate automaticamente.",
+    "placeholder": "Tag {{id}}",
+    "reset": "Ripristina predefiniti"
+  },
+  "timer": {
+    "phase": {
+      "idle": "Pronto",
+      "first_half": "1° tempo",
+      "half_time": "Intervallo",
+      "second_half": "2° tempo",
+      "ended": "Fine partita"
+    },
+    "running": "In corso",
+    "paused": "In pausa",
+    "startFirstHalf": "Inizia 1° tempo",
+    "startSecondHalf": "Inizia 2° tempo",
+    "pause": "Pausa",
+    "resume": "Riprendi",
+    "endFirstHalf": "Fine 1° tempo",
+    "endMatch": "Fine partita",
+    "exportData": "Esporta dati",
+    "newMatch": "Nuova partita",
+    "hintIdle": "Avvia la partita per abilitare il tagging",
+    "hintHalfTime": "Intervallo — avvia il 2° tempo per riprendere il tagging"
+  },
+  "injuryModal": {
+    "subtitle": "Recupero (minuti)",
+    "cancel": "Annulla",
+    "confirm": "Conferma"
+  },
+  "export": {
+    "versus": "{{home}} - {{away}}",
+    "summary_one": "{{count}} evento · recupero {{first}}' + {{second}}'",
+    "summary_other": "{{count}} eventi · recupero {{first}}' + {{second}}'",
+    "partialWarning": "Partita non ancora terminata — l'esportazione conterrà dati parziali.",
+    "json": "Esporta JSON",
+    "csv": "Esporta CSV",
+    "empty": "Nessun evento registrato.",
+    "failed": "Esportazione non riuscita",
+    "unknownError": "Errore sconosciuto"
+  },
+  "defaultTags": {
+    "1": "Gol",
+    "2": "Tiro in porta",
+    "3": "Tiro fuori",
+    "4": "Calcio d'angolo",
+    "5": "Punizione",
+    "6": "Fallo",
+    "7": "Ammonizione",
+    "8": "Espulsione",
+    "9": "Fuorigioco",
+    "10": "Rimessa laterale",
+    "11": "Sostituzione",
+    "12": "Passaggio riuscito",
+    "13": "Contrasto vinto",
+    "14": "Intercetto",
+    "15": "Rinvio",
+    "16": "Parata"
+  }
+}

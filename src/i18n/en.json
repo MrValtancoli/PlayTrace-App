@@ -1,0 +1,108 @@
+{
+  "language": {
+    "name": "English"
+  },
+  "nav": {
+    "matchInfo": "Match Info",
+    "tagConfig": "Tag Configuration",
+    "match": "Match",
+    "export": "Export"
+  },
+  "home": {
+    "tagline": "Real-time football match tagging",
+    "noCompetition": "No competition set",
+    "halves": "{{minutes}}' halves",
+    "events_one": "{{count}} event",
+    "events_other": "{{count}} events",
+    "goToMatch": "Go to Match",
+    "backToMatch": "Back to Match",
+    "matchInfo": "Match Info",
+    "tagConfig": "Tag Config",
+    "export": "Export",
+    "appearance": "Appearance",
+    "language": "Language",
+    "phase": {
+      "idle": "No match in progress",
+      "first_half": "Match in progress — 1st half",
+      "half_time": "Match in progress — half time",
+      "second_half": "Match in progress — 2nd half",
+      "ended": "Match ended — ready to export"
+    }
+  },
+  "theme": {
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "matchSetup": {
+    "autosave": "Changes are saved automatically.",
+    "competition": "Competition",
+    "competitionPlaceholder": "e.g. Serie A",
+    "date": "Date (YYYY-MM-DD)",
+    "venue": "Venue",
+    "venuePlaceholder": "e.g. San Siro",
+    "homeTeam": "Home Team",
+    "awayTeam": "Away Team",
+    "halfDuration": "Half Duration (minutes)"
+  },
+  "tagConfig": {
+    "hint": "Tap the color dot to change color. Changes are saved automatically.",
+    "placeholder": "Tag {{id}}",
+    "reset": "Reset to Defaults"
+  },
+  "timer": {
+    "phase": {
+      "idle": "Ready",
+      "first_half": "1st Half",
+      "half_time": "Half Time",
+      "second_half": "2nd Half",
+      "ended": "Full Time"
+    },
+    "running": "Running",
+    "paused": "Paused",
+    "startFirstHalf": "Start 1st Half",
+    "startSecondHalf": "Start 2nd Half",
+    "pause": "Pause",
+    "resume": "Resume",
+    "endFirstHalf": "End 1st Half",
+    "endMatch": "End Match",
+    "exportData": "Export Data",
+    "newMatch": "New Match",
+    "hintIdle": "Start the match to enable tagging",
+    "hintHalfTime": "Half time — start the 2nd half to resume tagging"
+  },
+  "injuryModal": {
+    "subtitle": "Injury time (minutes)",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "export": {
+    "versus": "{{home}} vs {{away}}",
+    "summary_one": "{{count}} event · injury time {{first}}' + {{second}}'",
+    "summary_other": "{{count}} events · injury time {{first}}' + {{second}}'",
+    "partialWarning": "Match not ended yet — export will contain partial data.",
+    "json": "Export JSON",
+    "csv": "Export CSV",
+    "empty": "No events tagged yet.",
+    "failed": "Export failed",
+    "unknownError": "Unknown error"
+  },
+  "defaultTags": {
+    "1": "Goal",
+    "2": "Shot on Target",
+    "3": "Shot off Target",
+    "4": "Corner",
+    "5": "Free Kick",
+    "6": "Foul",
+    "7": "Yellow Card",
+    "8": "Red Card",
+    "9": "Offside",
+    "10": "Throw-in",
+    "11": "Substitution",
+    "12": "Pass Completed",
+    "13": "Tackle Won",
+    "14": "Interception",
+    "15": "Clearance",
+    "16": "Save"
+  }
+}
