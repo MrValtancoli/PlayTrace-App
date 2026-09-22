@@ -53,8 +53,16 @@ export function buildJSON(input: ExportInput): string {
   return JSON.stringify(root, null, 2);
 }
 
+// Spreadsheets evaluate a cell starting with one of these as a formula.
+const FORMULA_TRIGGER = /^[=+\-@\t\r]/;
+
 function csvEscape(value: string | number): string {
-  const s = String(value);
+  let s = String(value);
+  // CSV only: prefix user text with ' so Excel & co. show it as text instead
+  // of running it (OWASP CSV injection). Numbers are left untouched.
+  if (typeof value === 'string' && FORMULA_TRIGGER.test(s)) {
+    s = `'${s}`;
+  }
   if (/[",\n\r]/.test(s)) {
     return `"${s.replace(/"/g, '""')}"`;
   }

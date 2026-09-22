@@ -126,6 +126,34 @@ describe('buildCSV', () => {
     expect(row).toContain('"Stadio ""Grande"", Torino"');
   });
 
+  it('neutralizes values that spreadsheets would run as formulas', () => {
+    const risky: ExportInput = {
+      ...input,
+      matchConfig: { ...matchConfig, homeTeam: '=1+1', awayTeam: '@SUM(A1)' },
+      events: [
+        { ...events[0]!, tag_name: '-1 lost ball' },
+        { ...events[1]!, tag_name: '+ counter' },
+      ],
+    };
+    const [first, second] = buildCSV(risky).split('\n').slice(1);
+    expect(first).toContain(",'-1 lost ball,");
+    expect(first).toContain(",'=1+1,'@SUM(A1),");
+    expect(second).toContain(",'+ counter,");
+  });
+
+  it('keeps safe values and numbers unchanged', () => {
+    const row = buildCSV(input).split('\n')[1]!;
+    expect(row.startsWith('1,Goal,10/06/26 15:23:45,')).toBe(true);
+    expect(row).not.toContain("'");
+  });
+
+  it('leaves the JSON export untouched', () => {
+    const json = JSON.parse(
+      buildJSON({ ...input, matchConfig: { ...matchConfig, homeTeam: '=1+1' } })
+    );
+    expect(json.match_info.home_team).toBe('=1+1');
+  });
+
   it('produces a header-only file when there are no events', () => {
     expect(buildCSV({ ...input, events: [] }).split('\n')).toHaveLength(1);
   });
