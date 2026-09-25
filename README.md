@@ -71,13 +71,30 @@ timing data.
 
 ## 🗺️ Roadmap
 
-- [ ] Team assignment (Home/Away)
-- [ ] Player tagging
-- [ ] Sharing a tag set between devices
-- [ ] Landscape and tablet layouts
+Planned work is tracked in
+[milestones](https://github.com/MrValtancoli/PlayTrace-App/milestones).
+
+**v1.1**
+- [ ] Team assignment: Home / Away ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
+- [ ] Late timer start, when the half began before you pressed Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
+- [ ] Tag grid that grows when fewer tags are enabled ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
+- [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
+- [ ] CSV protected against spreadsheet formula injection ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+
+**v1.2**
+- [ ] Player tagging ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
+- [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
+- [ ] Delete an event, and undo the last one ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
+- [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [ ] Multi-language support ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+
+**Later**
+- [ ] Correct the tag of a recorded event ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
+- [ ] Reorder the tag buttons ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
+- [ ] Timer that follows seeking when tagging from video ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
+- [ ] Wear OS companion app ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
+- [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] Pitch zone selection
-- [ ] Video timestamp sync
-- [ ] Multi-language support
 
 ## 🤝 Contributing
 

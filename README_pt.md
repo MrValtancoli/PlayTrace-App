@@ -71,13 +71,30 @@ todos os eventos marcados com dados completos de tempo.
 
 ## 🗺️ Roteiro
 
-- [ ] Atribuição de times (Casa/Visitante)
-- [ ] Marcação de jogadores
-- [ ] Compartilhar um conjunto de tags entre aparelhos
-- [ ] Layouts em modo paisagem e para tablets
+O trabalho planejado é acompanhado nos
+[milestones](https://github.com/MrValtancoli/PlayTrace-App/milestones).
+
+**v1.1**
+- [ ] Atribuição de times: Casa / Visitante ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
+- [ ] Início tardio do cronômetro, quando o tempo começou antes de você apertar Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
+- [ ] Grade de tags que cresce quando poucas tags estão ativas ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
+- [ ] Compartilhar um conjunto de tags entre aparelhos ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
+- [ ] CSV protegido contra execução de fórmulas em planilhas ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+
+**v1.2**
+- [ ] Marcação de jogadores ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
+- [ ] Layouts em modo paisagem e para tablets ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
+- [ ] Excluir um evento e desfazer o último ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
+- [ ] Exportação XML para softwares de análise de vídeo ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [ ] Suporte a vários idiomas ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+
+**Mais adiante**
+- [ ] Corrigir a tag de um evento já registrado ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
+- [ ] Reordenar os botões de tags ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
+- [ ] Cronômetro que acompanha a navegação no vídeo durante a marcação ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
+- [ ] Aplicativo complementar para Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
+- [ ] Validação em aparelhos iOS reais ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] Seleção de zona do campo
-- [ ] Sincronização de carimbo de data/hora de vídeo
-- [ ] Suporte a vários idiomas
 
 ## 🤝 Contribuindo
 
