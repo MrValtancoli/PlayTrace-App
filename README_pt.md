@@ -94,7 +94,7 @@ O trabalho planejado é acompanhado nos
 - [ ] Cronômetro que acompanha a navegação no vídeo durante a marcação ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] Aplicativo complementar para Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 - [ ] Validação em aparelhos iOS reais ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
-- [ ] Seleção de zona do campo
+- [ ] Seleção de zona do campo ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
 
 ## 🤝 Contribuindo
 

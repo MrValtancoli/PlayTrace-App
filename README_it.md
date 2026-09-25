@@ -95,7 +95,7 @@ Il lavoro pianificato è tracciato nelle
 - [ ] Timer che segue gli spostamenti nel video durante il tagging ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] App companion per Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 - [ ] Validazione su dispositivi iOS reali ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
-- [ ] Selezione della zona di campo
+- [ ] Selezione della zona di campo ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
 
 ## 🤝 Contributi
 

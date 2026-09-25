@@ -94,7 +94,7 @@ Planned work is tracked in
 - [ ] Timer that follows seeking when tagging from video ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] Wear OS companion app ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 - [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
-- [ ] Pitch zone selection
+- [ ] Pitch zone selection ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
 
 ## 🤝 Contributing
 
