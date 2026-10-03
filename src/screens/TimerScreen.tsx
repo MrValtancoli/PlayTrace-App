@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useMemo, useState } from 'react';
 import {
+  Alert,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -51,6 +52,26 @@ export function TimerScreen({ navigation }: Props) {
   const onTagPress = (tag: TagConfig) => {
     logEvent(tag);
     Vibration.vibrate(40);
+  };
+
+  /**
+   * Abandoning or restarting a match throws away everything tagged so far, so
+   * it always asks first when there is something to lose.
+   */
+  const confirmReset = () => {
+    if (events.length === 0) {
+      resetMatch();
+      return;
+    }
+    Alert.alert(
+      'Discard this match?',
+      `${events.length} tagged event${events.length === 1 ? '' : 's'} will be ` +
+        'deleted. Export first if you want to keep them.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Discard', style: 'destructive', onPress: () => resetMatch() },
+      ]
+    );
   };
 
   const onInjuryConfirm = (minutes: number) => {
@@ -140,7 +161,7 @@ export function TimerScreen({ navigation }: Props) {
               type="primary"
               onPress={() => navigation.navigate('Export')}
             />
-            <Btn styles={styles} label="New Match" type="ghost" onPress={resetMatch} />
+            <Btn styles={styles} label="New Match" type="ghost" onPress={confirmReset} />
           </>
         )}
       </View>
@@ -157,6 +178,16 @@ export function TimerScreen({ navigation }: Props) {
       </View>
 
       <TagGrid tags={tags} disabled={!inPlay} onTagPress={onTagPress} />
+
+      {phase !== 'idle' && phase !== 'ended' && (
+        <Pressable
+          style={styles.discard}
+          onPress={confirmReset}
+          accessibilityRole="button"
+        >
+          <Text style={styles.discardText}>Discard match</Text>
+        </Pressable>
+      )}
 
       {!inPlay && phase !== 'ended' && (
         <Text style={styles.hint}>
@@ -287,6 +318,17 @@ const makeStyles = (c: Palette) =>
     fontSize: 13,
     flexShrink: 1,
     marginLeft: 8,
+  },
+  discard: {
+    alignSelf: 'center',
+    marginTop: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+  },
+  discardText: {
+    color: c.danger,
+    fontSize: 14,
+    fontWeight: '600',
   },
   hint: {
     color: c.textMuted,
