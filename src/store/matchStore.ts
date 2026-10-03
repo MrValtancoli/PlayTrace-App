@@ -8,6 +8,7 @@ import {
   formatTimePeriod,
   formatTimestampAbsolute,
 } from '../services/timeFormat';
+import { startTimestampFor } from '../services/matchStart';
 import { useConfigStore } from './configStore';
 
 interface MatchState {
@@ -33,8 +34,10 @@ interface MatchState {
   firstHalfElapsed: number | null;
   events: EventRecord[];
 
-  startFirstHalf: () => void;
-  startSecondHalf: () => void;
+  /** @param elapsedSec how far the half already is, for a late start (#14). */
+  startFirstHalf: (elapsedSec?: number) => void;
+  /** @param elapsedSec how far the half already is, for a late start (#14). */
+  startSecondHalf: (elapsedSec?: number) => void;
   pause: () => void;
   resume: () => void;
   endFirstHalf: (injuryMinutes: number) => void;
@@ -86,12 +89,12 @@ export const useMatchStore = create<MatchState>()(
       firstHalfElapsed: null,
       events: [],
 
-      startFirstHalf: () =>
+      startFirstHalf: (elapsedSec = 0) =>
         set({
           phase: 'first_half',
           period: 1,
           isRunning: true,
-          startTimestamp: Date.now(),
+          startTimestamp: startTimestampFor(elapsedSec, Date.now()),
           pausedAccum: 0,
           pauseStartedAt: null,
           elapsed: 0,
@@ -101,12 +104,12 @@ export const useMatchStore = create<MatchState>()(
           events: [],
         }),
 
-      startSecondHalf: () =>
+      startSecondHalf: (elapsedSec = 0) =>
         set({
           phase: 'second_half',
           period: 2,
           isRunning: true,
-          startTimestamp: Date.now(),
+          startTimestamp: startTimestampFor(elapsedSec, Date.now()),
           pausedAccum: 0,
           pauseStartedAt: null,
           elapsed: 0,

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { InjuryTimeModal } from '../components/InjuryTimeModal';
+import { StartTimeModal } from '../components/StartTimeModal';
 import { TagGrid } from '../components/TagGrid';
 import { TimerDisplay } from '../components/TimerDisplay';
 import { Palette, useTheme } from '../constants/theme';
@@ -39,8 +40,10 @@ export function TimerScreen({ navigation }: Props) {
   const resetMatch = useMatchStore((s) => s.resetMatch);
   const logEvent = useMatchStore((s) => s.logEvent);
   const tags = useConfigStore((s) => s.tags);
+  const halfDuration = useConfigStore((s) => s.matchConfig.halfDuration);
 
   const [injuryModal, setInjuryModal] = useState<'half' | 'match' | null>(null);
+  const [lateStart, setLateStart] = useState<1 | 2 | null>(null);
 
   const inPlay = phase === 'first_half' || phase === 'second_half';
   const lastEvent = events.length > 0 ? events[events.length - 1] : null;
@@ -71,7 +74,20 @@ export function TimerScreen({ navigation }: Props) {
 
       <View style={styles.controls}>
         {phase === 'idle' && (
-          <Btn styles={styles} label="Start 1st Half" type="primary" onPress={startFirstHalf} />
+          <>
+            <Btn
+              styles={styles}
+              label="Start 1st Half"
+              type="primary"
+              onPress={() => startFirstHalf()}
+            />
+            <Btn
+              styles={styles}
+              label="Started late"
+              type="ghost"
+              onPress={() => setLateStart(1)}
+            />
+          </>
         )}
 
         {inPlay && (
@@ -100,7 +116,20 @@ export function TimerScreen({ navigation }: Props) {
         )}
 
         {phase === 'half_time' && (
-          <Btn styles={styles} label="Start 2nd Half" type="primary" onPress={startSecondHalf} />
+          <>
+            <Btn
+              styles={styles}
+              label="Start 2nd Half"
+              type="primary"
+              onPress={() => startSecondHalf()}
+            />
+            <Btn
+              styles={styles}
+              label="Started late"
+              type="ghost"
+              onPress={() => setLateStart(2)}
+            />
+          </>
         )}
 
         {phase === 'ended' && (
@@ -136,6 +165,21 @@ export function TimerScreen({ navigation }: Props) {
             : 'Half time — start the 2nd half to resume tagging'}
         </Text>
       )}
+
+      <StartTimeModal
+        visible={lateStart !== null}
+        title={lateStart === 2 ? 'Start 2nd Half late' : 'Start 1st Half late'}
+        halfDuration={halfDuration}
+        onConfirm={(elapsedSec) => {
+          if (lateStart === 2) {
+            startSecondHalf(elapsedSec);
+          } else {
+            startFirstHalf(elapsedSec);
+          }
+          setLateStart(null);
+        }}
+        onCancel={() => setLateStart(null)}
+      />
 
       <InjuryTimeModal
         visible={injuryModal !== null}
