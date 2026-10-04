@@ -11,6 +11,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Palette, useTheme } from '../constants/theme';
 import { exportAndShare } from '../services/exportService';
 import { buildPeriods } from '../services/periods';
+import { teamLabel } from '../services/teamSelection';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
 import { EventRecord } from '../types';
@@ -70,7 +71,18 @@ export function ExportScreen() {
     <View style={styles.eventRow}>
       <Text style={styles.eventIndex}>{index + 1}</Text>
       <View style={styles.eventBody}>
-        <Text style={styles.eventName}>{item.tag_name}</Text>
+        <View style={styles.eventHeader}>
+          <Text style={styles.eventName} numberOfLines={1}>
+            {item.tag_name}
+          </Text>
+          {/* Unattributed events show nothing: a placeholder could be read
+              as a side (#47). */}
+          {item.team && (
+            <Text style={styles.eventTeam} numberOfLines={1}>
+              {teamLabel(item.team, matchConfig.homeTeam, matchConfig.awayTeam)}
+            </Text>
+          )}
+        </View>
         <Text style={styles.eventTime}>
           {item.time_match} · continuous {item.time_continuous}
         </Text>
@@ -200,10 +212,24 @@ const makeStyles = (c: Palette) =>
   eventBody: {
     flex: 1,
   },
+  eventHeader: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    gap: 8,
+  },
   eventName: {
     color: c.text,
     fontSize: 14,
     fontWeight: '600',
+    flexShrink: 1,
+  },
+  eventTeam: {
+    color: c.accent,
+    fontSize: 12,
+    fontWeight: '700',
+    // Takes what is left after the tag name, so a long team name is cut
+    // before the tag name is.
+    flexShrink: 2,
   },
   eventTime: {
     color: c.textMuted,
