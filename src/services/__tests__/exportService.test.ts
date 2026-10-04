@@ -1,5 +1,11 @@
-import { buildCSV, buildJSON, ExportInput } from '../exportService';
-import { EventRecord, MatchConfig, TagConfig } from '../../types';
+import {
+  buildCSV,
+  buildJSON,
+  eventPeriod,
+  ExportInput,
+  SCHEMA_VERSION,
+} from '../exportService';
+import { EventRecord, MatchConfig, PeriodRecord, TagConfig } from '../../types';
 import appConfig from '../../../app.json';
 
 const matchConfig: MatchConfig = {
@@ -36,11 +42,19 @@ const events: EventRecord[] = [
   },
 ];
 
+const periods: PeriodRecord[] = [
+  { period: 1, start_absolute: '10/06/26 15:03:12', duration: '47:47' },
+  { period: 2, start_absolute: '10/06/26 16:05:40', duration: '49:12' },
+];
+
 const input: ExportInput = {
   matchConfig,
   tags,
   injuryTime1: 3,
   injuryTime2: 5,
+  periods,
+  firstHalfElapsed: 47 * 60 + 47,
+  secondHalfElapsed: 49 * 60 + 12,
   events,
 };
 
@@ -82,10 +96,22 @@ describe('buildJSON', () => {
     }
   });
 
-  it('reports total events and total duration including injury time', () => {
+  it('counts tagged events only, periods are not events', () => {
     expect(root.metadata.total_events).toBe(2);
-    // 45 + 45 + 3 + 5 = 98 minutes
-    expect(root.metadata.match_duration).toBe('98:00');
+    expect(root.events).toHaveLength(2);
+  });
+
+  it('reports the measured duration, not the nominal one', () => {
+    // 47:47 + 49:12 = 96:59. The nominal figure would have been 98:00.
+    expect(root.metadata.match_duration).toBe('96:59');
+  });
+
+  it('declares the schema version', () => {
+    expect(root.metadata.schema_version).toBe(SCHEMA_VERSION);
+  });
+
+  it('carries the measured period boundaries', () => {
+    expect(root.periods).toEqual(periods);
   });
 
   it('reports the app version from app.json', () => {
@@ -96,16 +122,43 @@ describe('buildJSON', () => {
 describe('buildCSV', () => {
   const lines = buildCSV(input).split('\n');
 
-  it('starts with the documented 16-column header', () => {
+  /** The tag rows, in order, ignoring the header and the period markers. */
+  const tagRows = (csv: string) =>
+    csv
+      .split('\n')
+      .slice(1)
+      .filter((r) => r.startsWith('tag,'));
+
+  it('starts with the documented 17-column header', () => {
     expect(lines[0]).toBe(
-      'tag_id,tag_name,timestamp_absolute,time_period,time_match,time_continuous,' +
-        'competition,date,venue,home_team,away_team,half_duration,' +
-        'injury_time_1st,injury_time_2nd,app_version,export_timestamp'
+      'type,tag_id,tag_name,timestamp_absolute,time_period,time_match,' +
+        'time_continuous,competition,date,venue,home_team,away_team,' +
+        'half_duration,injury_time_1st,injury_time_2nd,app_version,' +
+        'export_timestamp'
     );
   });
 
-  it('writes one row per event', () => {
-    expect(lines).toHaveLength(events.length + 1);
+  it('writes one row per event plus one per period', () => {
+    expect(lines).toHaveLength(1 + events.length + periods.length);
+  });
+
+  it('opens each half with its period row, followed by its events', () => {
+    expect(lines[1]).toContain('period');
+    expect(lines[1]).toContain('15:03:12');
+    expect(lines[2]).toContain('Goal');
+    expect(lines[3]).toContain('period');
+    expect(lines[4]).toContain('Corner');
+  });
+
+  it('leaves tag_id and tag_name empty on a period row', () => {
+    const cells = lines[1]!.split(',');
+    expect(cells[0]).toBe('period');
+    expect(cells[1]).toBe('');
+    expect(cells[2]).toBe('');
+  });
+
+  it('marks event rows as tag', () => {
+    expect(lines[2]!.split(',')[0]).toBe('tag');
   });
 
   it('repeats match metadata on every row', () => {
@@ -121,7 +174,7 @@ describe('buildCSV', () => {
       matchConfig: { ...matchConfig, venue: 'Stadio "Grande", Torino' },
       events: [{ ...events[0]!, tag_name: 'Shot, blocked' }],
     };
-    const row = buildCSV(tricky).split('\n')[1]!;
+    const row = tagRows(buildCSV(tricky))[0]!;
     expect(row).toContain('"Shot, blocked"');
     expect(row).toContain('"Stadio ""Grande"", Torino"');
   });
@@ -135,15 +188,15 @@ describe('buildCSV', () => {
         { ...events[1]!, tag_name: '+ counter' },
       ],
     };
-    const [first, second] = buildCSV(risky).split('\n').slice(1);
+    const [first, second] = tagRows(buildCSV(risky));
     expect(first).toContain(",'-1 lost ball,");
     expect(first).toContain(",'=1+1,'@SUM(A1),");
     expect(second).toContain(",'+ counter,");
   });
 
   it('keeps safe values and numbers unchanged', () => {
-    const row = buildCSV(input).split('\n')[1]!;
-    expect(row.startsWith('1,Goal,10/06/26 15:23:45,')).toBe(true);
+    const row = tagRows(buildCSV(input))[0]!;
+    expect(row.startsWith('tag,1,Goal,10/06/26 15:23:45,')).toBe(true);
     expect(row).not.toContain("'");
   });
 
@@ -154,7 +207,14 @@ describe('buildCSV', () => {
     expect(json.match_info.home_team).toBe('=1+1');
   });
 
-  it('produces a header-only file when there are no events', () => {
-    expect(buildCSV({ ...input, events: [] }).split('\n')).toHaveLength(1);
+  it('produces a header-only file with nothing to report', () => {
+    const empty = buildCSV({ ...input, events: [], periods: [] });
+    expect(empty.split('\n')).toHaveLength(1);
+  });
+
+  it('still writes the period rows when no event was tagged', () => {
+    const rows = buildCSV({ ...input, events: [] }).split('\n').slice(1);
+    expect(rows).toHaveLength(periods.length);
+    expect(rows.every((r) => r.startsWith('period,'))).toBe(true);
   });
 });

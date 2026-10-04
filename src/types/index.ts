@@ -25,6 +25,17 @@ export interface EventRecord {
   time_continuous: string; // "71:30"
 }
 
+/**
+ * A half's real boundaries, as measured by the app. Unlike an event's
+ * `timestamp_absolute`, `start_absolute` describes the match rather than a
+ * tap, so with a late start (#14) it is the reconstructed kick-off.
+ */
+export interface PeriodRecord {
+  period: 1 | 2;
+  start_absolute: string; // DD/MM/YY HH:MM:SS
+  duration: string; // MM:SS, measured
+}
+
 export type MatchPhase =
   | 'idle'
   | 'first_half'

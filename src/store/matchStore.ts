@@ -32,6 +32,12 @@ interface MatchState {
    * 1st half ends, and on matches persisted before this field existed.
    */
   firstHalfElapsed: number | null;
+  /** Epoch ms the 1st half started, kept for the export's period boundaries. */
+  firstHalfStart: number | null;
+  /** Epoch ms the 2nd half started. */
+  secondHalfStart: number | null;
+  /** Seconds actually played in the 2nd half, captured when the match ends. */
+  secondHalfElapsed: number | null;
   events: EventRecord[];
 
   /** @param elapsedSec how far the half already is, for a late start (#14). */
@@ -87,33 +93,45 @@ export const useMatchStore = create<MatchState>()(
       injuryTime1: 0,
       injuryTime2: 0,
       firstHalfElapsed: null,
+      firstHalfStart: null,
+      secondHalfStart: null,
+      secondHalfElapsed: null,
       events: [],
 
-      startFirstHalf: (elapsedSec = 0) =>
+      startFirstHalf: (elapsedSec = 0) => {
+        const startedAt = startTimestampFor(elapsedSec, Date.now());
         set({
           phase: 'first_half',
           period: 1,
           isRunning: true,
-          startTimestamp: startTimestampFor(elapsedSec, Date.now()),
+          startTimestamp: startedAt,
           pausedAccum: 0,
           pauseStartedAt: null,
           elapsed: 0,
           injuryTime1: 0,
           injuryTime2: 0,
           firstHalfElapsed: null,
+          firstHalfStart: startedAt,
+          secondHalfStart: null,
+          secondHalfElapsed: null,
           events: [],
-        }),
+        });
+      },
 
-      startSecondHalf: (elapsedSec = 0) =>
+      startSecondHalf: (elapsedSec = 0) => {
+        const startedAt = startTimestampFor(elapsedSec, Date.now());
         set({
           phase: 'second_half',
           period: 2,
           isRunning: true,
-          startTimestamp: startTimestampFor(elapsedSec, Date.now()),
+          startTimestamp: startedAt,
           pausedAccum: 0,
           pauseStartedAt: null,
           elapsed: 0,
-        }),
+          secondHalfStart: startedAt,
+          secondHalfElapsed: null,
+        });
+      },
 
       pause: () => {
         const s = get();
@@ -147,6 +165,8 @@ export const useMatchStore = create<MatchState>()(
           isRunning: false,
           pauseStartedAt: null,
           injuryTime2: Math.max(0, injuryMinutes),
+          // Captured so the 2nd half's real duration survives into the export.
+          secondHalfElapsed: computeElapsed(get()),
         }),
 
       resetMatch: () =>
@@ -161,6 +181,9 @@ export const useMatchStore = create<MatchState>()(
           injuryTime1: 0,
           injuryTime2: 0,
           firstHalfElapsed: null,
+          firstHalfStart: null,
+          secondHalfStart: null,
+          secondHalfElapsed: null,
           events: [],
         }),
 

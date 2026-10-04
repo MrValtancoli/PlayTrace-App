@@ -10,6 +10,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Palette, useTheme } from '../constants/theme';
 import { exportAndShare } from '../services/exportService';
+import { buildPeriods } from '../services/periods';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
 import { EventRecord } from '../types';
@@ -22,6 +23,10 @@ export function ExportScreen() {
   const events = useMatchStore((s) => s.events);
   const injuryTime1 = useMatchStore((s) => s.injuryTime1);
   const injuryTime2 = useMatchStore((s) => s.injuryTime2);
+  const firstHalfStart = useMatchStore((s) => s.firstHalfStart);
+  const firstHalfElapsed = useMatchStore((s) => s.firstHalfElapsed);
+  const secondHalfStart = useMatchStore((s) => s.secondHalfStart);
+  const secondHalfElapsed = useMatchStore((s) => s.secondHalfElapsed);
   const phase = useMatchStore((s) => s.phase);
   const matchConfig = useConfigStore((s) => s.matchConfig);
   const tags = useConfigStore((s) => s.tags);
@@ -32,8 +37,23 @@ export function ExportScreen() {
     if (busy) return;
     setBusy(true);
     try {
+      const periodSource = {
+        firstHalfStart,
+        firstHalfElapsed,
+        secondHalfStart,
+        secondHalfElapsed,
+      };
       await exportAndShare(
-        { matchConfig, tags, injuryTime1, injuryTime2, events },
+        {
+          matchConfig,
+          tags,
+          injuryTime1,
+          injuryTime2,
+          periods: buildPeriods(periodSource),
+          firstHalfElapsed,
+          secondHalfElapsed,
+          events,
+        },
         format
       );
     } catch (err) {
