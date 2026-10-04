@@ -18,7 +18,8 @@ precisão em marcar tempos.
 > **Status:** disponível para Android — baixe a
 > [versão mais recente](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
 > O código é multiplataforma, mas o iOS ainda não foi validado. O app foi
-> testado em um único aparelho físico — relatos de bugs são muito bem-vindos.
+> testado em dois aparelhos Android pelo mantenedor e no teste fechado do
+> Google Play com 12 testadores — relatos de bugs são muito bem-vindos.
 
 ## 📲 Download
 

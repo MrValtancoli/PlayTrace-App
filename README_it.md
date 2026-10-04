@@ -18,8 +18,8 @@ dati precisi.
 > **Stato del progetto:** disponibile per Android — scarica
 > l'[ultima versione](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
 > Il codice è multipiattaforma, ma iOS non è ancora validato. L'app è stata
-> provata su un solo dispositivo fisico: le segnalazioni di bug sono molto
-> gradite.
+> provata su due dispositivi Android dal maintainer e con il test chiuso di
+> Google Play da 12 tester: le segnalazioni di bug sono molto gradite.
 
 ## 📲 Download
 
