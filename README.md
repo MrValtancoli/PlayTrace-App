@@ -75,14 +75,17 @@ match can be segmented and its true duration computed.
 Planned work is tracked in
 [milestones](https://github.com/MrValtancoli/PlayTrace-App/milestones).
 
-**v1.1**
-- [ ] Team assignment: Home / Away ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
-- [ ] Late timer start, when the half began before you pressed Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
-- [ ] Tag grid that grows when fewer tags are enabled ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
-- [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
-- [ ] CSV protected against spreadsheet formula injection ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+**v1.1** — [released](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.1.0)
+- [x] Team assignment: Home / Away ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
+- [x] Real start and duration of each half in the export ([#45](https://github.com/MrValtancoli/PlayTrace-App/issues/45))
+- [x] Late timer start, when the half began before you pressed Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
+- [x] Tag grid that grows when fewer tags are enabled ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
+- [x] Discard a match in progress ([#46](https://github.com/MrValtancoli/PlayTrace-App/issues/46))
+- [x] CSV protected against spreadsheet formula injection ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+- [ ] "Workflows and Use Cases" wiki page ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
 **v1.2**
+- [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Player tagging ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 - [ ] Delete an event, and undo the last one ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))

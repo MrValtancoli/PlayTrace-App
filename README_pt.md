@@ -76,14 +76,17 @@ duração efetiva.
 O trabalho planejado é acompanhado nos
 [milestones](https://github.com/MrValtancoli/PlayTrace-App/milestones).
 
-**v1.1**
-- [ ] Atribuição de times: Casa / Visitante ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
-- [ ] Início tardio do cronômetro, quando o tempo começou antes de você apertar Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
-- [ ] Grade de tags que cresce quando poucas tags estão ativas ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
-- [ ] Compartilhar um conjunto de tags entre aparelhos ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
-- [ ] CSV protegido contra execução de fórmulas em planilhas ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+**v1.1** — [lançada](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.1.0)
+- [x] Atribuição de times: Casa / Visitante ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
+- [x] Início real e duração de cada tempo na exportação ([#45](https://github.com/MrValtancoli/PlayTrace-App/issues/45))
+- [x] Início tardio do cronômetro, quando o tempo começou antes de você apertar Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
+- [x] Grade de tags que cresce quando poucas tags estão ativas ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
+- [x] Descartar uma partida em andamento ([#46](https://github.com/MrValtancoli/PlayTrace-App/issues/46))
+- [x] CSV protegido contra execução de fórmulas em planilhas ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+- [ ] Página da wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
 **v1.2**
+- [ ] Compartilhar um conjunto de tags entre aparelhos ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Marcação de jogadores ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Layouts em modo paisagem e para tablets ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 - [ ] Excluir um evento e desfazer o último ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))

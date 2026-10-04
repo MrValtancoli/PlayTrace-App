@@ -77,14 +77,17 @@ può calcolare la durata effettiva.
 Il lavoro pianificato è tracciato nelle
 [milestone](https://github.com/MrValtancoli/PlayTrace-App/milestones).
 
-**v1.1**
-- [ ] Assegnazione squadra: Casa / Trasferta ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
-- [ ] Avvio ritardato del timer, quando il tempo è iniziato prima di premere Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
-- [ ] Griglia dei tag che si ingrandisce quando i tag attivi sono pochi ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
-- [ ] Condivisione di un set di tag fra dispositivi ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
-- [ ] CSV protetto dall'esecuzione di formule nei fogli di calcolo ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+**v1.1** — [pubblicata](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.1.0)
+- [x] Assegnazione squadra: Casa / Trasferta ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
+- [x] Inizio reale e durata di ciascun tempo nell'export ([#45](https://github.com/MrValtancoli/PlayTrace-App/issues/45))
+- [x] Avvio ritardato del timer, quando il tempo è iniziato prima di premere Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
+- [x] Griglia dei tag che si ingrandisce quando i tag attivi sono pochi ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
+- [x] Scartare una partita in corso ([#46](https://github.com/MrValtancoli/PlayTrace-App/issues/46))
+- [x] CSV protetto dall'esecuzione di formule nei fogli di calcolo ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
+- [ ] Pagina wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
 **v1.2**
+- [ ] Condivisione di un set di tag fra dispositivi ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Tagging dei giocatori ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Layout orizzontale e per tablet ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 - [ ] Eliminazione di un evento e annullamento dell'ultimo ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
