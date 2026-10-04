@@ -65,6 +65,11 @@ first half's **measured** duration, captured when it ends — never on
 `half_duration + declared injury time`, which is a whole-minute approximation
 and drifts from the video by up to a minute.
 
+**Ending a half.** Ending a half or the match always goes through a
+confirmation modal, even if that modal no longer asks for any data such as the
+injury time. Both actions are irreversible, and the buttons sit among controls
+tapped under pressure at the pitch.
+
 **Tags.** 16 customizable tag buttons, configured before or during a match.
 
 **Export.** JSON and CSV, both consumed downstream by Python and R.
