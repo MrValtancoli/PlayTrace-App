@@ -86,7 +86,7 @@ Il lavoro pianificato è tracciato nelle
 - [x] CSV protetto dall'esecuzione di formule nei fogli di calcolo ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
 - [ ] Pagina wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
-**v1.2** — prossima versione
+**v1.2** — [pubblicata](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.2.0)
 - [x] Eliminazione di un evento e annullamento dell'ultimo ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
 - [x] Recupero precompilato dal tempo effettivamente giocato ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
 - [x] Squadra attribuita visibile nella lista dell'esportazione ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))

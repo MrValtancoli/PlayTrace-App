@@ -86,7 +86,7 @@ O trabalho planejado é acompanhado nos
 - [x] CSV protegido contra execução de fórmulas em planilhas ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
 - [ ] Página da wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
-**v1.2** — próxima versão
+**v1.2** — [lançada](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.2.0)
 - [x] Excluir um evento e desfazer o último ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
 - [x] Acréscimos preenchidos a partir do tempo realmente jogado ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
 - [x] Time atribuído visível na lista de exportação ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))

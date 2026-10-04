@@ -85,7 +85,7 @@ Planned work is tracked in
 - [x] CSV protected against spreadsheet formula injection ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
 - [ ] "Workflows and Use Cases" wiki page ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
-**v1.2** — next release
+**v1.2** — [released](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.2.0)
 - [x] Delete an event, and undo the last one ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
 - [x] Injury time pre-filled from the time actually played ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
 - [x] Attributed side shown in the export list ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))
