@@ -85,13 +85,18 @@ Planned work is tracked in
 - [x] CSV protected against spreadsheet formula injection ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
 - [ ] "Workflows and Use Cases" wiki page ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
-**v1.2**
-- [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
+**v1.2** — next release
+- [x] Delete an event, and undo the last one ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
+- [x] Injury time pre-filled from the time actually played ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
+- [x] Attributed side shown in the export list ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))
+- [x] Text fields no longer hidden by the on-screen keyboard ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
+
+**v1.3**
 - [ ] Player tagging ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
-- [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
-- [ ] Delete an event, and undo the last one ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
 - [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Multi-language support ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+- [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
 **Later**
 - [ ] Correct the tag of a recorded event ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))

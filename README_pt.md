@@ -86,13 +86,18 @@ O trabalho planejado é acompanhado nos
 - [x] CSV protegido contra execução de fórmulas em planilhas ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
 - [ ] Página da wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
-**v1.2**
-- [ ] Compartilhar um conjunto de tags entre aparelhos ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
+**v1.2** — próxima versão
+- [x] Excluir um evento e desfazer o último ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
+- [x] Acréscimos preenchidos a partir do tempo realmente jogado ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
+- [x] Time atribuído visível na lista de exportação ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))
+- [x] Campos de texto não ficam mais cobertos pelo teclado ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
+
+**v1.3**
 - [ ] Marcação de jogadores ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
-- [ ] Layouts em modo paisagem e para tablets ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
-- [ ] Excluir um evento e desfazer o último ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
 - [ ] Exportação XML para softwares de análise de vídeo ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [ ] Compartilhar um conjunto de tags entre aparelhos ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Suporte a vários idiomas ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+- [ ] Layouts em modo paisagem e para tablets ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
 **Mais adiante**
 - [ ] Corrigir a tag de um evento já registrado ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))

@@ -86,13 +86,18 @@ Il lavoro pianificato è tracciato nelle
 - [x] CSV protetto dall'esecuzione di formule nei fogli di calcolo ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
 - [ ] Pagina wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
-**v1.2**
-- [ ] Condivisione di un set di tag fra dispositivi ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
+**v1.2** — prossima versione
+- [x] Eliminazione di un evento e annullamento dell'ultimo ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
+- [x] Recupero precompilato dal tempo effettivamente giocato ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
+- [x] Squadra attribuita visibile nella lista dell'esportazione ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))
+- [x] Campi di testo non più coperti dalla tastiera ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
+
+**v1.3**
 - [ ] Tagging dei giocatori ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
-- [ ] Layout orizzontale e per tablet ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
-- [ ] Eliminazione di un evento e annullamento dell'ultimo ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
 - [ ] Esportazione XML per i software di analisi video ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [ ] Condivisione di un set di tag fra dispositivi ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Supporto multilingua ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+- [ ] Layout orizzontale e per tablet ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
 **Più avanti**
 - [ ] Correzione del tag di un evento già registrato ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
