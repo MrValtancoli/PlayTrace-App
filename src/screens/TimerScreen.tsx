@@ -18,6 +18,7 @@ import { TimerDisplay } from '../components/TimerDisplay';
 import { Palette, useTheme } from '../constants/theme';
 import { useTimer } from '../hooks/useTimer';
 import { canUndo } from '../services/eventEditing';
+import { suggestedInjuryMinutes } from '../services/injuryTime';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
 import { RootStackParamList, TagConfig } from '../types';
@@ -62,6 +63,15 @@ export function TimerScreen({ navigation }: Props) {
   }, [undoneLabel]);
 
   const [injuryModal, setInjuryModal] = useState<'half' | 'match' | null>(null);
+  const [injurySuggestion, setInjurySuggestion] = useState(0);
+
+  // The suggestion is taken when End is pressed — the whistle — not when the
+  // prompt is confirmed, so time spent in the prompt does not inflate it (#50).
+  const openInjury = (which: 'half' | 'match') => {
+    const { elapsed } = useMatchStore.getState();
+    setInjurySuggestion(suggestedInjuryMinutes(elapsed, halfDuration));
+    setInjuryModal(which);
+  };
   const [lateStart, setLateStart] = useState<1 | 2 | null>(null);
 
   const inPlay = phase === 'first_half' || phase === 'second_half';
@@ -153,14 +163,14 @@ export function TimerScreen({ navigation }: Props) {
                 styles={styles}
                 label="End 1st Half"
                 type="danger"
-                onPress={() => setInjuryModal('half')}
+                onPress={() => openInjury('half')}
               />
             ) : (
               <Btn
                 styles={styles}
                 label="End Match"
                 type="danger"
-                onPress={() => setInjuryModal('match')}
+                onPress={() => openInjury('match')}
               />
             )}
           </>
@@ -273,6 +283,7 @@ export function TimerScreen({ navigation }: Props) {
       <InjuryTimeModal
         visible={injuryModal !== null}
         title={injuryModal === 'half' ? 'End 1st Half' : 'End Match'}
+        suggestedMinutes={injurySuggestion}
         onConfirm={onInjuryConfirm}
         onCancel={() => setInjuryModal(null)}
       />

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Modal,
@@ -14,20 +14,32 @@ import { Palette, useTheme } from '../constants/theme';
 interface Props {
   visible: boolean;
   title: string;
+  /** Injury time actually played, offered as the starting value (#50). */
+  suggestedMinutes: number;
   onConfirm: (injuryMinutes: number) => void;
   onCancel: () => void;
 }
 
-export function InjuryTimeModal({ visible, title, onConfirm, onCancel }: Props) {
+export function InjuryTimeModal({
+  visible,
+  title,
+  suggestedMinutes,
+  onConfirm,
+  onCancel,
+}: Props) {
   const c = useTheme();
   const styles = useMemo(() => makeStyles(c), [c]);
 
-  const [value, setValue] = useState('0');
+  const [value, setValue] = useState(String(suggestedMinutes));
+
+  // Each time the prompt opens, start from the suggestion for that half.
+  useEffect(() => {
+    if (visible) setValue(String(suggestedMinutes));
+  }, [visible, suggestedMinutes]);
 
   const confirm = () => {
     const minutes = parseInt(value, 10);
     onConfirm(Number.isFinite(minutes) ? minutes : 0);
-    setValue('0');
   };
 
   return (
@@ -39,6 +51,10 @@ export function InjuryTimeModal({ visible, title, onConfirm, onCancel }: Props) 
         <View style={styles.card}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>Injury time (minutes)</Text>
+          <Text style={styles.hint}>
+            Suggested from the time played. Change it if the board showed
+            another number.
+          </Text>
           <TextInput
             style={styles.input}
             value={value}
@@ -85,6 +101,13 @@ const makeStyles = (c: Palette) =>
     fontSize: 18,
     fontWeight: '700',
     marginBottom: 4,
+  },
+  hint: {
+    color: c.textMuted,
+    fontSize: 12,
+    fontStyle: 'italic',
+    marginTop: -6,
+    marginBottom: 12,
   },
   subtitle: {
     color: c.textMuted,
