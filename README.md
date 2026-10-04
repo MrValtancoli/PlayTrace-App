@@ -103,12 +103,15 @@ Planned work is tracked in
 **v2.0**
 - [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
-**Future**
+**In progress**
+- [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+
+**Ideas** — not scheduled yet: their priority depends on feedback from the
+people using PlayTrace.
 - [ ] Player tagging ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Correct the tag of a recorded event ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
 - [ ] Timer that follows seeking when tagging from video ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] Pitch zone selection ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
-- [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] Wear OS companion app ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 
 ## 🤝 Contributing

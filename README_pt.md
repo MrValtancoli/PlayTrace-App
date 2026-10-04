@@ -104,12 +104,15 @@ O trabalho planejado é acompanhado nos
 **v2.0**
 - [ ] Layouts em modo paisagem e para tablets ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
-**No futuro**
+**Em andamento**
+- [ ] Validação do iOS em aparelhos reais ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+
+**Ideias** — ainda não planejadas: a prioridade depende do retorno de quem
+usa o PlayTrace.
 - [ ] Marcação de jogadores ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Corrigir a tag de um evento registrado ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
 - [ ] Cronômetro que acompanha os saltos no vídeo ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] Seleção de zona do campo ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
-- [ ] Validação do iOS em aparelhos reais ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] App complementar para Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 
 ## 🤝 Contribuindo

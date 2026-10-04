@@ -10,7 +10,7 @@ The core tagging loop is implemented: match setup, tag configuration, the match
 timer with injury time, and JSON/CSV export. Everything marked Done below is in
 the codebase but has not yet been validated on physical devices.
 
-**Status legend:** ✅ Done · 🔄 In Progress · 📅 Planned
+**Status legend:** ✅ Done · 🔄 In Progress · 📅 Planned for a version · 💡 Idea, not scheduled
 
 ## 🎯 v1.0 scope
 
@@ -29,7 +29,7 @@ Validation on Apple hardware is in progress and will land in a later release.
 Events can now be attributed to the home or away side, and the export records
 the real start and measured duration of each half. Both were added as new
 fields under `schema_version` 2, without renaming existing ones. Player
-attribution is planned for a later version ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)).
+attribution is an idea not yet scheduled ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)).
 
 ## ⏱️ Timing (Match Management)
 
@@ -50,12 +50,12 @@ attribution is planned for a later version ([#33](https://github.com/MrValtancol
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
 | **Customizable Board** | ✅ Done | Ability to configure buttons for different events (shots, fouls, etc.). | High |
-| **Player Tagging** | 📅 Future ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)) | Associating events with specific jersey numbers or player names. | High |
+| **Player Tagging** | 💡 Idea ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)) | Associating events with specific jersey numbers or player names. | High |
 | **Team Assignment** | ✅ Done ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32)) | Optional home/away attribution with a lockable selector; exported as `team`. | High |
 | **Undo and Delete** | ✅ Done ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41)) | Undo the last event during play, and delete any event from the export list with a confirmation. | High |
 | **Note Tags** | 📅 v1.4 ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49)) | A tag that can carry a free-text note, typed in a modal after the event is recorded. | Medium |
 | **Reorder Tags** | 📅 v1.4 ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43)) | Change the order of the tag buttons in the grid. | Medium |
-| **Pitch Zoning** | 📅 Future ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44)) | Selection of the pitch area where the action occurred. | Medium |
+| **Pitch Zoning** | 💡 Idea ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44)) | Selection of the pitch area where the action occurred. | Medium |
 
 ## 📤 Data & Export
 
