@@ -29,7 +29,7 @@ Validation on Apple hardware is in progress and will land in a later release.
 Events can now be attributed to the home or away side, and the export records
 the real start and measured duration of each half. Both were added as new
 fields under `schema_version` 2, without renaming existing ones. Player
-attribution follows in v1.3.
+attribution is planned for a later version ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)).
 
 ## ⏱️ Timing (Match Management)
 
@@ -50,10 +50,12 @@ attribution follows in v1.3.
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
 | **Customizable Board** | ✅ Done | Ability to configure buttons for different events (shots, fouls, etc.). | High |
-| **Player Tagging** | 📅 v1.3 ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)) | Associating events with specific jersey numbers or player names. | High |
+| **Player Tagging** | 📅 Future ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33)) | Associating events with specific jersey numbers or player names. | High |
 | **Team Assignment** | ✅ Done ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32)) | Optional home/away attribution with a lockable selector; exported as `team`. | High |
 | **Undo and Delete** | ✅ Done ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41)) | Undo the last event during play, and delete any event from the export list with a confirmation. | High |
-| **Pitch Zoning** | 📅 Planned | Selection of the pitch area where the action occurred. | Medium |
+| **Note Tags** | 📅 v1.4 ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49)) | A tag that can carry a free-text note, typed in a modal after the event is recorded. | Medium |
+| **Reorder Tags** | 📅 v1.4 ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43)) | Change the order of the tag buttons in the grid. | Medium |
+| **Pitch Zoning** | 📅 Future ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44)) | Selection of the pitch area where the action occurred. | Medium |
 
 ## 📤 Data & Export
 
@@ -73,10 +75,10 @@ attribution follows in v1.3.
 
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
-| **Localization** | 📅 Planned | Translate the app interface, which is English only today. The documentation is already available in English, Italian and Portuguese. | High |
+| **Localization** | 📅 v1.3 ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39)) | Translate the app interface, which is English only today. The documentation is already available in English, Italian and Portuguese. | High |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
-| **Device Rotation** | 📅 v1.3 ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35)) | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
+| **Device Rotation** | 📅 v2.0 ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35)) | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
 | **iOS Support Validation** | 🔄 In Progress | Verify layout, share sheet, and timing behavior on iOS devices. The codebase already builds for iOS; what is missing is validation on real hardware. | High |
 | **Automated Tests** | ✅ Done | Jest suite covering the four time references and the JSON/CSV export schema, run with `npm test`. | High |
 

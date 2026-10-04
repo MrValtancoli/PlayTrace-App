@@ -93,19 +93,24 @@ Il lavoro pianificato è tracciato nelle
 - [x] Campi di testo non più coperti dalla tastiera ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
 
 **v1.3**
-- [ ] Tagging dei giocatori ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Esportazione XML per i software di analisi video ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
 - [ ] Condivisione di un set di tag fra dispositivi ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Supporto multilingua ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+
+**v1.4**
+- [ ] Tag nota: testo libero associato a un evento ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
+- [ ] Riordinare i pulsanti dei tag ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
+
+**v2.0**
 - [ ] Layout orizzontale e per tablet ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
-**Più avanti**
-- [ ] Correzione del tag di un evento già registrato ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
-- [ ] Riordino dei pulsanti dei tag ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
-- [ ] Timer che segue gli spostamenti nel video durante il tagging ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
-- [ ] App companion per Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
-- [ ] Validazione su dispositivi iOS reali ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+**In futuro**
+- [ ] Tagging dei giocatori ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
+- [ ] Correggere il tag di un evento registrato ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
+- [ ] Timer che segue gli spostamenti nel video ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] Selezione della zona di campo ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
+- [ ] Validazione iOS su dispositivi reali ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+- [ ] App companion per Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 
 ## 🤝 Contributi
 

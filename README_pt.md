@@ -93,19 +93,24 @@ O trabalho planejado é acompanhado nos
 - [x] Campos de texto não ficam mais cobertos pelo teclado ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
 
 **v1.3**
-- [ ] Marcação de jogadores ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Exportação XML para softwares de análise de vídeo ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
 - [ ] Compartilhar um conjunto de tags entre aparelhos ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Suporte a vários idiomas ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+
+**v1.4**
+- [ ] Tags de nota: texto livre associado a um evento ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
+- [ ] Reordenar os botões de tags ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
+
+**v2.0**
 - [ ] Layouts em modo paisagem e para tablets ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
-**Mais adiante**
-- [ ] Corrigir a tag de um evento já registrado ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
-- [ ] Reordenar os botões de tags ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
-- [ ] Cronômetro que acompanha a navegação no vídeo durante a marcação ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
-- [ ] Aplicativo complementar para Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
-- [ ] Validação em aparelhos iOS reais ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+**No futuro**
+- [ ] Marcação de jogadores ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
+- [ ] Corrigir a tag de um evento registrado ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
+- [ ] Cronômetro que acompanha os saltos no vídeo ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
 - [ ] Seleção de zona do campo ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
+- [ ] Validação do iOS em aparelhos reais ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+- [ ] App complementar para Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 
 ## 🤝 Contribuindo
 

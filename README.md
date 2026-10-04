@@ -92,19 +92,24 @@ Planned work is tracked in
 - [x] Text fields no longer hidden by the on-screen keyboard ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
 
 **v1.3**
-- [ ] Player tagging ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
 - [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [ ] Multi-language support ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+
+**v1.4**
+- [ ] Note tags: attach free text to an event ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
+- [ ] Reorder the tag buttons ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
+
+**v2.0**
 - [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
-**Later**
+**Future**
+- [ ] Player tagging ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
 - [ ] Correct the tag of a recorded event ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
-- [ ] Reorder the tag buttons ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
 - [ ] Timer that follows seeking when tagging from video ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
-- [ ] Wear OS companion app ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
-- [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] Pitch zone selection ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
+- [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+- [ ] Wear OS companion app ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
 
 ## 🤝 Contributing
 
