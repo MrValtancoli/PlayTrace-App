@@ -2,13 +2,13 @@ import React, { useMemo, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Modal,
-  Platform,
   Pressable,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from 'react-native';
+import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
 import { Palette, useTheme } from '../constants/theme';
 
 interface Props {
@@ -33,7 +33,7 @@ export function InjuryTimeModal({ visible, title, onConfirm, onCancel }: Props) 
   return (
     <Modal visible={visible} transparent animationType="fade">
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        behavior={KEYBOARD_BEHAVIOR}
         style={styles.backdrop}
       >
         <View style={styles.card}>

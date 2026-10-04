@@ -1,13 +1,14 @@
 import React, { useMemo } from 'react';
 import {
   KeyboardAvoidingView,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from 'react-native';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
 import { Palette, useTheme } from '../constants/theme';
 import { useConfigStore } from '../store/configStore';
 import { MatchConfig } from '../types';
@@ -50,6 +51,7 @@ function Field({
 
 export function MatchSetupScreen() {
   const c = useTheme();
+  const headerHeight = useHeaderHeight();
   const styles = useMemo(() => makeStyles(c), [c]);
   const matchConfig = useConfigStore((s) => s.matchConfig);
   const setMatchConfig = useConfigStore((s) => s.setMatchConfig);
@@ -65,9 +67,13 @@ export function MatchSetupScreen() {
   return (
     <KeyboardAvoidingView
       style={styles.screen}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={KEYBOARD_BEHAVIOR}
+      keyboardVerticalOffset={headerHeight}
     >
-      <ScrollView contentContainerStyle={styles.content}>
+      <ScrollView
+        contentContainerStyle={styles.content}
+        keyboardShouldPersistTaps="handled"
+      >
         <Text style={styles.note}>Changes are saved automatically.</Text>
         <Field
           styles={styles}

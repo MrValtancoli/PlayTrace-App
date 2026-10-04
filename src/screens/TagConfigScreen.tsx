@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import {
   FlatList,
+  KeyboardAvoidingView,
   Pressable,
   StyleSheet,
   Switch,
@@ -9,7 +10,9 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useHeaderHeight } from '@react-navigation/elements';
 import { TAG_COLOR_PALETTE } from '../constants/defaultTags';
+import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
 import { Palette, useTheme } from '../constants/theme';
 import { useConfigStore } from '../store/configStore';
 import { TagConfig } from '../types';
@@ -17,6 +20,7 @@ import { TagConfig } from '../types';
 export function TagConfigScreen() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
+  const headerHeight = useHeaderHeight();
   const styles = useMemo(() => makeStyles(c), [c]);
 
   const tags = useConfigStore((s) => s.tags);
@@ -56,8 +60,13 @@ export function TagConfigScreen() {
   );
 
   return (
-    <View style={styles.screen}>
+    <KeyboardAvoidingView
+      style={styles.screen}
+      behavior={KEYBOARD_BEHAVIOR}
+      keyboardVerticalOffset={headerHeight}
+    >
       <FlatList
+        keyboardShouldPersistTaps="handled"
         data={tags}
         keyExtractor={(t) => String(t.id)}
         renderItem={renderItem}
@@ -76,7 +85,7 @@ export function TagConfigScreen() {
           </Pressable>
         }
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
