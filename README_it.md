@@ -65,7 +65,9 @@ I nomi dei campi esportati usano lo snake_case volutamente, per corrispondere
 ## 📤 Esportazione
 
 Le esportazioni includono le informazioni sulla partita, la configurazione dei
-tag e tutti gli eventi taggati con i dati temporali completi.
+tag, tutti gli eventi taggati con i dati temporali completi e l'inizio reale e
+la durata misurata di ciascun tempo — così la gara si può segmentare e se ne
+può calcolare la durata effettiva.
 
 - **JSON** — formato strutturato, ideale per l'analisi dati con Python/R
 - **CSV** — pronto per i fogli di calcolo, si apre direttamente in Excel

@@ -63,8 +63,9 @@ export specification 1:1.
 
 ## 📤 Export
 
-Exports include match info, tag configuration, and all tagged events with full
-timing data.
+Exports include match info, tag configuration, every tagged event with full
+timing data, and the real start and measured duration of each half — so a
+match can be segmented and its true duration computed.
 
 - **JSON** — structured format, ideal for data analysis with Python/R
 - **CSV** — spreadsheet-ready, opens directly in Excel
