@@ -52,8 +52,7 @@ export function InjuryTimeModal({
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>Injury time (minutes)</Text>
           <Text style={styles.hint}>
-            Suggested from the time played. Change it if the board showed
-            another number.
+            Time actually played past the half, to the nearest minute.
           </Text>
           <TextInput
             style={styles.input}
