@@ -12,6 +12,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { InjuryTimeModal } from '../components/InjuryTimeModal';
 import { StartTimeModal } from '../components/StartTimeModal';
+import { TeamSelector } from '../components/TeamSelector';
 import { TagGrid } from '../components/TagGrid';
 import { TimerDisplay } from '../components/TimerDisplay';
 import { Palette, useTheme } from '../constants/theme';
@@ -42,6 +43,12 @@ export function TimerScreen({ navigation }: Props) {
   const logEvent = useMatchStore((s) => s.logEvent);
   const tags = useConfigStore((s) => s.tags);
   const halfDuration = useConfigStore((s) => s.matchConfig.halfDuration);
+  const homeTeam = useConfigStore((s) => s.matchConfig.homeTeam);
+  const awayTeam = useConfigStore((s) => s.matchConfig.awayTeam);
+  const selectedTeam = useMatchStore((s) => s.selectedTeam);
+  const teamLocked = useMatchStore((s) => s.teamLocked);
+  const selectTeam = useMatchStore((s) => s.selectTeam);
+  const toggleTeamLock = useMatchStore((s) => s.toggleTeamLock);
 
   const [injuryModal, setInjuryModal] = useState<'half' | 'match' | null>(null);
   const [lateStart, setLateStart] = useState<1 | 2 | null>(null);
@@ -176,6 +183,16 @@ export function TimerScreen({ navigation }: Props) {
           </Text>
         )}
       </View>
+
+      <TeamSelector
+        homeTeam={homeTeam}
+        awayTeam={awayTeam}
+        selected={selectedTeam}
+        locked={teamLocked}
+        disabled={!inPlay}
+        onSelect={selectTeam}
+        onToggleLock={toggleTeamLock}
+      />
 
       <TagGrid tags={tags} disabled={!inPlay} onTagPress={onTagPress} />
 

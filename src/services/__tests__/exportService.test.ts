@@ -5,7 +5,12 @@ import {
   ExportInput,
   SCHEMA_VERSION,
 } from '../exportService';
-import { EventRecord, MatchConfig, PeriodRecord, TagConfig } from '../../types';
+import {
+  EventRecord,
+  MatchConfig,
+  PeriodRecord,
+  TagConfig,
+} from '../../types';
 import appConfig from '../../../app.json';
 
 const matchConfig: MatchConfig = {
@@ -27,6 +32,7 @@ const events: EventRecord[] = [
   {
     tag_id: 1,
     tag_name: 'Goal',
+    team: 'home',
     timestamp_absolute: '10/06/26 15:23:45',
     time_period: '23:45 1T',
     time_match: '23:45 (1T)',
@@ -35,6 +41,7 @@ const events: EventRecord[] = [
   {
     tag_id: 2,
     tag_name: 'Corner',
+    team: null,
     timestamp_absolute: '10/06/26 16:12:30',
     time_period: '23:30 2T',
     time_match: '68:30 (2T)',
@@ -129,13 +136,19 @@ describe('buildCSV', () => {
       .slice(1)
       .filter((r) => r.startsWith('tag,'));
 
-  it('starts with the documented 17-column header', () => {
+  it('starts with the documented 18-column header', () => {
     expect(lines[0]).toBe(
-      'type,tag_id,tag_name,timestamp_absolute,time_period,time_match,' +
+      'type,tag_id,tag_name,team,timestamp_absolute,time_period,time_match,' +
         'time_continuous,competition,date,venue,home_team,away_team,' +
         'half_duration,injury_time_1st,injury_time_2nd,app_version,' +
         'export_timestamp'
     );
+  });
+
+  it('writes the attributed side, and leaves it empty when there is none', () => {
+    const rows = tagRows(buildCSV(input));
+    expect(rows[0]!.split(',')[3]).toBe('home');
+    expect(rows[1]!.split(',')[3]).toBe('');
   });
 
   it('writes one row per event plus one per period', () => {
@@ -150,11 +163,12 @@ describe('buildCSV', () => {
     expect(lines[4]).toContain('Corner');
   });
 
-  it('leaves tag_id and tag_name empty on a period row', () => {
+  it('leaves tag_id, tag_name and team empty on a period row', () => {
     const cells = lines[1]!.split(',');
     expect(cells[0]).toBe('period');
     expect(cells[1]).toBe('');
     expect(cells[2]).toBe('');
+    expect(cells[3]).toBe('');
   });
 
   it('marks event rows as tag', () => {
@@ -196,7 +210,7 @@ describe('buildCSV', () => {
 
   it('keeps safe values and numbers unchanged', () => {
     const row = tagRows(buildCSV(input))[0]!;
-    expect(row.startsWith('tag,1,Goal,10/06/26 15:23:45,')).toBe(true);
+    expect(row.startsWith('tag,1,Goal,home,10/06/26 15:23:45,')).toBe(true);
     expect(row).not.toContain("'");
   });
 

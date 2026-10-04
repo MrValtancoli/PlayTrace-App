@@ -14,11 +14,16 @@ export interface TagConfig {
   enabled: boolean;
 }
 
+/** Which side an event is attributed to. Names live in MatchConfig. */
+export type TeamSide = 'home' | 'away';
+
 // Field names are snake_case to match the PlayTrace export spec 1:1
 // (see Export-Format-Reference.md) so events serialize without mapping.
 export interface EventRecord {
   tag_id: number;
   tag_name: string;
+  /** null when the analyst did not attribute the event to a side (#32). */
+  team: TeamSide | null;
   timestamp_absolute: string; // DD/MM/YY HH:MM:SS
   time_period: string; // "23:45 1T" | "45+2 1T"
   time_match: string; // "68:30 (2T)"

@@ -100,6 +100,7 @@ export function buildCSV(input: ExportInput): string {
     'type',
     'tag_id',
     'tag_name',
+    'team',
     'timestamp_absolute',
     'time_period',
     'time_match',
@@ -134,6 +135,7 @@ export function buildCSV(input: ExportInput): string {
       'tag',
       e.tag_id,
       e.tag_name,
+      e.team ?? '',
       e.timestamp_absolute,
       e.time_period,
       e.time_match,
@@ -148,6 +150,7 @@ export function buildCSV(input: ExportInput): string {
   const periodRow = (p: PeriodRecord) =>
     [
       'period',
+      '',
       '',
       '',
       p.start_absolute,

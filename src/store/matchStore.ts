@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { EventRecord, MatchPhase, Period, TagConfig } from '../types';
+import { EventRecord, MatchPhase, Period, TagConfig, TeamSide } from '../types';
 import {
   formatTimeContinuous,
   formatTimeMatch,
@@ -9,6 +9,10 @@ import {
   formatTimestampAbsolute,
 } from '../services/timeFormat';
 import { startTimestampFor } from '../services/matchStart';
+import {
+  selectionAfterTagging,
+  selectionAfterTap,
+} from '../services/teamSelection';
 import { useConfigStore } from './configStore';
 
 interface MatchState {
@@ -38,6 +42,10 @@ interface MatchState {
   secondHalfStart: number | null;
   /** Seconds actually played in the 2nd half, captured when the match ends. */
   secondHalfElapsed: number | null;
+  /** Side the next tagged event is attributed to; null leaves it unattributed. */
+  selectedTeam: TeamSide | null;
+  /** When locked the selection survives tagging, for a spell of one team. */
+  teamLocked: boolean;
   events: EventRecord[];
 
   /** @param elapsedSec how far the half already is, for a late start (#14). */
@@ -49,6 +57,8 @@ interface MatchState {
   endFirstHalf: (injuryMinutes: number) => void;
   endMatch: (injuryMinutes: number) => void;
   resetMatch: () => void;
+  selectTeam: (side: TeamSide) => void;
+  toggleTeamLock: () => void;
   tick: () => void;
   logEvent: (tag: TagConfig) => void;
 }
@@ -96,6 +106,8 @@ export const useMatchStore = create<MatchState>()(
       firstHalfStart: null,
       secondHalfStart: null,
       secondHalfElapsed: null,
+      selectedTeam: null,
+      teamLocked: false,
       events: [],
 
       startFirstHalf: (elapsedSec = 0) => {
@@ -114,6 +126,7 @@ export const useMatchStore = create<MatchState>()(
           firstHalfStart: startedAt,
           secondHalfStart: null,
           secondHalfElapsed: null,
+          selectedTeam: null,
           events: [],
         });
       },
@@ -184,8 +197,14 @@ export const useMatchStore = create<MatchState>()(
           firstHalfStart: null,
           secondHalfStart: null,
           secondHalfElapsed: null,
+          selectedTeam: null,
           events: [],
         }),
+
+      selectTeam: (side) =>
+        set((s) => ({ selectedTeam: selectionAfterTap(s.selectedTeam, side) })),
+
+      toggleTeamLock: () => set((s) => ({ teamLocked: !s.teamLocked })),
 
       tick: () => set({ elapsed: computeElapsed(get()) }),
 
@@ -201,6 +220,7 @@ export const useMatchStore = create<MatchState>()(
         const event: EventRecord = {
           tag_id: tag.id,
           tag_name: tag.name,
+          team: s.selectedTeam,
           timestamp_absolute: formatTimestampAbsolute(new Date()),
           time_period: formatTimePeriod(elapsedSec, s.period, halfDuration),
           time_match: formatTimeMatch(elapsedSec, s.period, halfDuration),
@@ -211,7 +231,10 @@ export const useMatchStore = create<MatchState>()(
           ),
         };
 
-        set({ events: [...s.events, event] });
+        set({
+          events: [...s.events, event],
+          selectedTeam: selectionAfterTagging(s.selectedTeam, s.teamLocked),
+        });
       },
     }),
     {
