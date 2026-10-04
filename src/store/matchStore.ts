@@ -8,6 +8,7 @@ import {
   formatTimePeriod,
   formatTimestampAbsolute,
 } from '../services/timeFormat';
+import { canUndo, removeEventAt } from '../services/eventEditing';
 import { startTimestampFor } from '../services/matchStart';
 import {
   selectionAfterTagging,
@@ -46,6 +47,11 @@ interface MatchState {
   selectedTeam: TeamSide | null;
   /** When locked the selection survives tagging, for a spell of one team. */
   teamLocked: boolean;
+  /**
+   * Whether Undo may remove the last event. Set by tagging, cleared by using
+   * it, by a deletion from the list and at the end of every half (#41).
+   */
+  undoAvailable: boolean;
   events: EventRecord[];
 
   /** @param elapsedSec how far the half already is, for a late start (#14). */
@@ -59,6 +65,10 @@ interface MatchState {
   resetMatch: () => void;
   selectTeam: (side: TeamSide) => void;
   toggleTeamLock: () => void;
+  /** Removes the event just tagged; returns it, or null if Undo was not allowed. */
+  undoLastEvent: () => EventRecord | null;
+  /** Removes the event at a position in the list. */
+  deleteEvent: (index: number) => void;
   tick: () => void;
   logEvent: (tag: TagConfig) => void;
 }
@@ -108,6 +118,7 @@ export const useMatchStore = create<MatchState>()(
       secondHalfElapsed: null,
       selectedTeam: null,
       teamLocked: false,
+      undoAvailable: false,
       events: [],
 
       startFirstHalf: (elapsedSec = 0) => {
@@ -127,6 +138,7 @@ export const useMatchStore = create<MatchState>()(
           secondHalfStart: null,
           secondHalfElapsed: null,
           selectedTeam: null,
+          undoAvailable: false,
           events: [],
         });
       },
@@ -143,6 +155,7 @@ export const useMatchStore = create<MatchState>()(
           elapsed: 0,
           secondHalfStart: startedAt,
           secondHalfElapsed: null,
+          undoAvailable: false,
         });
       },
 
@@ -170,6 +183,7 @@ export const useMatchStore = create<MatchState>()(
           injuryTime1: Math.max(0, injuryMinutes),
           // Captured before the clock is reset for the 2nd half.
           firstHalfElapsed: computeElapsed(get()),
+          undoAvailable: false,
         }),
 
       endMatch: (injuryMinutes) =>
@@ -180,6 +194,7 @@ export const useMatchStore = create<MatchState>()(
           injuryTime2: Math.max(0, injuryMinutes),
           // Captured so the 2nd half's real duration survives into the export.
           secondHalfElapsed: computeElapsed(get()),
+          undoAvailable: false,
         }),
 
       resetMatch: () =>
@@ -198,6 +213,7 @@ export const useMatchStore = create<MatchState>()(
           secondHalfStart: null,
           secondHalfElapsed: null,
           selectedTeam: null,
+          undoAvailable: false,
           events: [],
         }),
 
@@ -205,6 +221,26 @@ export const useMatchStore = create<MatchState>()(
         set((s) => ({ selectedTeam: selectionAfterTap(s.selectedTeam, side) })),
 
       toggleTeamLock: () => set((s) => ({ teamLocked: !s.teamLocked })),
+
+      undoLastEvent: () => {
+        const s = get();
+        const allowed = canUndo({
+          phase: s.phase,
+          undoAvailable: s.undoAvailable,
+          eventCount: s.events.length,
+        });
+        if (!allowed) return null;
+        const removed = s.events[s.events.length - 1]!;
+        set({ events: s.events.slice(0, -1), undoAvailable: false });
+        return removed;
+      },
+
+      deleteEvent: (index) =>
+        set((s) => ({
+          events: removeEventAt(s.events, index),
+          // The last event may have changed: Undo must not reach a different one.
+          undoAvailable: false,
+        })),
 
       tick: () => set({ elapsed: computeElapsed(get()) }),
 
@@ -234,6 +270,7 @@ export const useMatchStore = create<MatchState>()(
         set({
           events: [...s.events, event],
           selectedTeam: selectionAfterTagging(s.selectedTeam, s.teamLocked),
+          undoAvailable: true,
         });
       },
     }),

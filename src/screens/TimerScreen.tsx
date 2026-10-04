@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   Alert,
   Pressable,
@@ -17,6 +17,7 @@ import { TagGrid } from '../components/TagGrid';
 import { TimerDisplay } from '../components/TimerDisplay';
 import { Palette, useTheme } from '../constants/theme';
 import { useTimer } from '../hooks/useTimer';
+import { canUndo } from '../services/eventEditing';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
 import { RootStackParamList, TagConfig } from '../types';
@@ -49,6 +50,16 @@ export function TimerScreen({ navigation }: Props) {
   const teamLocked = useMatchStore((s) => s.teamLocked);
   const selectTeam = useMatchStore((s) => s.selectTeam);
   const toggleTeamLock = useMatchStore((s) => s.toggleTeamLock);
+  const undoAvailable = useMatchStore((s) => s.undoAvailable);
+  const undoLastEvent = useMatchStore((s) => s.undoLastEvent);
+
+  // Brief confirmation of what Undo removed, e.g. "Corner removed".
+  const [undoneLabel, setUndoneLabel] = useState<string | null>(null);
+  useEffect(() => {
+    if (undoneLabel === null) return;
+    const id = setTimeout(() => setUndoneLabel(null), 3000);
+    return () => clearTimeout(id);
+  }, [undoneLabel]);
 
   const [injuryModal, setInjuryModal] = useState<'half' | 'match' | null>(null);
   const [lateStart, setLateStart] = useState<1 | 2 | null>(null);
@@ -58,8 +69,20 @@ export function TimerScreen({ navigation }: Props) {
 
   const onTagPress = (tag: TagConfig) => {
     logEvent(tag);
+    setUndoneLabel(null);
     Vibration.vibrate(40);
   };
+
+  const onUndo = () => {
+    const removed = undoLastEvent();
+    if (removed) setUndoneLabel(`${removed.tag_name} removed`);
+  };
+
+  const undoEnabled = canUndo({
+    phase,
+    undoAvailable,
+    eventCount: events.length,
+  });
 
   /**
    * Abandoning or restarting a match throws away everything tagged so far, so
@@ -177,10 +200,28 @@ export function TimerScreen({ navigation }: Props) {
         <Text style={styles.eventCount}>
           {events.length} event{events.length === 1 ? '' : 's'}
         </Text>
-        {lastEvent && (
-          <Text style={styles.lastEvent} numberOfLines={1}>
-            Last: {lastEvent.tag_name} · {lastEvent.time_match}
+        {undoneLabel ? (
+          <Text style={styles.undone} numberOfLines={1}>
+            {undoneLabel}
           </Text>
+        ) : (
+          lastEvent && (
+            <Text style={styles.lastEvent} numberOfLines={1}>
+              Last: {lastEvent.tag_name} · {lastEvent.time_match}
+            </Text>
+          )
+        )}
+        {inPlay && (
+          <Pressable
+            style={[styles.undo, !undoEnabled && styles.undoDisabled]}
+            disabled={!undoEnabled}
+            onPress={onUndo}
+            accessibilityRole="button"
+            accessibilityLabel="Undo the last event"
+            hitSlop={8}
+          >
+            <Text style={styles.undoText}>Undo</Text>
+          </Pressable>
         )}
       </View>
 
@@ -334,7 +375,34 @@ const makeStyles = (c: Palette) =>
     color: c.textMuted,
     fontSize: 13,
     flexShrink: 1,
+    flexGrow: 1,
+    textAlign: 'right',
     marginLeft: 8,
+  },
+  undone: {
+    color: c.warning,
+    fontSize: 13,
+    fontWeight: '600',
+    flexShrink: 1,
+    flexGrow: 1,
+    textAlign: 'right',
+    marginLeft: 8,
+  },
+  undo: {
+    marginLeft: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: c.border,
+  },
+  undoDisabled: {
+    opacity: 0.35,
+  },
+  undoText: {
+    color: c.text,
+    fontSize: 13,
+    fontWeight: '700',
   },
   discard: {
     alignSelf: 'center',

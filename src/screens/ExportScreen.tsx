@@ -29,6 +29,22 @@ export function ExportScreen() {
   const secondHalfStart = useMatchStore((s) => s.secondHalfStart);
   const secondHalfElapsed = useMatchStore((s) => s.secondHalfElapsed);
   const phase = useMatchStore((s) => s.phase);
+  const deleteEvent = useMatchStore((s) => s.deleteEvent);
+
+  // Deleting cannot be undone, so it always asks first (#41).
+  const confirmDelete = (item: EventRecord, index: number) =>
+    Alert.alert(
+      `Delete event ${index + 1}?`,
+      `${item.tag_name} at ${item.time_match}. This cannot be undone.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: () => deleteEvent(index),
+        },
+      ]
+    );
   const matchConfig = useConfigStore((s) => s.matchConfig);
   const tags = useConfigStore((s) => s.tags);
 
@@ -68,7 +84,13 @@ export function ExportScreen() {
   };
 
   const renderItem = ({ item, index }: { item: EventRecord; index: number }) => (
-    <View style={styles.eventRow}>
+    <Pressable
+      style={({ pressed }) => [styles.eventRow, pressed && styles.eventRowPressed]}
+      onLongPress={() => confirmDelete(item, index)}
+      delayLongPress={400}
+      accessibilityRole="button"
+      accessibilityHint="Long-press to delete this event"
+    >
       <Text style={styles.eventIndex}>{index + 1}</Text>
       <View style={styles.eventBody}>
         <View style={styles.eventHeader}>
@@ -87,7 +109,7 @@ export function ExportScreen() {
           {item.time_match} · continuous {item.time_continuous}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 
   return (
@@ -131,6 +153,11 @@ export function ExportScreen() {
           styles.list,
           { paddingBottom: insets.bottom + 24 },
         ]}
+        ListHeaderComponent={
+          events.length > 0 ? (
+            <Text style={styles.hint}>Long-press an event to delete it.</Text>
+          ) : null
+        }
         ListEmptyComponent={
           <Text style={styles.empty}>No events tagged yet.</Text>
         }
@@ -201,6 +228,15 @@ const makeStyles = (c: Palette) =>
     padding: 10,
     marginBottom: 6,
     gap: 10,
+  },
+  eventRowPressed: {
+    opacity: 0.7,
+  },
+  hint: {
+    color: c.textMuted,
+    fontSize: 12,
+    fontStyle: 'italic',
+    marginBottom: 8,
   },
   eventIndex: {
     color: c.textMuted,
