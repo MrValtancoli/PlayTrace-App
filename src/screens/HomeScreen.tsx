@@ -127,13 +127,17 @@ export function HomeScreen({ navigation }: Props) {
       {/* Each language is shown by its own name. Picking one never renames
           existing tags: only Reset to Defaults uses it (#39). */}
       <Text style={styles.themeLabel}>{t('home.language')}</Text>
-      <View style={styles.themeRow}>
+      <View style={styles.languageGrid}>
         {LANGUAGE_OPTIONS.map((opt) => {
           const active = currentLanguage === opt.code;
           return (
             <Pressable
               key={opt.code}
-              style={[styles.themeBtn, active && styles.themeBtnActive]}
+              style={[
+                styles.themeBtn,
+                styles.languageBtn,
+                active && styles.themeBtnActive,
+              ]}
               onPress={() => setLanguage(opt.code)}
               accessibilityRole="button"
               accessibilityState={{ selected: active }}
@@ -249,6 +253,17 @@ const makeStyles = (c: Palette) =>
   themeRow: {
     flexDirection: 'row',
     gap: 8,
+  },
+  // Three languages per row: one row of six would be too narrow to read.
+  languageGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  languageBtn: {
+    flex: 0,
+    width: '31%',
+    flexGrow: 1,
   },
   themeBtn: {
     flex: 1,

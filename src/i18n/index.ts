@@ -1,8 +1,12 @@
 import { getLocales } from 'expo-localization';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import de from './de.json';
 import en from './en.json';
+import es from './es.json';
+import fr from './fr.json';
 import it from './it.json';
+import pt from './pt.json';
 
 /**
  * UI translations (#39). en.json is the source of truth; every other file
@@ -15,6 +19,10 @@ import it from './it.json';
 export const LANGUAGES = {
   en,
   it,
+  es,
+  pt, // Brazilian Portuguese
+  fr,
+  de,
 } as const;
 
 export type LanguageCode = keyof typeof LANGUAGES;

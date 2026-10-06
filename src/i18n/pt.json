@@ -1,0 +1,154 @@
+{
+  "language": {
+    "name": "Português (BR)"
+  },
+  "nav": {
+    "matchInfo": "Dados da partida",
+    "tagConfig": "Configurar tags",
+    "match": "Partida",
+    "export": "Exportar"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "versus": "{{home}} x {{away}}"
+  },
+  "home": {
+    "tagline": "Marcação de eventos de futebol em tempo real",
+    "noCompetition": "Nenhuma competição definida",
+    "halves": "Tempos de {{minutes}}'",
+    "events_one": "{{count}} evento",
+    "events_other": "{{count}} eventos",
+    "goToMatch": "Ir para a partida",
+    "backToMatch": "Voltar à partida",
+    "matchInfo": "Dados da partida",
+    "tagConfig": "Tags",
+    "export": "Exportar",
+    "appearance": "Aparência",
+    "language": "Idioma",
+    "phase": {
+      "idle": "Nenhuma partida em andamento",
+      "first_half": "Partida em andamento — 1º tempo",
+      "half_time": "Partida em andamento — intervalo",
+      "second_half": "Partida em andamento — 2º tempo",
+      "ended": "Partida encerrada — pronta para exportar"
+    }
+  },
+  "theme": {
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "matchSetup": {
+    "autosave": "As alterações são salvas automaticamente.",
+    "competition": "Competição",
+    "competitionPlaceholder": "ex.: Brasileirão",
+    "date": "Data (AAAA-MM-DD)",
+    "venue": "Estádio",
+    "venuePlaceholder": "ex.: Maracanã",
+    "homeTeam": "Time mandante",
+    "awayTeam": "Time visitante",
+    "halfDuration": "Duração de cada tempo (minutos)"
+  },
+  "tagConfig": {
+    "hint": "Toque no círculo para mudar a cor. As alterações são salvas automaticamente.",
+    "placeholder": "Tag {{id}}",
+    "reset": "Restaurar padrões"
+  },
+  "timer": {
+    "phase": {
+      "idle": "Pronto",
+      "first_half": "1º tempo",
+      "half_time": "Intervalo",
+      "second_half": "2º tempo",
+      "ended": "Fim de jogo"
+    },
+    "running": "Em andamento",
+    "paused": "Pausado",
+    "startFirstHalf": "Iniciar 1º tempo",
+    "startSecondHalf": "Iniciar 2º tempo",
+    "pause": "Pausar",
+    "resume": "Retomar",
+    "endFirstHalf": "Encerrar 1º tempo",
+    "endMatch": "Encerrar partida",
+    "exportData": "Exportar dados",
+    "newMatch": "Nova partida",
+    "hintIdle": "Inicie a partida para ativar a marcação",
+    "hintHalfTime": "Intervalo — inicie o 2º tempo para continuar marcando",
+    "startedLate": "Início atrasado",
+    "startFirstHalfLate": "Início atrasado do 1º tempo",
+    "startSecondHalfLate": "Início atrasado do 2º tempo",
+    "events_one": "{{count}} evento",
+    "events_other": "{{count}} eventos",
+    "lastEvent": "Último: {{tag}} · {{time}}",
+    "undo": "Desfazer",
+    "undoLabel": "Desfazer o último evento",
+    "undone": "{{tag}} removido",
+    "discardMatch": "Descartar partida",
+    "discardTitle": "Descartar esta partida?",
+    "discardBody_one": "{{count}} evento marcado será excluído. Exporte antes se quiser mantê-lo.",
+    "discardBody_other": "{{count}} eventos marcados serão excluídos. Exporte antes se quiser mantê-los.",
+    "discard": "Descartar",
+    "total": "Total: {{time}}"
+  },
+  "injuryModal": {
+    "subtitle": "Acréscimos (minutos)",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "hint": "Tempo realmente jogado após o fim do tempo regulamentar, arredondado ao minuto."
+  },
+  "export": {
+    "summary_one": "{{count}} evento · acréscimos {{first}}' + {{second}}'",
+    "summary_other": "{{count}} eventos · acréscimos {{first}}' + {{second}}'",
+    "partialWarning": "Partida ainda não encerrada — a exportação terá dados parciais.",
+    "json": "Exportar JSON",
+    "csv": "Exportar CSV",
+    "empty": "Nenhum evento marcado ainda.",
+    "failed": "Falha na exportação",
+    "unknownError": "Erro desconhecido",
+    "deleteTitle": "Excluir o evento {{number}}?",
+    "deleteBody": "{{tag}} aos {{time}}. Esta ação não pode ser desfeita.",
+    "delete": "Excluir",
+    "deleteHint": "Mantenha pressionado para excluir este evento",
+    "listHint": "Mantenha um evento pressionado para excluí-lo.",
+    "eventTimes": "{{match}} · contínuo {{continuous}}",
+    "shareUnavailable": "O compartilhamento não está disponível neste dispositivo",
+    "shareTitle": "Compartilhar exportação {{format}} do PlayTrace"
+  },
+  "startModal": {
+    "subtitle": "Em que minuto o tempo já está?",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "valid": "O cronômetro começa a partir deste tempo.",
+    "invalid": "Digite um tempo entre 00:00 e {{max}}:59.",
+    "start": "Iniciar"
+  },
+  "tagGrid": {
+    "empty": "Nenhuma tag ativa — ative algumas em Configurar tags."
+  },
+  "team": {
+    "home": "Mandante",
+    "away": "Visitante",
+    "lock": "Travar a escolha do time",
+    "unlock": "Destravar a escolha do time",
+    "lockedHint": "O time escolhido permanece após cada evento",
+    "unlockedHint": "A escolha é apagada após cada evento"
+  },
+  "defaultTags": {
+    "1": "Gol",
+    "2": "Chute no gol",
+    "3": "Chute para fora",
+    "4": "Escanteio",
+    "5": "Falta cobrada",
+    "6": "Falta",
+    "7": "Cartão amarelo",
+    "8": "Cartão vermelho",
+    "9": "Impedimento",
+    "10": "Lateral",
+    "11": "Substituição",
+    "12": "Passe certo",
+    "13": "Desarme",
+    "14": "Interceptação",
+    "15": "Corte",
+    "16": "Defesa"
+  }
+}

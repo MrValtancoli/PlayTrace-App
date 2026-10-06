@@ -1,0 +1,154 @@
+{
+  "language": {
+    "name": "Deutsch"
+  },
+  "nav": {
+    "matchInfo": "Spieldaten",
+    "tagConfig": "Tags konfigurieren",
+    "match": "Spiel",
+    "export": "Export"
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "versus": "{{home}} – {{away}}"
+  },
+  "home": {
+    "tagline": "Echtzeit-Tagging von Fußballspielen",
+    "noCompetition": "Kein Wettbewerb festgelegt",
+    "halves": "Halbzeiten à {{minutes}}'",
+    "events_one": "{{count}} Ereignis",
+    "events_other": "{{count}} Ereignisse",
+    "goToMatch": "Zum Spiel",
+    "backToMatch": "Zurück zum Spiel",
+    "matchInfo": "Spieldaten",
+    "tagConfig": "Tags",
+    "export": "Export",
+    "appearance": "Darstellung",
+    "language": "Sprache",
+    "phase": {
+      "idle": "Kein laufendes Spiel",
+      "first_half": "Spiel läuft — 1. Halbzeit",
+      "half_time": "Spiel läuft — Halbzeitpause",
+      "second_half": "Spiel läuft — 2. Halbzeit",
+      "ended": "Spiel beendet — bereit zum Export"
+    }
+  },
+  "theme": {
+    "system": "System",
+    "light": "Hell",
+    "dark": "Dunkel"
+  },
+  "matchSetup": {
+    "autosave": "Änderungen werden automatisch gespeichert.",
+    "competition": "Wettbewerb",
+    "competitionPlaceholder": "z. B. Bundesliga",
+    "date": "Datum (JJJJ-MM-TT)",
+    "venue": "Stadion",
+    "venuePlaceholder": "z. B. Allianz Arena",
+    "homeTeam": "Heimmannschaft",
+    "awayTeam": "Gastmannschaft",
+    "halfDuration": "Dauer einer Halbzeit (Minuten)"
+  },
+  "tagConfig": {
+    "hint": "Tippe auf den Farbpunkt, um die Farbe zu ändern. Änderungen werden automatisch gespeichert.",
+    "placeholder": "Tag {{id}}",
+    "reset": "Standard wiederherstellen"
+  },
+  "timer": {
+    "phase": {
+      "idle": "Bereit",
+      "first_half": "1. Halbzeit",
+      "half_time": "Halbzeitpause",
+      "second_half": "2. Halbzeit",
+      "ended": "Abpfiff"
+    },
+    "running": "Läuft",
+    "paused": "Pausiert",
+    "startFirstHalf": "1. Halbzeit starten",
+    "startSecondHalf": "2. Halbzeit starten",
+    "pause": "Pause",
+    "resume": "Fortsetzen",
+    "endFirstHalf": "1. Halbzeit beenden",
+    "endMatch": "Spiel beenden",
+    "exportData": "Daten exportieren",
+    "newMatch": "Neues Spiel",
+    "hintIdle": "Starte das Spiel, um Ereignisse zu taggen",
+    "hintHalfTime": "Halbzeitpause — starte die 2. Halbzeit, um weiter zu taggen",
+    "startedLate": "Später Start",
+    "startFirstHalfLate": "1. Halbzeit später starten",
+    "startSecondHalfLate": "2. Halbzeit später starten",
+    "events_one": "{{count}} Ereignis",
+    "events_other": "{{count}} Ereignisse",
+    "lastEvent": "Zuletzt: {{tag}} · {{time}}",
+    "undo": "Rückgängig",
+    "undoLabel": "Letztes Ereignis rückgängig machen",
+    "undone": "{{tag}} entfernt",
+    "discardMatch": "Spiel verwerfen",
+    "discardTitle": "Dieses Spiel verwerfen?",
+    "discardBody_one": "{{count}} getaggtes Ereignis wird gelöscht. Exportiere es vorher, wenn du es behalten willst.",
+    "discardBody_other": "{{count}} getaggte Ereignisse werden gelöscht. Exportiere sie vorher, wenn du sie behalten willst.",
+    "discard": "Verwerfen",
+    "total": "Gesamt: {{time}}"
+  },
+  "injuryModal": {
+    "subtitle": "Nachspielzeit (Minuten)",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "hint": "Tatsächlich gespielte Zeit nach Ablauf der Halbzeit, auf die Minute gerundet."
+  },
+  "export": {
+    "summary_one": "{{count}} Ereignis · Nachspielzeit {{first}}' + {{second}}'",
+    "summary_other": "{{count}} Ereignisse · Nachspielzeit {{first}}' + {{second}}'",
+    "partialWarning": "Spiel noch nicht beendet — der Export enthält unvollständige Daten.",
+    "json": "Als JSON exportieren",
+    "csv": "Als CSV exportieren",
+    "empty": "Noch keine Ereignisse getaggt.",
+    "failed": "Export fehlgeschlagen",
+    "unknownError": "Unbekannter Fehler",
+    "deleteTitle": "Ereignis {{number}} löschen?",
+    "deleteBody": "{{tag}} bei {{time}}. Das kann nicht rückgängig gemacht werden.",
+    "delete": "Löschen",
+    "deleteHint": "Lange drücken, um dieses Ereignis zu löschen",
+    "listHint": "Ein Ereignis lange drücken, um es zu löschen.",
+    "eventTimes": "{{match}} · fortlaufend {{continuous}}",
+    "shareUnavailable": "Teilen ist auf diesem Gerät nicht verfügbar",
+    "shareTitle": "PlayTrace-{{format}}-Export teilen"
+  },
+  "startModal": {
+    "subtitle": "Bei welcher Spielzeit ist die Halbzeit bereits?",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "valid": "Die Uhr startet ab dieser Zeit.",
+    "invalid": "Gib eine Zeit zwischen 00:00 und {{max}}:59 ein.",
+    "start": "Starten"
+  },
+  "tagGrid": {
+    "empty": "Keine Tags aktiv — aktiviere einige unter Tags konfigurieren."
+  },
+  "team": {
+    "home": "Heim",
+    "away": "Gast",
+    "lock": "Mannschaftsauswahl sperren",
+    "unlock": "Mannschaftsauswahl entsperren",
+    "lockedHint": "Die gewählte Mannschaft bleibt nach jedem Ereignis",
+    "unlockedHint": "Die Auswahl wird nach jedem Ereignis gelöscht"
+  },
+  "defaultTags": {
+    "1": "Tor",
+    "2": "Schuss aufs Tor",
+    "3": "Schuss neben das Tor",
+    "4": "Ecke",
+    "5": "Freistoß",
+    "6": "Foul",
+    "7": "Gelbe Karte",
+    "8": "Rote Karte",
+    "9": "Abseits",
+    "10": "Einwurf",
+    "11": "Auswechslung",
+    "12": "Angekommener Pass",
+    "13": "Gewonnener Zweikampf",
+    "14": "Abgefangener Ball",
+    "15": "Klärung",
+    "16": "Parade"
+  }
+}

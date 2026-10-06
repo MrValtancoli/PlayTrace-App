@@ -1,0 +1,154 @@
+{
+  "language": {
+    "name": "Español"
+  },
+  "nav": {
+    "matchInfo": "Datos del partido",
+    "tagConfig": "Configurar etiquetas",
+    "match": "Partido",
+    "export": "Exportar"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "versus": "{{home}} - {{away}}"
+  },
+  "home": {
+    "tagline": "Etiquetado de partidos de fútbol en tiempo real",
+    "noCompetition": "Sin competición",
+    "halves": "Tiempos de {{minutes}}'",
+    "events_one": "{{count}} evento",
+    "events_other": "{{count}} eventos",
+    "goToMatch": "Ir al partido",
+    "backToMatch": "Volver al partido",
+    "matchInfo": "Datos del partido",
+    "tagConfig": "Etiquetas",
+    "export": "Exportar",
+    "appearance": "Apariencia",
+    "language": "Idioma",
+    "phase": {
+      "idle": "Ningún partido en curso",
+      "first_half": "Partido en curso — 1.ª parte",
+      "half_time": "Partido en curso — descanso",
+      "second_half": "Partido en curso — 2.ª parte",
+      "ended": "Partido terminado — listo para exportar"
+    }
+  },
+  "theme": {
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "matchSetup": {
+    "autosave": "Los cambios se guardan automáticamente.",
+    "competition": "Competición",
+    "competitionPlaceholder": "p. ej. LaLiga",
+    "date": "Fecha (AAAA-MM-DD)",
+    "venue": "Estadio",
+    "venuePlaceholder": "p. ej. Santiago Bernabéu",
+    "homeTeam": "Equipo local",
+    "awayTeam": "Equipo visitante",
+    "halfDuration": "Duración de cada parte (minutos)"
+  },
+  "tagConfig": {
+    "hint": "Toca el punto de color para cambiarlo. Los cambios se guardan automáticamente.",
+    "placeholder": "Etiqueta {{id}}",
+    "reset": "Restablecer valores"
+  },
+  "timer": {
+    "phase": {
+      "idle": "Listo",
+      "first_half": "1.ª parte",
+      "half_time": "Descanso",
+      "second_half": "2.ª parte",
+      "ended": "Final"
+    },
+    "running": "En marcha",
+    "paused": "En pausa",
+    "startFirstHalf": "Iniciar 1.ª parte",
+    "startSecondHalf": "Iniciar 2.ª parte",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "endFirstHalf": "Terminar 1.ª parte",
+    "endMatch": "Terminar partido",
+    "exportData": "Exportar datos",
+    "newMatch": "Nuevo partido",
+    "hintIdle": "Inicia el partido para activar el etiquetado",
+    "hintHalfTime": "Descanso — inicia la 2.ª parte para seguir etiquetando",
+    "startedLate": "Inicio con retraso",
+    "startFirstHalfLate": "Inicio con retraso 1.ª parte",
+    "startSecondHalfLate": "Inicio con retraso 2.ª parte",
+    "events_one": "{{count}} evento",
+    "events_other": "{{count}} eventos",
+    "lastEvent": "Último: {{tag}} · {{time}}",
+    "undo": "Deshacer",
+    "undoLabel": "Deshacer el último evento",
+    "undone": "{{tag}} eliminado",
+    "discardMatch": "Descartar partido",
+    "discardTitle": "¿Descartar este partido?",
+    "discardBody_one": "Se eliminará {{count}} evento etiquetado. Expórtalo antes si quieres conservarlo.",
+    "discardBody_other": "Se eliminarán {{count}} eventos etiquetados. Expórtalos antes si quieres conservarlos.",
+    "discard": "Descartar",
+    "total": "Total: {{time}}"
+  },
+  "injuryModal": {
+    "subtitle": "Tiempo añadido (minutos)",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "hint": "Tiempo jugado realmente después del final de la parte, redondeado al minuto."
+  },
+  "export": {
+    "summary_one": "{{count}} evento · añadido {{first}}' + {{second}}'",
+    "summary_other": "{{count}} eventos · añadido {{first}}' + {{second}}'",
+    "partialWarning": "El partido aún no ha terminado: la exportación tendrá datos parciales.",
+    "json": "Exportar JSON",
+    "csv": "Exportar CSV",
+    "empty": "Aún no hay eventos etiquetados.",
+    "failed": "Error al exportar",
+    "unknownError": "Error desconocido",
+    "deleteTitle": "¿Eliminar el evento {{number}}?",
+    "deleteBody": "{{tag}} en el {{time}}. No se puede deshacer.",
+    "delete": "Eliminar",
+    "deleteHint": "Mantén pulsado para eliminar este evento",
+    "listHint": "Mantén pulsado un evento para eliminarlo.",
+    "eventTimes": "{{match}} · continuo {{continuous}}",
+    "shareUnavailable": "Compartir no está disponible en este dispositivo",
+    "shareTitle": "Compartir exportación {{format}} de PlayTrace"
+  },
+  "startModal": {
+    "subtitle": "¿En qué minuto va ya la parte?",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "valid": "El cronómetro empieza desde este tiempo.",
+    "invalid": "Introduce un tiempo entre 00:00 y {{max}}:59.",
+    "start": "Iniciar"
+  },
+  "tagGrid": {
+    "empty": "No hay etiquetas activas — activa algunas en Configurar etiquetas."
+  },
+  "team": {
+    "home": "Local",
+    "away": "Visitante",
+    "lock": "Bloquear la selección de equipo",
+    "unlock": "Desbloquear la selección de equipo",
+    "lockedHint": "El equipo elegido se mantiene tras cada evento",
+    "unlockedHint": "La selección se borra tras cada evento"
+  },
+  "defaultTags": {
+    "1": "Gol",
+    "2": "Tiro a puerta",
+    "3": "Tiro fuera",
+    "4": "Córner",
+    "5": "Tiro libre",
+    "6": "Falta",
+    "7": "Tarjeta amarilla",
+    "8": "Tarjeta roja",
+    "9": "Fuera de juego",
+    "10": "Saque de banda",
+    "11": "Sustitución",
+    "12": "Pase completado",
+    "13": "Entrada ganada",
+    "14": "Intercepción",
+    "15": "Despeje",
+    "16": "Parada"
+  }
+}

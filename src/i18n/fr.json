@@ -1,0 +1,154 @@
+{
+  "language": {
+    "name": "Français"
+  },
+  "nav": {
+    "matchInfo": "Infos du match",
+    "tagConfig": "Configuration des tags",
+    "match": "Match",
+    "export": "Exporter"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "versus": "{{home}} - {{away}}"
+  },
+  "home": {
+    "tagline": "Tagging de matchs de football en temps réel",
+    "noCompetition": "Aucune compétition définie",
+    "halves": "Mi-temps de {{minutes}}'",
+    "events_one": "{{count}} événement",
+    "events_other": "{{count}} événements",
+    "goToMatch": "Aller au match",
+    "backToMatch": "Retour au match",
+    "matchInfo": "Infos du match",
+    "tagConfig": "Tags",
+    "export": "Exporter",
+    "appearance": "Apparence",
+    "language": "Langue",
+    "phase": {
+      "idle": "Aucun match en cours",
+      "first_half": "Match en cours — 1re mi-temps",
+      "half_time": "Match en cours — mi-temps",
+      "second_half": "Match en cours — 2e mi-temps",
+      "ended": "Match terminé — prêt à exporter"
+    }
+  },
+  "theme": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "matchSetup": {
+    "autosave": "Les modifications sont enregistrées automatiquement.",
+    "competition": "Compétition",
+    "competitionPlaceholder": "ex. Ligue 1",
+    "date": "Date (AAAA-MM-JJ)",
+    "venue": "Stade",
+    "venuePlaceholder": "ex. Parc des Princes",
+    "homeTeam": "Équipe à domicile",
+    "awayTeam": "Équipe à l'extérieur",
+    "halfDuration": "Durée d'une mi-temps (minutes)"
+  },
+  "tagConfig": {
+    "hint": "Touchez la pastille pour changer de couleur. Les modifications sont enregistrées automatiquement.",
+    "placeholder": "Tag {{id}}",
+    "reset": "Rétablir les tags par défaut"
+  },
+  "timer": {
+    "phase": {
+      "idle": "Prêt",
+      "first_half": "1re mi-temps",
+      "half_time": "Mi-temps",
+      "second_half": "2e mi-temps",
+      "ended": "Fin du match"
+    },
+    "running": "En cours",
+    "paused": "En pause",
+    "startFirstHalf": "Lancer la 1re mi-temps",
+    "startSecondHalf": "Lancer la 2e mi-temps",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "endFirstHalf": "Fin de la 1re mi-temps",
+    "endMatch": "Fin du match",
+    "exportData": "Exporter les données",
+    "newMatch": "Nouveau match",
+    "hintIdle": "Lancez le match pour activer le tagging",
+    "hintHalfTime": "Mi-temps — lancez la 2e mi-temps pour reprendre le tagging",
+    "startedLate": "Départ en retard",
+    "startFirstHalfLate": "Départ en retard 1re mi-temps",
+    "startSecondHalfLate": "Départ en retard 2e mi-temps",
+    "events_one": "{{count}} événement",
+    "events_other": "{{count}} événements",
+    "lastEvent": "Dernier : {{tag}} · {{time}}",
+    "undo": "Annuler",
+    "undoLabel": "Annuler le dernier événement",
+    "undone": "{{tag}} supprimé",
+    "discardMatch": "Abandonner le match",
+    "discardTitle": "Abandonner ce match ?",
+    "discardBody_one": "{{count}} événement tagué sera supprimé. Exportez-le d'abord si vous voulez le garder.",
+    "discardBody_other": "{{count}} événements tagués seront supprimés. Exportez-les d'abord si vous voulez les garder.",
+    "discard": "Abandonner",
+    "total": "Total : {{time}}"
+  },
+  "injuryModal": {
+    "subtitle": "Temps additionnel (minutes)",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "hint": "Temps réellement joué après la fin de la mi-temps, arrondi à la minute."
+  },
+  "export": {
+    "summary_one": "{{count}} événement · temps add. {{first}}' + {{second}}'",
+    "summary_other": "{{count}} événements · temps add. {{first}}' + {{second}}'",
+    "partialWarning": "Match pas encore terminé — l'export contiendra des données partielles.",
+    "json": "Exporter en JSON",
+    "csv": "Exporter en CSV",
+    "empty": "Aucun événement tagué pour l'instant.",
+    "failed": "Échec de l'export",
+    "unknownError": "Erreur inconnue",
+    "deleteTitle": "Supprimer l'événement {{number}} ?",
+    "deleteBody": "{{tag}} à {{time}}. Cette action est irréversible.",
+    "delete": "Supprimer",
+    "deleteHint": "Appui long pour supprimer cet événement",
+    "listHint": "Appui long sur un événement pour le supprimer.",
+    "eventTimes": "{{match}} · continu {{continuous}}",
+    "shareUnavailable": "Le partage n'est pas disponible sur cet appareil",
+    "shareTitle": "Partager l'export {{format}} de PlayTrace"
+  },
+  "startModal": {
+    "subtitle": "À quelle minute la mi-temps en est-elle déjà ?",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "valid": "Le chronomètre démarre à partir de ce temps.",
+    "invalid": "Saisissez un temps entre 00:00 et {{max}}:59.",
+    "start": "Lancer"
+  },
+  "tagGrid": {
+    "empty": "Aucun tag actif — activez-en dans Configuration des tags."
+  },
+  "team": {
+    "home": "Domicile",
+    "away": "Extérieur",
+    "lock": "Verrouiller le choix de l'équipe",
+    "unlock": "Déverrouiller le choix de l'équipe",
+    "lockedHint": "L'équipe choisie reste après chaque événement",
+    "unlockedHint": "Le choix est effacé après chaque événement"
+  },
+  "defaultTags": {
+    "1": "But",
+    "2": "Tir cadré",
+    "3": "Tir non cadré",
+    "4": "Corner",
+    "5": "Coup franc",
+    "6": "Faute",
+    "7": "Carton jaune",
+    "8": "Carton rouge",
+    "9": "Hors-jeu",
+    "10": "Touche",
+    "11": "Remplacement",
+    "12": "Passe réussie",
+    "13": "Tacle réussi",
+    "14": "Interception",
+    "15": "Dégagement",
+    "16": "Arrêt"
+  }
+}
