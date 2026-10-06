@@ -37,6 +37,22 @@ change when the app itself changes. If you change a section the translations
 share, please flag in your PR which of them still need the same change — you
 don't have to translate them yourself.
 
+Several files describe the same things, so a change in one often means a
+change in another:
+
+| If you change... | Also check... |
+|---|---|
+| `README.md` (except roadmap and status) | The translated READMEs, which share every other section |
+| The status of a feature | `FEATURES.md` and the roadmap in `README.md` |
+| An app UI string | `src/i18n/en.json` and every other language file — tests fail if a key is missing |
+| The development setup | This guide, "Notes for Developers" in `FEATURES.md` and the [Development Setup](https://github.com/MrValtancoli/PlayTrace-App/wiki/Development-Setup) wiki page |
+| The export format | The [Export Format Reference](https://github.com/MrValtancoli/PlayTrace-App/wiki/Export-Format-Reference) wiki page — and the release notes, since it is a public contract |
+| `WELCOME_CONTRIBUTORS_ISSUE.md` | The pinned issue #1: the file and the issue are separate copies |
+| Platform or device requirements | The Device field in `.github/ISSUE_TEMPLATE/bug_report.yml` |
+
+If you can't update everything at once, list in your PR description what is
+still to align.
+
 ### 💻 Code Contributions
 
 **Development Setup:**
@@ -100,7 +116,7 @@ cannot read yourself is not a contribution we can verify.
 ## 🎯 Priority Areas
 
 We especially welcome contributions in:
-- **Translations** (Spanish, Portuguese, French, German)
+- **Reviewing translations** of the app and the README ([#51](https://github.com/MrValtancoli/PlayTrace-App/issues/51))
 - **UI/UX improvements**
 - **Export format enhancements**
 - **Testing on different iOS and Android devices**
