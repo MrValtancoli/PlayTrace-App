@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { exportAndShare } from '../services/exportService';
 import { buildPeriods } from '../services/periods';
@@ -18,6 +19,7 @@ import { EventRecord } from '../types';
 
 export function ExportScreen() {
   const c = useTheme();
+  const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const styles = useMemo(() => makeStyles(c), [c]);
 
@@ -34,12 +36,12 @@ export function ExportScreen() {
   // Deleting cannot be undone, so it always asks first (#41).
   const confirmDelete = (item: EventRecord, index: number) =>
     Alert.alert(
-      `Delete event ${index + 1}?`,
-      `${item.tag_name} at ${item.time_match}. This cannot be undone.`,
+      t('export.deleteTitle', { number: index + 1 }),
+      t('export.deleteBody', { tag: item.tag_name, time: item.time_match }),
       [
-        { text: 'Cancel', style: 'cancel' },
+        { text: t('common.cancel'), style: 'cancel' },
         {
-          text: 'Delete',
+          text: t('export.delete'),
           style: 'destructive',
           onPress: () => deleteEvent(index),
         },
@@ -75,8 +77,8 @@ export function ExportScreen() {
       );
     } catch (err) {
       Alert.alert(
-        'Export failed',
-        err instanceof Error ? err.message : 'Unknown error'
+        t('export.failed'),
+        err instanceof Error ? err.message : t('export.unknownError')
       );
     } finally {
       setBusy(false);
@@ -89,7 +91,7 @@ export function ExportScreen() {
       onLongPress={() => confirmDelete(item, index)}
       delayLongPress={400}
       accessibilityRole="button"
-      accessibilityHint="Long-press to delete this event"
+      accessibilityHint={t('export.deleteHint')}
     >
       <Text style={styles.eventIndex}>{index + 1}</Text>
       <View style={styles.eventBody}>
@@ -101,12 +103,18 @@ export function ExportScreen() {
               as a side (#47). */}
           {item.team && (
             <Text style={styles.eventTeam} numberOfLines={1}>
-              {teamLabel(item.team, matchConfig.homeTeam, matchConfig.awayTeam)}
+              {teamLabel(item.team, matchConfig.homeTeam, matchConfig.awayTeam, {
+                home: t('team.home'),
+                away: t('team.away'),
+              })}
             </Text>
           )}
         </View>
         <Text style={styles.eventTime}>
-          {item.time_match} · continuous {item.time_continuous}
+          {t('export.eventTimes', {
+            match: item.time_match,
+            continuous: item.time_continuous,
+          })}
         </Text>
       </View>
     </Pressable>
@@ -116,14 +124,21 @@ export function ExportScreen() {
     <View style={styles.screen}>
       <View style={styles.summary}>
         <Text style={styles.summaryTitle}>
-          {matchConfig.homeTeam} vs {matchConfig.awayTeam}
+          {t('common.versus', {
+            home: matchConfig.homeTeam,
+            away: matchConfig.awayTeam,
+          })}
         </Text>
         <Text style={styles.summaryLine}>
-          {events.length} events · injury time {injuryTime1}' + {injuryTime2}'
+          {t('export.summary', {
+            count: events.length,
+            first: injuryTime1,
+            second: injuryTime2,
+          })}
         </Text>
         {phase !== 'ended' && events.length > 0 && (
           <Text style={styles.warning}>
-            Match not ended yet — export will contain partial data.
+            {t('export.partialWarning')}
           </Text>
         )}
       </View>
@@ -134,14 +149,14 @@ export function ExportScreen() {
           disabled={busy || events.length === 0}
           onPress={() => doExport('json')}
         >
-          <Text style={styles.btnText}>Export JSON</Text>
+          <Text style={styles.btnText}>{t('export.json')}</Text>
         </Pressable>
         <Pressable
           style={[styles.btn, (busy || events.length === 0) && styles.btnDisabled]}
           disabled={busy || events.length === 0}
           onPress={() => doExport('csv')}
         >
-          <Text style={styles.btnText}>Export CSV</Text>
+          <Text style={styles.btnText}>{t('export.csv')}</Text>
         </Pressable>
       </View>
 
@@ -155,11 +170,11 @@ export function ExportScreen() {
         ]}
         ListHeaderComponent={
           events.length > 0 ? (
-            <Text style={styles.hint}>Long-press an event to delete it.</Text>
+            <Text style={styles.hint}>{t('export.listHint')}</Text>
           ) : null
         }
         ListEmptyComponent={
-          <Text style={styles.empty}>No events tagged yet.</Text>
+          <Text style={styles.empty}>{t('export.empty')}</Text>
         }
       />
     </View>

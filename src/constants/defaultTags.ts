@@ -1,5 +1,6 @@
 import { TagConfig } from '../types';
 import appConfig from '../../app.json';
+import { LANGUAGES, LanguageCode } from '../i18n';
 
 // Read from app.json so the exported app_version always matches the build.
 export const APP_VERSION: string = appConfig.expo.version;
@@ -19,25 +20,37 @@ export const TAG_COLOR_PALETTE = [
   '#FF1493',
 ];
 
-// Default 16-tag configuration from the PlayTrace spec.
-export const DEFAULT_TAGS: TagConfig[] = [
-  { id: 1, name: 'Goal', color: '#00FF00', enabled: true },
-  { id: 2, name: 'Shot on Target', color: '#FFD700', enabled: true },
-  { id: 3, name: 'Shot off Target', color: '#FF6347', enabled: true },
-  { id: 4, name: 'Corner', color: '#1E90FF', enabled: true },
-  { id: 5, name: 'Free Kick', color: '#FF8C00', enabled: true },
-  { id: 6, name: 'Foul', color: '#FF0000', enabled: true },
-  { id: 7, name: 'Yellow Card', color: '#FFFF00', enabled: true },
-  { id: 8, name: 'Red Card', color: '#8B0000', enabled: true },
-  { id: 9, name: 'Offside', color: '#800080', enabled: true },
-  { id: 10, name: 'Throw-in', color: '#808080', enabled: true },
-  { id: 11, name: 'Substitution', color: '#00CED1', enabled: true },
-  { id: 12, name: 'Pass Completed', color: '#32CD32', enabled: true },
-  { id: 13, name: 'Tackle Won', color: '#4169E1', enabled: true },
-  { id: 14, name: 'Interception', color: '#20B2AA', enabled: true },
-  { id: 15, name: 'Clearance', color: '#778899', enabled: true },
-  { id: 16, name: 'Save', color: '#FF1493', enabled: true },
+// Default 16-tag configuration from the PlayTrace spec. Names come from the
+// language's `defaultTags` (#39); colors and order are the same everywhere.
+const DEFAULT_TAG_COLORS = [
+  '#00FF00',
+  '#FFD700',
+  '#FF6347',
+  '#1E90FF',
+  '#FF8C00',
+  '#FF0000',
+  '#FFFF00',
+  '#8B0000',
+  '#800080',
+  '#808080',
+  '#00CED1',
+  '#32CD32',
+  '#4169E1',
+  '#20B2AA',
+  '#778899',
+  '#FF1493',
 ];
+
+/** The default tag set with names in the given language. */
+export function defaultTags(language: LanguageCode): TagConfig[] {
+  const names: Record<string, string> = LANGUAGES[language].defaultTags;
+  return DEFAULT_TAG_COLORS.map((color, i) => ({
+    id: i + 1,
+    name: names[String(i + 1)],
+    color,
+    enabled: true,
+  }));
+}
 
 export const DEFAULT_MATCH_CONFIG = {
   competition: '',

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Modal,
@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { isStartTimeValid, parseStartTime } from '../services/matchStart';
 
@@ -32,8 +33,10 @@ export function StartTimeModal({
   onCancel,
 }: Props) {
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
 
+  const minutesRef = useRef<TextInput>(null);
   const [minutes, setMinutes] = useState('');
   const [seconds, setSeconds] = useState('');
 
@@ -57,7 +60,14 @@ export function StartTimeModal({
   };
 
   return (
-    <Modal visible={visible} transparent animationType="fade">
+    // Focus once the modal is on screen: autoFocus runs before the centered
+    // input is laid out, and Android leaves the caret at the left edge.
+    <Modal
+      visible={visible}
+      transparent
+      animationType="fade"
+      onShow={() => minutesRef.current?.focus()}
+    >
       <KeyboardAvoidingView
         behavior={KEYBOARD_BEHAVIOR}
         style={styles.backdrop}
@@ -65,11 +75,12 @@ export function StartTimeModal({
         <View style={styles.card}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>
-            What time is the half already at?
+            {t('startModal.subtitle')}
           </Text>
 
           <View style={styles.inputRow}>
             <TextInput
+              ref={minutesRef}
               style={styles.input}
               value={minutes}
               onChangeText={setMinutes}
@@ -77,9 +88,8 @@ export function StartTimeModal({
               maxLength={2}
               placeholder="00"
               placeholderTextColor={c.textMuted}
-              accessibilityLabel="Minutes"
+              accessibilityLabel={t('startModal.minutes')}
               selectTextOnFocus
-              autoFocus
             />
             <Text style={styles.colon}>:</Text>
             <TextInput
@@ -90,27 +100,27 @@ export function StartTimeModal({
               maxLength={2}
               placeholder="00"
               placeholderTextColor={c.textMuted}
-              accessibilityLabel="Seconds"
+              accessibilityLabel={t('startModal.seconds')}
               selectTextOnFocus
             />
           </View>
 
           <Text style={[styles.hint, !valid && styles.hintError]}>
             {valid
-              ? 'The clock starts from this time.'
-              : `Enter a time between 00:00 and ${halfDuration - 1}:59.`}
+              ? t('startModal.valid')
+              : t('startModal.invalid', { max: halfDuration - 1 })}
           </Text>
 
           <View style={styles.row}>
             <Pressable style={[styles.btn, styles.btnGhost]} onPress={cancel}>
-              <Text style={styles.btnGhostText}>Cancel</Text>
+              <Text style={styles.btnGhostText}>{t('common.cancel')}</Text>
             </Pressable>
             <Pressable
               style={[styles.btn, styles.btnPrimary, !valid && styles.btnDisabled]}
               disabled={!valid}
               onPress={confirm}
             >
-              <Text style={styles.btnPrimaryText}>Start</Text>
+              <Text style={styles.btnPrimaryText}>{t('startModal.start')}</Text>
             </Pressable>
           </View>
         </View>

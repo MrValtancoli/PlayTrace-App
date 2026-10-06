@@ -2,39 +2,38 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { Palette, ThemeMode, useTheme } from '../constants/theme';
+import { LANGUAGES, LanguageCode, resolveLanguage } from '../i18n';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
 import { RootStackParamList } from '../types';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
-const PHASE_TEXT: Record<string, string> = {
-  idle: 'No match in progress',
-  first_half: 'Match in progress — 1st half',
-  half_time: 'Match in progress — half time',
-  second_half: 'Match in progress — 2nd half',
-  ended: 'Match ended — ready to export',
-};
+const THEME_OPTIONS: ThemeMode[] = ['system', 'light', 'dark'];
 
-const THEME_OPTIONS: { mode: ThemeMode; label: string }[] = [
-  { mode: 'system', label: 'System' },
-  { mode: 'light', label: 'Light' },
-  { mode: 'dark', label: 'Dark' },
-];
+const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([code, strings]) => ({
+  code: code as LanguageCode,
+  name: strings.language.name,
+}));
 
 export function HomeScreen({ navigation }: Props) {
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
   // The Home screen hides the navigation header, so it owns its top inset.
   const insets = useSafeAreaInsets();
   const themeMode = useConfigStore((s) => s.themeMode);
   const setThemeMode = useConfigStore((s) => s.setThemeMode);
+  const language = useConfigStore((s) => s.language);
+  const setLanguage = useConfigStore((s) => s.setLanguage);
   const matchConfig = useConfigStore((s) => s.matchConfig);
   const phase = useMatchStore((s) => s.phase);
   const eventCount = useMatchStore((s) => s.events.length);
 
   const matchActive = phase !== 'idle';
+  const currentLanguage = resolveLanguage(language);
 
   return (
     <ScrollView
@@ -45,22 +44,26 @@ export function HomeScreen({ navigation }: Props) {
       ]}
     >
       <Text style={styles.logo}>⚽ PlayTrace</Text>
-      <Text style={styles.tagline}>Real-time football match tagging</Text>
+      <Text style={styles.tagline}>{t('home.tagline')}</Text>
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>
-          {matchConfig.homeTeam} vs {matchConfig.awayTeam}
+          {t('common.versus', {
+            home: matchConfig.homeTeam,
+            away: matchConfig.awayTeam,
+          })}
         </Text>
         <Text style={styles.cardLine}>
-          {matchConfig.competition || 'No competition set'}
+          {matchConfig.competition || t('home.noCompetition')}
           {matchConfig.venue ? ` · ${matchConfig.venue}` : ''}
         </Text>
         <Text style={styles.cardLine}>
-          {matchConfig.date} · {matchConfig.halfDuration}' halves
+          {matchConfig.date} ·{' '}
+          {t('home.halves', { minutes: matchConfig.halfDuration })}
         </Text>
         <Text style={[styles.cardStatus, matchActive && styles.cardStatusActive]}>
-          {PHASE_TEXT[phase]}
-          {matchActive ? ` · ${eventCount} events` : ''}
+          {t(`home.phase.${phase}`)}
+          {matchActive ? ` · ${t('home.events', { count: eventCount })}` : ''}
         </Text>
       </View>
 
@@ -69,7 +72,7 @@ export function HomeScreen({ navigation }: Props) {
         onPress={() => navigation.navigate('Timer')}
       >
         <Text style={styles.mainBtnText}>
-          {matchActive ? 'Back to Match' : 'Go to Match'}
+          {matchActive ? t('home.backToMatch') : t('home.goToMatch')}
         </Text>
       </Pressable>
 
@@ -78,13 +81,13 @@ export function HomeScreen({ navigation }: Props) {
           style={styles.secondaryBtn}
           onPress={() => navigation.navigate('MatchSetup')}
         >
-          <Text style={styles.secondaryBtnText}>Match Info</Text>
+          <Text style={styles.secondaryBtnText}>{t('home.matchInfo')}</Text>
         </Pressable>
         <Pressable
           style={styles.secondaryBtn}
           onPress={() => navigation.navigate('TagConfig')}
         >
-          <Text style={styles.secondaryBtnText}>Tag Config</Text>
+          <Text style={styles.secondaryBtnText}>{t('home.tagConfig')}</Text>
         </Pressable>
       </View>
 
@@ -94,27 +97,51 @@ export function HomeScreen({ navigation }: Props) {
           onPress={() => navigation.navigate('Export')}
         >
           <Text style={styles.secondaryBtnText}>
-            Export · {eventCount} events
+            {t('home.export')} · {t('home.events', { count: eventCount })}
           </Text>
         </Pressable>
       )}
 
-      <Text style={styles.themeLabel}>Appearance</Text>
+      <Text style={styles.themeLabel}>{t('home.appearance')}</Text>
       <View style={styles.themeRow}>
-        {THEME_OPTIONS.map((opt) => {
-          const active = themeMode === opt.mode;
+        {THEME_OPTIONS.map((mode) => {
+          const active = themeMode === mode;
           return (
             <Pressable
-              key={opt.mode}
+              key={mode}
               style={[styles.themeBtn, active && styles.themeBtnActive]}
-              onPress={() => setThemeMode(opt.mode)}
+              onPress={() => setThemeMode(mode)}
               accessibilityRole="button"
               accessibilityState={{ selected: active }}
             >
               <Text
                 style={[styles.themeBtnText, active && styles.themeBtnTextActive]}
               >
-                {opt.label}
+                {t(`theme.${mode}`)}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
+      {/* Each language is shown by its own name. Picking one never renames
+          existing tags: only Reset to Defaults uses it (#39). */}
+      <Text style={styles.themeLabel}>{t('home.language')}</Text>
+      <View style={styles.themeRow}>
+        {LANGUAGE_OPTIONS.map((opt) => {
+          const active = currentLanguage === opt.code;
+          return (
+            <Pressable
+              key={opt.code}
+              style={[styles.themeBtn, active && styles.themeBtnActive]}
+              onPress={() => setLanguage(opt.code)}
+              accessibilityRole="button"
+              accessibilityState={{ selected: active }}
+            >
+              <Text
+                style={[styles.themeBtnText, active && styles.themeBtnTextActive]}
+              >
+                {opt.name}
               </Text>
             </Pressable>
           );

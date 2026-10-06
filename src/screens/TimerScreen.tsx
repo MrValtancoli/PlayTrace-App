@@ -15,6 +15,7 @@ import { StartTimeModal } from '../components/StartTimeModal';
 import { TeamSelector } from '../components/TeamSelector';
 import { TagGrid } from '../components/TagGrid';
 import { TimerDisplay } from '../components/TimerDisplay';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { useTimer } from '../hooks/useTimer';
 import { canUndo } from '../services/eventEditing';
@@ -29,6 +30,7 @@ export function TimerScreen({ navigation }: Props) {
   useTimer();
 
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
   const insets = useSafeAreaInsets();
 
@@ -85,7 +87,7 @@ export function TimerScreen({ navigation }: Props) {
 
   const onUndo = () => {
     const removed = undoLastEvent();
-    if (removed) setUndoneLabel(`${removed.tag_name} removed`);
+    if (removed) setUndoneLabel(t('timer.undone', { tag: removed.tag_name }));
   };
 
   const undoEnabled = canUndo({
@@ -104,12 +106,15 @@ export function TimerScreen({ navigation }: Props) {
       return;
     }
     Alert.alert(
-      'Discard this match?',
-      `${events.length} tagged event${events.length === 1 ? '' : 's'} will be ` +
-        'deleted. Export first if you want to keep them.',
+      t('timer.discardTitle'),
+      t('timer.discardBody', { count: events.length }),
       [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Discard', style: 'destructive', onPress: () => resetMatch() },
+        { text: t('common.cancel'), style: 'cancel' },
+        {
+          text: t('timer.discard'),
+          style: 'destructive',
+          onPress: () => resetMatch(),
+        },
       ]
     );
   };
@@ -138,13 +143,13 @@ export function TimerScreen({ navigation }: Props) {
           <>
             <Btn
               styles={styles}
-              label="Start 1st Half"
+              label={t('timer.startFirstHalf')}
               type="primary"
               onPress={() => startFirstHalf()}
             />
             <Btn
               styles={styles}
-              label="Started late"
+              label={t('timer.startedLate')}
               type="ghost"
               onPress={() => setLateStart(1)}
             />
@@ -154,21 +159,21 @@ export function TimerScreen({ navigation }: Props) {
         {inPlay && (
           <>
             {isRunning ? (
-              <Btn styles={styles} label="Pause" type="ghost" onPress={pause} />
+              <Btn styles={styles} label={t('timer.pause')} type="ghost" onPress={pause} />
             ) : (
-              <Btn styles={styles} label="Resume" type="primary" onPress={resume} />
+              <Btn styles={styles} label={t('timer.resume')} type="primary" onPress={resume} />
             )}
             {phase === 'first_half' ? (
               <Btn
                 styles={styles}
-                label="End 1st Half"
+                label={t('timer.endFirstHalf')}
                 type="danger"
                 onPress={() => openInjury('half')}
               />
             ) : (
               <Btn
                 styles={styles}
-                label="End Match"
+                label={t('timer.endMatch')}
                 type="danger"
                 onPress={() => openInjury('match')}
               />
@@ -180,13 +185,13 @@ export function TimerScreen({ navigation }: Props) {
           <>
             <Btn
               styles={styles}
-              label="Start 2nd Half"
+              label={t('timer.startSecondHalf')}
               type="primary"
               onPress={() => startSecondHalf()}
             />
             <Btn
               styles={styles}
-              label="Started late"
+              label={t('timer.startedLate')}
               type="ghost"
               onPress={() => setLateStart(2)}
             />
@@ -197,18 +202,18 @@ export function TimerScreen({ navigation }: Props) {
           <>
             <Btn
               styles={styles}
-              label="Export Data"
+              label={t('timer.exportData')}
               type="primary"
               onPress={() => navigation.navigate('Export')}
             />
-            <Btn styles={styles} label="New Match" type="ghost" onPress={confirmReset} />
+            <Btn styles={styles} label={t('timer.newMatch')} type="ghost" onPress={confirmReset} />
           </>
         )}
       </View>
 
       <View style={styles.eventBar}>
         <Text style={styles.eventCount}>
-          {events.length} event{events.length === 1 ? '' : 's'}
+          {t('timer.events', { count: events.length })}
         </Text>
         {undoneLabel ? (
           <Text style={styles.undone} numberOfLines={1}>
@@ -217,7 +222,10 @@ export function TimerScreen({ navigation }: Props) {
         ) : (
           lastEvent && (
             <Text style={styles.lastEvent} numberOfLines={1}>
-              Last: {lastEvent.tag_name} · {lastEvent.time_match}
+              {t('timer.lastEvent', {
+                tag: lastEvent.tag_name,
+                time: lastEvent.time_match,
+              })}
             </Text>
           )
         )}
@@ -227,10 +235,10 @@ export function TimerScreen({ navigation }: Props) {
             disabled={!undoEnabled}
             onPress={onUndo}
             accessibilityRole="button"
-            accessibilityLabel="Undo the last event"
+            accessibilityLabel={t('timer.undoLabel')}
             hitSlop={8}
           >
-            <Text style={styles.undoText}>Undo</Text>
+            <Text style={styles.undoText}>{t('timer.undo')}</Text>
           </Pressable>
         )}
       </View>
@@ -253,21 +261,25 @@ export function TimerScreen({ navigation }: Props) {
           onPress={confirmReset}
           accessibilityRole="button"
         >
-          <Text style={styles.discardText}>Discard match</Text>
+          <Text style={styles.discardText}>{t('timer.discardMatch')}</Text>
         </Pressable>
       )}
 
       {!inPlay && phase !== 'ended' && (
         <Text style={styles.hint}>
           {phase === 'idle'
-            ? 'Start the match to enable tagging'
-            : 'Half time — start the 2nd half to resume tagging'}
+            ? t('timer.hintIdle')
+            : t('timer.hintHalfTime')}
         </Text>
       )}
 
       <StartTimeModal
         visible={lateStart !== null}
-        title={lateStart === 2 ? 'Start 2nd Half late' : 'Start 1st Half late'}
+        title={
+          lateStart === 2
+            ? t('timer.startSecondHalfLate')
+            : t('timer.startFirstHalfLate')
+        }
         halfDuration={halfDuration}
         onConfirm={(elapsedSec) => {
           if (lateStart === 2) {
@@ -282,7 +294,9 @@ export function TimerScreen({ navigation }: Props) {
 
       <InjuryTimeModal
         visible={injuryModal !== null}
-        title={injuryModal === 'half' ? 'End 1st Half' : 'End Match'}
+        title={
+          injuryModal === 'half' ? t('timer.endFirstHalf') : t('timer.endMatch')
+        }
         suggestedMinutes={injurySuggestion}
         onConfirm={onInjuryConfirm}
         onCancel={() => setInjuryModal(null)}

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { teamLabel } from '../services/teamSelection';
 import { TeamSide } from '../types';
@@ -31,10 +32,14 @@ export function TeamSelector({
   onToggleLock,
 }: Props) {
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
+
+  const fallbacks = { home: t('team.home'), away: t('team.away') };
 
   const side = (value: TeamSide) => {
     const active = selected === value;
+    const label = teamLabel(value, homeTeam, awayTeam, fallbacks);
     return (
       <Pressable
         key={value}
@@ -44,13 +49,13 @@ export function TeamSelector({
         onLongPress={onToggleLock}
         accessibilityRole="button"
         accessibilityState={{ selected: active }}
-        accessibilityLabel={teamLabel(value, homeTeam, awayTeam)}
+        accessibilityLabel={label}
       >
         <Text
           style={[styles.sideText, active && styles.sideTextActive]}
           numberOfLines={1}
         >
-          {teamLabel(value, homeTeam, awayTeam)}
+          {label}
         </Text>
       </Pressable>
     );
@@ -67,12 +72,12 @@ export function TeamSelector({
         accessibilityRole="button"
         accessibilityState={{ selected: locked }}
         accessibilityLabel={
-          locked ? 'Unlock the team selection' : 'Lock the team selection'
+          locked ? t('team.unlock') : t('team.lock')
         }
         accessibilityHint={
           locked
-            ? 'The selected team stays after each event'
-            : 'The selection clears after each event'
+            ? t('team.lockedHint')
+            : t('team.unlockedHint')
         }
       >
         <Text style={[styles.lockText, locked && styles.lockTextActive]}>

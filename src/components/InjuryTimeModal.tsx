@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 
 interface Props {
@@ -28,6 +29,7 @@ export function InjuryTimeModal({
   onCancel,
 }: Props) {
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
 
   const [value, setValue] = useState(String(suggestedMinutes));
@@ -50,9 +52,9 @@ export function InjuryTimeModal({
       >
         <View style={styles.card}>
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>Injury time (minutes)</Text>
+          <Text style={styles.subtitle}>{t('injuryModal.subtitle')}</Text>
           <Text style={styles.hint}>
-            Time actually played past the half, to the nearest minute.
+            {t('injuryModal.hint')}
           </Text>
           <TextInput
             style={styles.input}
@@ -65,10 +67,10 @@ export function InjuryTimeModal({
           />
           <View style={styles.row}>
             <Pressable style={[styles.btn, styles.btnGhost]} onPress={onCancel}>
-              <Text style={styles.btnGhostText}>Cancel</Text>
+              <Text style={styles.btnGhostText}>{t('injuryModal.cancel')}</Text>
             </Pressable>
             <Pressable style={[styles.btn, styles.btnPrimary]} onPress={confirm}>
-              <Text style={styles.btnPrimaryText}>Confirm</Text>
+              <Text style={styles.btnPrimaryText}>{t('injuryModal.confirm')}</Text>
             </Pressable>
           </View>
         </View>

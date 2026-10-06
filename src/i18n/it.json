@@ -8,6 +8,10 @@
     "match": "Partita",
     "export": "Esporta"
   },
+  "common": {
+    "cancel": "Annulla",
+    "versus": "{{home}} - {{away}}"
+  },
   "home": {
     "tagline": "Tagging in tempo reale delle partite di calcio",
     "noCompetition": "Nessuna competizione impostata",
@@ -69,15 +73,30 @@
     "exportData": "Esporta dati",
     "newMatch": "Nuova partita",
     "hintIdle": "Avvia la partita per abilitare il tagging",
-    "hintHalfTime": "Intervallo — avvia il 2° tempo per riprendere il tagging"
+    "hintHalfTime": "Intervallo — avvia il 2° tempo per riprendere il tagging",
+    "startedLate": "Partenza ritardata",
+    "startFirstHalfLate": "Partenza ritardata 1° tempo",
+    "startSecondHalfLate": "Partenza ritardata 2° tempo",
+    "events_one": "{{count}} evento",
+    "events_other": "{{count}} eventi",
+    "lastEvent": "Ultimo: {{tag}} · {{time}}",
+    "undo": "Annulla",
+    "undoLabel": "Annulla l'ultimo evento",
+    "undone": "{{tag}} rimosso",
+    "discardMatch": "Scarta partita",
+    "discardTitle": "Scartare questa partita?",
+    "discardBody_one": "{{count}} evento registrato verrà eliminato. Esportalo prima se vuoi conservarlo.",
+    "discardBody_other": "{{count}} eventi registrati verranno eliminati. Esportali prima se vuoi conservarli.",
+    "discard": "Scarta",
+    "total": "Totale: {{time}}"
   },
   "injuryModal": {
     "subtitle": "Recupero (minuti)",
     "cancel": "Annulla",
-    "confirm": "Conferma"
+    "confirm": "Conferma",
+    "hint": "Tempo effettivamente giocato oltre la fine del tempo, arrotondato al minuto."
   },
   "export": {
-    "versus": "{{home}} - {{away}}",
     "summary_one": "{{count}} evento · recupero {{first}}' + {{second}}'",
     "summary_other": "{{count}} eventi · recupero {{first}}' + {{second}}'",
     "partialWarning": "Partita non ancora terminata — l'esportazione conterrà dati parziali.",
@@ -85,7 +104,34 @@
     "csv": "Esporta CSV",
     "empty": "Nessun evento registrato.",
     "failed": "Esportazione non riuscita",
-    "unknownError": "Errore sconosciuto"
+    "unknownError": "Errore sconosciuto",
+    "deleteTitle": "Eliminare l'evento {{number}}?",
+    "deleteBody": "{{tag}} al {{time}}. L'operazione non si può annullare.",
+    "delete": "Elimina",
+    "deleteHint": "Tieni premuto per eliminare questo evento",
+    "listHint": "Tieni premuto un evento per eliminarlo.",
+    "eventTimes": "{{match}} · continuo {{continuous}}",
+    "shareUnavailable": "La condivisione non è disponibile su questo dispositivo",
+    "shareTitle": "Condividi export {{format}} di PlayTrace"
+  },
+  "startModal": {
+    "subtitle": "A che minuto è già arrivato il tempo?",
+    "minutes": "Minuti",
+    "seconds": "Secondi",
+    "valid": "Il cronometro parte da questo tempo.",
+    "invalid": "Inserisci un tempo tra 00:00 e {{max}}:59.",
+    "start": "Avvia"
+  },
+  "tagGrid": {
+    "empty": "Nessun tag attivo — attivane alcuni in Configurazione tag."
+  },
+  "team": {
+    "home": "Casa",
+    "away": "Ospiti",
+    "lock": "Blocca la scelta della squadra",
+    "unlock": "Sblocca la scelta della squadra",
+    "lockedHint": "La squadra scelta resta dopo ogni evento",
+    "unlockedHint": "La scelta si azzera dopo ogni evento"
   },
   "defaultTags": {
     "1": "Gol",

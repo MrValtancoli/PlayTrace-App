@@ -8,6 +8,10 @@
     "match": "Match",
     "export": "Export"
   },
+  "common": {
+    "cancel": "Cancel",
+    "versus": "{{home}} vs {{away}}"
+  },
   "home": {
     "tagline": "Real-time football match tagging",
     "noCompetition": "No competition set",
@@ -69,15 +73,30 @@
     "exportData": "Export Data",
     "newMatch": "New Match",
     "hintIdle": "Start the match to enable tagging",
-    "hintHalfTime": "Half time — start the 2nd half to resume tagging"
+    "hintHalfTime": "Half time — start the 2nd half to resume tagging",
+    "startedLate": "Started late",
+    "startFirstHalfLate": "Start 1st Half late",
+    "startSecondHalfLate": "Start 2nd Half late",
+    "events_one": "{{count}} event",
+    "events_other": "{{count}} events",
+    "lastEvent": "Last: {{tag}} · {{time}}",
+    "undo": "Undo",
+    "undoLabel": "Undo the last event",
+    "undone": "{{tag}} removed",
+    "discardMatch": "Discard match",
+    "discardTitle": "Discard this match?",
+    "discardBody_one": "{{count}} tagged event will be deleted. Export first if you want to keep it.",
+    "discardBody_other": "{{count}} tagged events will be deleted. Export first if you want to keep them.",
+    "discard": "Discard",
+    "total": "Total: {{time}}"
   },
   "injuryModal": {
     "subtitle": "Injury time (minutes)",
     "cancel": "Cancel",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "hint": "Time actually played past the half, to the nearest minute."
   },
   "export": {
-    "versus": "{{home}} vs {{away}}",
     "summary_one": "{{count}} event · injury time {{first}}' + {{second}}'",
     "summary_other": "{{count}} events · injury time {{first}}' + {{second}}'",
     "partialWarning": "Match not ended yet — export will contain partial data.",
@@ -85,7 +104,34 @@
     "csv": "Export CSV",
     "empty": "No events tagged yet.",
     "failed": "Export failed",
-    "unknownError": "Unknown error"
+    "unknownError": "Unknown error",
+    "deleteTitle": "Delete event {{number}}?",
+    "deleteBody": "{{tag}} at {{time}}. This cannot be undone.",
+    "delete": "Delete",
+    "deleteHint": "Long-press to delete this event",
+    "listHint": "Long-press an event to delete it.",
+    "eventTimes": "{{match}} · continuous {{continuous}}",
+    "shareUnavailable": "Sharing is not available on this device",
+    "shareTitle": "Share PlayTrace {{format}} export"
+  },
+  "startModal": {
+    "subtitle": "What time is the half already at?",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "valid": "The clock starts from this time.",
+    "invalid": "Enter a time between 00:00 and {{max}}:59.",
+    "start": "Start"
+  },
+  "tagGrid": {
+    "empty": "No tags enabled — turn some on in Tag Configuration."
+  },
+  "team": {
+    "home": "Home",
+    "away": "Away",
+    "lock": "Lock the team selection",
+    "unlock": "Unlock the team selection",
+    "lockedHint": "The selected team stays after each event",
+    "unlockedHint": "The selection clears after each event"
   },
   "defaultTags": {
     "1": "Goal",

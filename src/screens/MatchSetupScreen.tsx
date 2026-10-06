@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { useConfigStore } from '../store/configStore';
 import { MatchConfig } from '../types';
@@ -51,6 +52,7 @@ function Field({
 
 export function MatchSetupScreen() {
   const c = useTheme();
+  const { t } = useTranslation();
   const headerHeight = useHeaderHeight();
   const styles = useMemo(() => makeStyles(c), [c]);
   const matchConfig = useConfigStore((s) => s.matchConfig);
@@ -74,19 +76,19 @@ export function MatchSetupScreen() {
         contentContainerStyle={styles.content}
         keyboardShouldPersistTaps="handled"
       >
-        <Text style={styles.note}>Changes are saved automatically.</Text>
+        <Text style={styles.note}>{t('matchSetup.autosave')}</Text>
         <Field
           styles={styles}
           mutedColor={c.textMuted}
-          label="Competition"
+          label={t('matchSetup.competition')}
           value={matchConfig.competition}
           onChange={update('competition')}
-          placeholder="e.g. Serie A"
+          placeholder={t('matchSetup.competitionPlaceholder')}
         />
         <Field
           styles={styles}
           mutedColor={c.textMuted}
-          label="Date (YYYY-MM-DD)"
+          label={t('matchSetup.date')}
           value={matchConfig.date}
           onChange={update('date')}
           placeholder="2026-06-10"
@@ -94,29 +96,29 @@ export function MatchSetupScreen() {
         <Field
           styles={styles}
           mutedColor={c.textMuted}
-          label="Venue"
+          label={t('matchSetup.venue')}
           value={matchConfig.venue}
           onChange={update('venue')}
-          placeholder="e.g. San Siro"
+          placeholder={t('matchSetup.venuePlaceholder')}
         />
         <Field
           styles={styles}
           mutedColor={c.textMuted}
-          label="Home Team"
+          label={t('matchSetup.homeTeam')}
           value={matchConfig.homeTeam}
           onChange={update('homeTeam')}
         />
         <Field
           styles={styles}
           mutedColor={c.textMuted}
-          label="Away Team"
+          label={t('matchSetup.awayTeam')}
           value={matchConfig.awayTeam}
           onChange={update('awayTeam')}
         />
         <Field
           styles={styles}
           mutedColor={c.textMuted}
-          label="Half Duration (minutes)"
+          label={t('matchSetup.halfDuration')}
           value={String(matchConfig.halfDuration)}
           onChange={updateHalfDuration}
           keyboardType="number-pad"

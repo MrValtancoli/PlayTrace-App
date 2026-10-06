@@ -3,6 +3,7 @@ import * as Sharing from 'expo-sharing';
 import { Platform } from 'react-native';
 import { EventRecord, MatchConfig, PeriodRecord, TagConfig } from '../types';
 import { APP_VERSION } from '../constants/defaultTags';
+import i18n from '../i18n';
 import { exportBaseName, formatMMSS, formatTimestampAbsolute } from './timeFormat';
 import { measuredDurationSeconds } from './periods';
 
@@ -189,12 +190,12 @@ export async function exportAndShare(
 
   const available = await Sharing.isAvailableAsync();
   if (!available) {
-    throw new Error('Sharing is not available on this device');
+    throw new Error(i18n.t('export.shareUnavailable'));
   }
 
   await Sharing.shareAsync(file.uri, {
     mimeType: format === 'json' ? 'application/json' : 'text/csv',
-    dialogTitle: `Share PlayTrace ${format.toUpperCase()} export`,
+    dialogTitle: i18n.t('export.shareTitle', { format: format.toUpperCase() }),
     UTI: format === 'json' ? 'public.json' : 'public.comma-separated-values-text',
   });
 }

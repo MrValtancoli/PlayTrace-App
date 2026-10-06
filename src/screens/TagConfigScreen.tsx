@@ -13,12 +13,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { TAG_COLOR_PALETTE } from '../constants/defaultTags';
 import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { useConfigStore } from '../store/configStore';
 import { TagConfig } from '../types';
 
 export function TagConfigScreen() {
   const c = useTheme();
+  const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const headerHeight = useHeaderHeight();
   const styles = useMemo(() => makeStyles(c), [c]);
@@ -47,7 +49,7 @@ export function TagConfigScreen() {
         value={item.name}
         onChangeText={(name) => updateTag(item.id, { name })}
         maxLength={20}
-        placeholder={`Tag ${item.id}`}
+        placeholder={t('tagConfig.placeholder', { id: item.id })}
         placeholderTextColor={c.textMuted}
       />
       <Switch
@@ -76,12 +78,12 @@ export function TagConfigScreen() {
         ]}
         ListHeaderComponent={
           <Text style={styles.note}>
-            Tap the color dot to change color. Changes are saved automatically.
+            {t('tagConfig.hint')}
           </Text>
         }
         ListFooterComponent={
           <Pressable style={styles.resetBtn} onPress={resetTags}>
-            <Text style={styles.resetText}>Reset to Defaults</Text>
+            <Text style={styles.resetText}>{t('tagConfig.reset')}</Text>
           </Pressable>
         }
       />

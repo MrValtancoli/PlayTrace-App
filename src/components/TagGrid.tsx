@@ -6,6 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import {
   gridHeight,
@@ -32,6 +33,7 @@ interface Props {
  */
 export function TagGrid({ tags, disabled, onTagPress }: Props) {
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
   const [width, setWidth] = useState(0);
 
@@ -97,7 +99,7 @@ export function TagGrid({ tags, disabled, onTagPress }: Props) {
 
       {width > 0 && enabled.length === 0 && (
         <Text style={styles.empty}>
-          No tags enabled — turn some on in Tag Configuration.
+          {t('tagGrid.empty')}
         </Text>
       )}
     </View>

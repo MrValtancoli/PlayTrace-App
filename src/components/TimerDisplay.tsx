@@ -1,20 +1,14 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
 import { formatMMSS, formatTimeContinuous, formatTimePeriod } from '../services/timeFormat';
 import { useConfigStore } from '../store/configStore';
 import { resolveFirstHalfSeconds, useMatchStore } from '../store/matchStore';
 
-const PHASE_LABELS: Record<string, string> = {
-  idle: 'Ready',
-  first_half: '1st Half',
-  half_time: 'Half Time',
-  second_half: '2nd Half',
-  ended: 'Full Time',
-};
-
 export function TimerDisplay() {
   const c = useTheme();
+  const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
 
   const phase = useMatchStore((s) => s.phase);
@@ -28,9 +22,9 @@ export function TimerDisplay() {
   const inPlay = phase === 'first_half' || phase === 'second_half';
   const inInjuryTime = inPlay && elapsed > halfDuration * 60;
 
-  let status = PHASE_LABELS[phase];
+  let status = t(`timer.phase.${phase}`);
   if (inPlay) {
-    status = `${PHASE_LABELS[phase]} · ${isRunning ? 'Running' : 'Paused'}`;
+    status += ` · ${isRunning ? t('timer.running') : t('timer.paused')}`;
   }
 
   return (
@@ -46,12 +40,13 @@ export function TimerDisplay() {
       )}
       {inPlay && period === 2 && (
         <Text style={styles.continuous}>
-          Total:{' '}
-          {formatTimeContinuous(
-            elapsed,
-            period,
-            resolveFirstHalfSeconds({ firstHalfElapsed, injuryTime1 }, halfDuration)
-          )}
+          {t('timer.total', {
+            time: formatTimeContinuous(
+              elapsed,
+              period,
+              resolveFirstHalfSeconds({ firstHalfElapsed, injuryTime1 }, halfDuration)
+            ),
+          })}
         </Text>
       )}
     </View>

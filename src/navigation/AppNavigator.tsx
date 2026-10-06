@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { DARK, useTheme } from '../constants/theme';
 import { ExportScreen } from '../screens/ExportScreen';
 import { HomeScreen } from '../screens/HomeScreen';
@@ -17,6 +18,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function AppNavigator() {
   const c = useTheme();
+  const { t } = useTranslation();
   const isDark = c === DARK;
 
   const theme = useMemo(() => {
@@ -53,22 +55,22 @@ export function AppNavigator() {
         <Stack.Screen
           name="MatchSetup"
           component={MatchSetupScreen}
-          options={{ title: 'Match Info' }}
+          options={{ title: t('nav.matchInfo') }}
         />
         <Stack.Screen
           name="TagConfig"
           component={TagConfigScreen}
-          options={{ title: 'Tag Configuration' }}
+          options={{ title: t('nav.tagConfig') }}
         />
         <Stack.Screen
           name="Timer"
           component={TimerScreen}
-          options={{ title: 'Match' }}
+          options={{ title: t('nav.match') }}
         />
         <Stack.Screen
           name="Export"
           component={ExportScreen}
-          options={{ title: 'Export' }}
+          options={{ title: t('nav.export') }}
         />
       </Stack.Navigator>
     </NavigationContainer>

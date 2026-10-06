@@ -28,14 +28,18 @@ export function selectionAfterTap(
   return selected === tapped ? null : tapped;
 }
 
-/** The label for a side, falling back when the analyst left the name empty. */
+/**
+ * The label for a side, falling back when the analyst left the name empty.
+ * Screens pass the fallbacks in the UI language.
+ */
 export function teamLabel(
   side: TeamSide,
   homeTeam: string,
-  awayTeam: string
+  awayTeam: string,
+  fallbacks: Record<TeamSide, string> = { home: 'Home', away: 'Away' }
 ): string {
   const name = side === 'home' ? homeTeam : awayTeam;
   const trimmed = name.trim();
   if (trimmed !== '') return trimmed;
-  return side === 'home' ? 'Home' : 'Away';
+  return fallbacks[side];
 }
