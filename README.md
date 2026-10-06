@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-🌐 **Translations:** [Português](README_pt.md) | [Italiano](README_it.md)
+🌐 **Translations:** [Italiano](README_it.md) | [Español](README_es.md) | [Português](README_pt.md) | [Français](README_fr.md) | [Deutsch](README_de.md)
 
 Free, open-source mobile app for real-time football match tagging. Perfect for
 coaches, video analysts, and scouts who need precise event timing data.
@@ -123,7 +123,7 @@ We welcome contributions from the football analysis community!
 **Want to contribute?** Read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
 Areas where we especially need help (look for the `help wanted` label):
-- 🌍 Translations (Spanish, Portuguese, French, German)
+- 🌍 Reviewing the app and README translations ([#51](https://github.com/MrValtancoli/PlayTrace-App/issues/51))
 - 📚 Documentation & tutorials (`documentation` label)
 - 🧪 Testing on different iOS and Android devices
 - 💡 Feature suggestions from coaches and analysts (`enhancement` label)

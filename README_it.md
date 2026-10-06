@@ -9,7 +9,7 @@
 ![Licenza](https://img.shields.io/github/license/MrValtancoli/PlayTrace-App)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-🌐 **Traduzioni:** [English](README.md) | [Português](README_pt.md)
+🌐 **Traduzioni:** [English](README.md) | [Español](README_es.md) | [Português](README_pt.md) | [Français](README_fr.md) | [Deutsch](README_de.md)
 
 App mobile gratuita e open-source per il tagging di partite di calcio in
 real-time. Perfetta per allenatori, videoanalisti, scout e chiunque voglia avere
@@ -17,9 +17,7 @@ dati precisi.
 
 > **Stato del progetto:** disponibile per Android — scarica
 > l'[ultima versione](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
-> Il codice è multipiattaforma, ma iOS non è ancora validato. L'app è stata
-> provata su due dispositivi Android dal maintainer e con il test chiuso di
-> Google Play da 12 tester: le segnalazioni di bug sono molto gradite.
+> Il codice è multipiattaforma, ma iOS non è ancora validato.
 
 ## 📲 Download
 
@@ -74,46 +72,10 @@ può calcolare la durata effettiva.
 
 ## 🗺️ Roadmap
 
-Il lavoro pianificato è tracciato nelle
-[milestone](https://github.com/MrValtancoli/PlayTrace-App/milestones).
-
-**v1.1** — [pubblicata](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.1.0)
-- [x] Assegnazione squadra: Casa / Trasferta ([#32](https://github.com/MrValtancoli/PlayTrace-App/issues/32))
-- [x] Inizio reale e durata di ciascun tempo nell'export ([#45](https://github.com/MrValtancoli/PlayTrace-App/issues/45))
-- [x] Avvio ritardato del timer, quando il tempo è iniziato prima di premere Start ([#14](https://github.com/MrValtancoli/PlayTrace-App/issues/14))
-- [x] Griglia dei tag che si ingrandisce quando i tag attivi sono pochi ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
-- [x] Scartare una partita in corso ([#46](https://github.com/MrValtancoli/PlayTrace-App/issues/46))
-- [x] CSV protetto dall'esecuzione di formule nei fogli di calcolo ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
-- [ ] Pagina wiki "Workflows and Use Cases" ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
-
-**v1.2** — [pubblicata](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.2.0)
-- [x] Eliminazione di un evento e annullamento dell'ultimo ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
-- [x] Recupero precompilato dal tempo effettivamente giocato ([#50](https://github.com/MrValtancoli/PlayTrace-App/issues/50))
-- [x] Squadra attribuita visibile nella lista dell'esportazione ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))
-- [x] Campi di testo non più coperti dalla tastiera ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
-
-**v1.3**
-- [ ] Esportazione XML per i software di analisi video ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
-- [ ] Condivisione di un set di tag fra dispositivi ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
-- [ ] Supporto multilingua ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
-
-**v1.4**
-- [ ] Tag nota: testo libero associato a un evento ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
-- [ ] Riordinare i pulsanti dei tag ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
-
-**v2.0**
-- [ ] Layout orizzontale e per tablet ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
-
-**In corso**
-- [ ] Validazione iOS su dispositivi reali ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
-
-**Idee** — non ancora pianificate: la priorità dipende dai riscontri di chi
-usa PlayTrace.
-- [ ] Tagging dei giocatori ([#33](https://github.com/MrValtancoli/PlayTrace-App/issues/33))
-- [ ] Correggere il tag di un evento registrato ([#42](https://github.com/MrValtancoli/PlayTrace-App/issues/42))
-- [ ] Timer che segue gli spostamenti nel video ([#25](https://github.com/MrValtancoli/PlayTrace-App/issues/25))
-- [ ] Selezione della zona di campo ([#44](https://github.com/MrValtancoli/PlayTrace-App/issues/44))
-- [ ] App companion per Wear OS ([#29](https://github.com/MrValtancoli/PlayTrace-App/issues/29))
+La roadmap e lo stato aggiornato del progetto si trovano nel
+[README in inglese](README.md) e nelle
+[milestone](https://github.com/MrValtancoli/PlayTrace-App/milestones): questa traduzione non li ripete, per non
+restare indietro.
 
 ## 🤝 Contributi
 
@@ -124,7 +86,7 @@ Accogliamo volentieri i contributi della community di analisi calcistica!
 **Vuoi contribuire?** Leggi la nostra [Contributing Guide](CONTRIBUTING.md) per iniziare.
 
 Aree in cui abbiamo particolare bisogno (cerca l'etichetta `help wanted`):
-- 🌍 Traduzioni (Spagnolo, Portoghese, Francese, Tedesco)
+- 🌍 Revisione delle traduzioni dell'app e dei README ([#51](https://github.com/MrValtancoli/PlayTrace-App/issues/51))
 - 📚 Documentazione & tutorial (etichetta `documentation`)
 - 🧪 Test su dispositivi iOS e Android differenti
 - 💡 Suggerimenti di funzionalità da parte di allenatori ed analisti (etichetta `enhancement`)

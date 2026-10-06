@@ -29,9 +29,13 @@ Use the [Documentation template](.github/ISSUE_TEMPLATE/documentation.yml) for:
 - New tutorials
 - Translation improvements
 
-Note that the README exists in several languages (`README.md`, `README_it.md`,
-`README_pt.md`). If you change one, please flag in your PR which of the others
-still need the same change — you don't have to translate them yourself.
+Note that the README exists in several languages (`README.md` plus
+`README_it.md`, `README_es.md`, `README_pt.md`, `README_fr.md`,
+`README_de.md`). The English README is the reference: the translations leave
+out the roadmap and the project status and link to it instead, so they only
+change when the app itself changes. If you change a section the translations
+share, please flag in your PR which of them still need the same change — you
+don't have to translate them yourself.
 
 ### 💻 Code Contributions
 
