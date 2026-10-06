@@ -1,100 +1,77 @@
 # 👋 Welcome Contributors!
 
-Thank you for your interest in PlayTrace! We're excited to have you here.
+Thank you for your interest in PlayTrace!
 
-## 🎯 About PlayTrace
+## About PlayTrace
 
 PlayTrace is a free, open-source mobile app for real-time football match
-tagging, designed for coaches, video analysts, and scouts who need precise event
-timing data. It is built with **React Native** and **Expo** (TypeScript) and
-runs on both iOS and Android. Our goal is to provide professional-grade tools
-accessible to everyone in the football analysis community.
+tagging, built for coaches, video analysts and scouts who need precise event
+timing data. It is written in **React Native + Expo (TypeScript)** for Android
+and iOS, and works fully offline.
 
-## 🚀 How to Get Started
+It is released for Android — get the
+[latest version](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
+iOS is not validated yet — help with testing on real iPhones is welcome (#24).
 
-1. **Star the repository** ⭐ if you find it useful
-2. **Read the [CONTRIBUTING.md](CONTRIBUTING.md)** to understand our workflow
-3. **Pick an issue** labeled `good first issue` to start contributing
-4. **Join the discussion** - feel free to ask questions in issues or discussions
+## How to get started
 
-## 🎁 Good First Issues
+1. Read the [Contributing Guide](https://github.com/MrValtancoli/PlayTrace-App/blob/main/CONTRIBUTING.md)
+2. Set up the project with the [Development Setup](https://github.com/MrValtancoli/PlayTrace-App/wiki/Development-Setup) wiki page
+3. Pick an issue — the ones below are a good place to start
+4. Comment on the issue before starting, so work isn't duplicated
 
-Here are some easy tasks perfect for first-time contributors:
-
-### 📚 Documentation
-- [ ] Add screenshots/GIF demo to README
-- [ ] Translate README to your language (Spanish, French, German, etc.)
-- [ ] Create a "Quick Start Guide" in the Wiki
-- [ ] Document the JSON/CSV export format with examples
-- [ ] Add FAQ section
-
-### 🎨 Design & UX
-- [ ] Design app icon variations
-- [ ] Create promotional graphics for the app stores
-- [ ] Suggest UI improvements with mockups
-- [ ] Run the app on your device and report UX feedback
+## Good places to start
 
 ### 🧪 Testing
-- [ ] Run the app on iOS and report results (iOS is the least tested platform)
-- [ ] Test on different Android versions and report results
-- [ ] Test edge cases (very long matches, many tags, backgrounding the app mid-match)
-- [ ] Create sample exported files for documentation
+- Test the app on your Android device and report what you find — device
+  model and Android version help a lot
+- Help validate iOS on real hardware — #24
 
-### 🌍 Internationalization
-- [ ] Add string translations for your language
-- [ ] Review and improve existing translations
+### 📚 Documentation
+- Add a standalone Code of Conduct — #21
+- Add screenshots or a short GIF of the app to the README
 
-### 💻 Code (React Native / TypeScript)
-- [ ] Add input validation to configuration forms
-- [ ] Improve error messages
-- [ ] Add unit tests for the time calculation logic
+### 🌍 Translations
+- If you are a native speaker of Spanish, Portuguese (Brazil), French or
+  German, review the app and README translations — #51
+- To add a new language, follow "Adding a language" on the
+  [Code Architecture](https://github.com/MrValtancoli/PlayTrace-App/wiki/Code-Architecture#translations)
+  wiki page
 
-## 🤝 What We're Looking For
+### 💡 Feedback from the field
+- Tell us how you use PlayTrace in real matches: what works, what slows you
+  down, what is missing. Open a
+  [feature request](https://github.com/MrValtancoli/PlayTrace-App/issues/new?template=feature_request.yml)
+  or start a [discussion](https://github.com/MrValtancoli/PlayTrace-App/discussions).
 
-We welcome contributions from:
-- **Developers** (React Native, Expo, TypeScript)
-- **Designers** (UI/UX, graphics)
-- **Technical writers** (documentation, tutorials)
-- **Translators** (any language)
-- **Football analysts/coaches** (feature suggestions, testing)
-- **Anyone passionate about football and open-source!**
+### 💻 Code
+Look for issues labelled `good first issue` or `help wanted`. Read the
+[Code Architecture](https://github.com/MrValtancoli/PlayTrace-App/wiki/Code-Architecture)
+page first: time calculations and export formatting live in `src/services`
+and are covered by tests.
 
-No React Native experience? Documentation, translation, design and testing
-contributions are just as valuable, and need no setup beyond running the app.
+## Labels
 
-## 💡 Contribution Ideas
+- `good first issue` — suitable for newcomers
+- `help wanted` — community help especially welcome
+- `documentation` — docs and wiki
+- `enhancement` — new features and improvements
+- `bug` — something isn't working
 
-Not sure where to start? Here are some areas we need help with:
+## How decisions are made
 
-1. **Multi-language support** - Make PlayTrace accessible worldwide
-2. **Video tutorials** - Screen recordings showing how to use the app
-3. **Sample workflows** - Document real-world use cases from different roles
-4. **Device testing** - Test on various iOS and Android devices
-5. **Feature brainstorming** - Share your experience as analyst/coach/scout
+PlayTrace is maintained by [@MrValtancoli](https://github.com/MrValtancoli),
+who makes the structural and roadmap decisions. Contributions are very welcome
+within that scope — for anything larger than a small fix, please open an issue
+and agree on the approach before starting work.
 
-## 📋 Labels Explained
+## Need help?
 
-- `good first issue` - Perfect for newcomers
-- `help wanted` - Extra attention is needed
-- `documentation` - Improvements or additions to documentation
-- `enhancement` - New feature or request
-- `bug` - Something isn't working
-- `duplicate` - This issue or pull request already exists
-- `wontfix` - This will not be worked on
+- **Found a bug?** Use the [bug report template](https://github.com/MrValtancoli/PlayTrace-App/issues/new?template=bug_report.yml)
+- **Have an idea?** Use the [feature request template](https://github.com/MrValtancoli/PlayTrace-App/issues/new?template=feature_request.yml)
+- **Questions?** Open a [discussion](https://github.com/MrValtancoli/PlayTrace-App/discussions)
 
-## ❓ Need Help?
+**License:** MIT
 
-- **Questions?** Open a discussion or comment on an issue
-- **Found a bug?** Use our [Bug Report template](.github/ISSUE_TEMPLATE/bug_report.yml)
-- **Have an idea?** Use our [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.yml)
 
-## 🙏 Thank You!
 
-Every contribution matters - whether it's code, documentation, testing, or just spreading the word. Together we're building tools that help football analysts worldwide.
-
-**Let's build something great for the football community!** ⚽
-
----
-
-**Maintainer:** [@MrValtancoli](https://github.com/MrValtancoli)  
-**License:** MIT - Free to use, modify, and distribute
