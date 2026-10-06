@@ -67,7 +67,7 @@ attribution is an idea not yet scheduled ([#33](https://github.com/MrValtancoli/
 | **Match Configuration** | ✅ Done | Management of metadata: teams, date, competition, and venue. | Medium |
 | **Offline Engine** | ✅ Done | Full functionality without requiring an internet connection. | High |
 | **Local Persistence** | ✅ Done | Match state survives app restarts and backgrounding. | High |
-| **Tag Set Export/Import** | 📅 v1.3 ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34)) | Share a tag configuration between devices as a file, so an analyst can set up once and hand the same board to a colleague. Separate from the match export: it carries configuration, not events. | High |
+| **Tag Set Export/Import** | ✅ Done ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34)) | Share the 16-tag configuration as a file from Tag Configuration, and import it on another device. Import replaces the whole board after a confirmation; a malformed file is rejected and leaves the board untouched. Separate from the match export: it carries configuration, not events. | High |
 
 ## 🎨 UI/UX & Quality
 

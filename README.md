@@ -93,7 +93,7 @@ Planned work is tracked in
 
 **v1.3**
 - [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
-- [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
+- [x] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [x] Multi-language support: English, Italian, Spanish, Portuguese (Brazil), French, German ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
 
 **v1.4**
