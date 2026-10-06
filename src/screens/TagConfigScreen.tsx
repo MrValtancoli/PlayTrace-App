@@ -49,7 +49,8 @@ export function TagConfigScreen() {
     let text: string | null;
     try {
       text = await pickTagSetText();
-    } catch {
+    } catch (err) {
+      console.warn('Tag set import: the file could not be read', err);
       Alert.alert(t('tagSet.importFailed'), t('tagSet.error.readFailed'));
       return;
     }

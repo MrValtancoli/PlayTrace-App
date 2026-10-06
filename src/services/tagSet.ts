@@ -1,4 +1,3 @@
-import * as DocumentPicker from 'expo-document-picker';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import { APP_VERSION } from '../constants/defaultTags';
@@ -121,15 +120,12 @@ export async function shareTagSet(tags: TagConfig[]): Promise<void> {
 
 /**
  * Lets the analyst pick a file and returns its text, or null when the picker
- * was cancelled. Any file type is accepted: chat apps often deliver a .json
- * as a generic binary, and the content check decides anyway.
+ * was cancelled. The file is read where it is, through the system picker,
+ * rather than copied first. Any file type is accepted: chat apps often deliver
+ * a .json as a generic binary, and the content check decides anyway.
  */
 export async function pickTagSetText(): Promise<string | null> {
-  const result = await DocumentPicker.getDocumentAsync({
-    type: '*/*',
-    copyToCacheDirectory: true,
-    multiple: false,
-  });
-  if (result.canceled || result.assets.length === 0) return null;
-  return new File(result.assets[0].uri).text();
+  const picked = await File.pickFileAsync({ mimeTypes: ['*/*'] });
+  if (picked.canceled) return null;
+  return picked.result.text();
 }
