@@ -83,7 +83,7 @@ Planned work is tracked in
 - [x] Tag grid that grows when fewer tags are enabled ([#37](https://github.com/MrValtancoli/PlayTrace-App/issues/37))
 - [x] Discard a match in progress ([#46](https://github.com/MrValtancoli/PlayTrace-App/issues/46))
 - [x] CSV protected against spreadsheet formula injection ([#36](https://github.com/MrValtancoli/PlayTrace-App/issues/36))
-- [ ] "Workflows and Use Cases" wiki page ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
+- [x] "Workflows and Use Cases" wiki page ([#20](https://github.com/MrValtancoli/PlayTrace-App/issues/20))
 
 **v1.2** — [released](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.2.0)
 - [x] Delete an event, and undo the last one ([#41](https://github.com/MrValtancoli/PlayTrace-App/issues/41))
@@ -94,7 +94,7 @@ Planned work is tracked in
 **v1.3**
 - [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
 - [ ] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
-- [ ] Multi-language support ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+- [x] Multi-language support: English, Italian, Spanish, Portuguese (Brazil), French, German ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
 
 **v1.4**
 - [ ] Note tags: attach free text to an event ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))

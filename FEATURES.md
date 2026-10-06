@@ -75,7 +75,7 @@ attribution is an idea not yet scheduled ([#33](https://github.com/MrValtancoli/
 
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
-| **Localization** | 📅 v1.3 ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39)) | Translate the app interface, which is English only today. The documentation is already available in English, Italian and Portuguese. | High |
+| **Localization** | ✅ Done ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39)) | The app interface is translated into English, Italian, Spanish, Portuguese (Brazil), French and German, with a language picker on the Home screen. The README is available in the same languages. The Spanish, Portuguese, French and German translations await native-speaker review ([#51](https://github.com/MrValtancoli/PlayTrace-App/issues/51)). | High |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
 | **Device Rotation** | 📅 v2.0 ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35)) | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
