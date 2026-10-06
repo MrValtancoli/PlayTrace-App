@@ -17,6 +17,8 @@ interface ConfigState {
   setLanguage: (language: string | null) => void;
   updateTag: (id: number, patch: Partial<Omit<TagConfig, 'id'>>) => void;
   resetTags: () => void;
+  /** Replaces the whole board, e.g. with an imported tag set (#34). */
+  replaceTags: (tags: TagConfig[]) => void;
 }
 
 export const useConfigStore = create<ConfigState>()(
@@ -44,6 +46,8 @@ export const useConfigStore = create<ConfigState>()(
       // restores them in the selected language.
       resetTags: () =>
         set({ tags: defaultTags(resolveLanguage(get().language)) }),
+
+      replaceTags: (tags) => set({ tags: tags.map((t) => ({ ...t })) }),
     }),
     {
       name: 'playtrace-config',

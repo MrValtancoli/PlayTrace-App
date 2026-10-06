@@ -133,6 +133,23 @@
     "lockedHint": "O time escolhido permanece após cada evento",
     "unlockedHint": "A escolha é apagada após cada evento"
   },
+  "tagSet": {
+    "share": "Compartilhar tags",
+    "import": "Importar tags",
+    "shareTitle": "Compartilhar conjunto de tags do PlayTrace",
+    "confirmTitle": "Substituir todas as tags?",
+    "confirmBody": "As 16 tags serão substituídas pelas do arquivo. As tags atuais serão perdidas.",
+    "replace": "Substituir",
+    "importFailed": "Falha na importação",
+    "error": {
+      "readFailed": "Não foi possível ler o arquivo.",
+      "notJson": "Este arquivo não é um conjunto de tags do PlayTrace.",
+      "notTagSet": "Este arquivo não é um conjunto de tags do PlayTrace.",
+      "matchExport": "Esta é a exportação de uma partida, não um conjunto de tags. Escolha um arquivo compartilhado com \"Compartilhar tags\".",
+      "unsupportedVersion": "Este conjunto de tags foi criado por uma versão mais recente do PlayTrace. Atualize o app para importá-lo.",
+      "invalidTags": "Este conjunto de tags está danificado: ele deve conter 16 tags com nomes e cores válidos."
+    }
+  },
   "defaultTags": {
     "1": "Gol",
     "2": "Chute no gol",

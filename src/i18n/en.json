@@ -133,6 +133,23 @@
     "lockedHint": "The selected team stays after each event",
     "unlockedHint": "The selection clears after each event"
   },
+  "tagSet": {
+    "share": "Share tag set",
+    "import": "Import tag set",
+    "shareTitle": "Share PlayTrace tag set",
+    "confirmTitle": "Replace all tags?",
+    "confirmBody": "All 16 tags will be replaced with the ones in the file. Your current tags will be lost.",
+    "replace": "Replace",
+    "importFailed": "Import failed",
+    "error": {
+      "readFailed": "The file could not be read.",
+      "notJson": "This file is not a PlayTrace tag set.",
+      "notTagSet": "This file is not a PlayTrace tag set.",
+      "matchExport": "This is a match export, not a tag set. Pick a file shared with \"Share tag set\".",
+      "unsupportedVersion": "This tag set was made by a newer version of PlayTrace. Update the app to import it.",
+      "invalidTags": "This tag set is damaged: it must contain 16 tags with valid names and colors."
+    }
+  },
   "defaultTags": {
     "1": "Goal",
     "2": "Shot on Target",

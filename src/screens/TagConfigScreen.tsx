@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import {
+  Alert,
   FlatList,
   KeyboardAvoidingView,
   Pressable,
@@ -15,6 +16,7 @@ import { TAG_COLOR_PALETTE } from '../constants/defaultTags';
 import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
 import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
+import { parseTagSet, pickTagSetText, shareTagSet } from '../services/tagSet';
 import { useConfigStore } from '../store/configStore';
 import { TagConfig } from '../types';
 
@@ -28,6 +30,41 @@ export function TagConfigScreen() {
   const tags = useConfigStore((s) => s.tags);
   const updateTag = useConfigStore((s) => s.updateTag);
   const resetTags = useConfigStore((s) => s.resetTags);
+  const replaceTags = useConfigStore((s) => s.replaceTags);
+
+  const onShare = async () => {
+    try {
+      await shareTagSet(tags);
+    } catch (err) {
+      Alert.alert(
+        t('export.failed'),
+        err instanceof Error ? err.message : t('export.unknownError')
+      );
+    }
+  };
+
+  // Import replaces the whole board, so it always asks first. A rejected
+  // file leaves the current tags untouched (#34).
+  const onImport = async () => {
+    let text: string | null;
+    try {
+      text = await pickTagSetText();
+    } catch {
+      Alert.alert(t('tagSet.importFailed'), t('tagSet.error.readFailed'));
+      return;
+    }
+    if (text === null) return;
+
+    const result = parseTagSet(text);
+    if (!result.ok) {
+      Alert.alert(t('tagSet.importFailed'), t(`tagSet.error.${result.error}`));
+      return;
+    }
+    Alert.alert(t('tagSet.confirmTitle'), t('tagSet.confirmBody'), [
+      { text: t('common.cancel'), style: 'cancel' },
+      { text: t('tagSet.replace'), onPress: () => replaceTags(result.tags) },
+    ]);
+  };
 
   const cycleColor = (tag: TagConfig) => {
     const idx = TAG_COLOR_PALETTE.indexOf(tag.color);
@@ -82,9 +119,19 @@ export function TagConfigScreen() {
           </Text>
         }
         ListFooterComponent={
-          <Pressable style={styles.resetBtn} onPress={resetTags}>
-            <Text style={styles.resetText}>{t('tagConfig.reset')}</Text>
-          </Pressable>
+          <>
+            <View style={styles.tagSetRow}>
+              <Pressable style={styles.tagSetBtn} onPress={onShare}>
+                <Text style={styles.tagSetText}>{t('tagSet.share')}</Text>
+              </Pressable>
+              <Pressable style={styles.tagSetBtn} onPress={onImport}>
+                <Text style={styles.tagSetText}>{t('tagSet.import')}</Text>
+              </Pressable>
+            </View>
+            <Pressable style={styles.resetBtn} onPress={resetTags}>
+              <Text style={styles.resetText}>{t('tagConfig.reset')}</Text>
+            </Pressable>
+          </>
         }
       />
     </KeyboardAvoidingView>
@@ -138,6 +185,25 @@ const makeStyles = (c: Palette) =>
     color: c.text,
     fontSize: 15,
     paddingVertical: 6,
+  },
+  tagSetRow: {
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 8,
+  },
+  tagSetBtn: {
+    flex: 1,
+    backgroundColor: c.cardAlt,
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+  },
+  tagSetText: {
+    color: c.text,
+    fontWeight: '700',
+    fontSize: 15,
+    textAlign: 'center',
   },
   resetBtn: {
     backgroundColor: c.cardAlt,

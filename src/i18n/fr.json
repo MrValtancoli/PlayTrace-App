@@ -133,6 +133,23 @@
     "lockedHint": "L'équipe choisie reste après chaque événement",
     "unlockedHint": "Le choix est effacé après chaque événement"
   },
+  "tagSet": {
+    "share": "Partager les tags",
+    "import": "Importer des tags",
+    "shareTitle": "Partager le jeu de tags PlayTrace",
+    "confirmTitle": "Remplacer tous les tags ?",
+    "confirmBody": "Les 16 tags seront remplacés par ceux du fichier. Vos tags actuels seront perdus.",
+    "replace": "Remplacer",
+    "importFailed": "Échec de l'import",
+    "error": {
+      "readFailed": "Impossible de lire le fichier.",
+      "notJson": "Ce fichier n'est pas un jeu de tags PlayTrace.",
+      "notTagSet": "Ce fichier n'est pas un jeu de tags PlayTrace.",
+      "matchExport": "Ceci est l'export d'un match, pas un jeu de tags. Choisissez un fichier partagé avec « Partager les tags ».",
+      "unsupportedVersion": "Ce jeu de tags a été créé par une version plus récente de PlayTrace. Mettez l'app à jour pour l'importer.",
+      "invalidTags": "Ce jeu de tags est endommagé : il doit contenir 16 tags avec des noms et des couleurs valides."
+    }
+  },
   "defaultTags": {
     "1": "But",
     "2": "Tir cadré",

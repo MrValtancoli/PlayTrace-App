@@ -133,6 +133,23 @@
     "lockedHint": "El equipo elegido se mantiene tras cada evento",
     "unlockedHint": "La selección se borra tras cada evento"
   },
+  "tagSet": {
+    "share": "Compartir etiquetas",
+    "import": "Importar etiquetas",
+    "shareTitle": "Compartir conjunto de etiquetas de PlayTrace",
+    "confirmTitle": "¿Reemplazar todas las etiquetas?",
+    "confirmBody": "Las 16 etiquetas se reemplazarán por las del archivo. Se perderán las etiquetas actuales.",
+    "replace": "Reemplazar",
+    "importFailed": "Error al importar",
+    "error": {
+      "readFailed": "No se pudo leer el archivo.",
+      "notJson": "Este archivo no es un conjunto de etiquetas de PlayTrace.",
+      "notTagSet": "Este archivo no es un conjunto de etiquetas de PlayTrace.",
+      "matchExport": "Esta es la exportación de un partido, no un conjunto de etiquetas. Elige un archivo compartido con \"Compartir etiquetas\".",
+      "unsupportedVersion": "Este conjunto de etiquetas se creó con una versión más reciente de PlayTrace. Actualiza la app para importarlo.",
+      "invalidTags": "Este conjunto de etiquetas está dañado: debe contener 16 etiquetas con nombres y colores válidos."
+    }
+  },
   "defaultTags": {
     "1": "Gol",
     "2": "Tiro a puerta",

@@ -133,6 +133,23 @@
     "lockedHint": "Die gewählte Mannschaft bleibt nach jedem Ereignis",
     "unlockedHint": "Die Auswahl wird nach jedem Ereignis gelöscht"
   },
+  "tagSet": {
+    "share": "Tag-Set teilen",
+    "import": "Tag-Set importieren",
+    "shareTitle": "PlayTrace-Tag-Set teilen",
+    "confirmTitle": "Alle Tags ersetzen?",
+    "confirmBody": "Alle 16 Tags werden durch die aus der Datei ersetzt. Deine aktuellen Tags gehen verloren.",
+    "replace": "Ersetzen",
+    "importFailed": "Import fehlgeschlagen",
+    "error": {
+      "readFailed": "Die Datei konnte nicht gelesen werden.",
+      "notJson": "Diese Datei ist kein PlayTrace-Tag-Set.",
+      "notTagSet": "Diese Datei ist kein PlayTrace-Tag-Set.",
+      "matchExport": "Das ist ein Spielexport, kein Tag-Set. Wähle eine Datei, die mit „Tag-Set teilen“ geteilt wurde.",
+      "unsupportedVersion": "Dieses Tag-Set stammt aus einer neueren PlayTrace-Version. Aktualisiere die App, um es zu importieren.",
+      "invalidTags": "Dieses Tag-Set ist beschädigt: Es muss 16 Tags mit gültigen Namen und Farben enthalten."
+    }
+  },
   "defaultTags": {
     "1": "Tor",
     "2": "Schuss aufs Tor",

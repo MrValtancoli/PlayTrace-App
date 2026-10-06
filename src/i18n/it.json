@@ -133,6 +133,23 @@
     "lockedHint": "La squadra scelta resta dopo ogni evento",
     "unlockedHint": "La scelta si azzera dopo ogni evento"
   },
+  "tagSet": {
+    "share": "Condividi set di tag",
+    "import": "Importa set di tag",
+    "shareTitle": "Condividi set di tag PlayTrace",
+    "confirmTitle": "Sostituire tutti i tag?",
+    "confirmBody": "Tutti i 16 tag verranno sostituiti con quelli del file. I tag attuali andranno persi.",
+    "replace": "Sostituisci",
+    "importFailed": "Importazione non riuscita",
+    "error": {
+      "readFailed": "Impossibile leggere il file.",
+      "notJson": "Questo file non è un set di tag PlayTrace.",
+      "notTagSet": "Questo file non è un set di tag PlayTrace.",
+      "matchExport": "Questo è l'export di una partita, non un set di tag. Scegli un file condiviso con \"Condividi set di tag\".",
+      "unsupportedVersion": "Questo set di tag è stato creato da una versione più recente di PlayTrace. Aggiorna l'app per importarlo.",
+      "invalidTags": "Questo set di tag è danneggiato: deve contenere 16 tag con nomi e colori validi."
+    }
+  },
   "defaultTags": {
     "1": "Gol",
     "2": "Tiro in porta",
