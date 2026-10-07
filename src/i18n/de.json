@@ -31,7 +31,15 @@
       "half_time": "Spiel läuft — Halbzeitpause",
       "second_half": "Spiel läuft — 2. Halbzeit",
       "ended": "Spiel beendet — bereit zum Export"
-    }
+    },
+    "about": "Info",
+    "reportProblem": "Problem melden",
+    "projectPage": "Projektseite",
+    "version": "Version {{version}}",
+    "reportIntro": "Beschreibe das Problem und was du gerade gemacht hast, als es auftrat:",
+    "noMailTitle": "Keine Mail-App gefunden",
+    "noMailBody": "Schreib an {{email}}",
+    "linkFailed": "Der Link konnte nicht geöffnet werden."
   },
   "theme": {
     "system": "System",

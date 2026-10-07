@@ -1,10 +1,26 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useMemo } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Alert,
+  Linking,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
+import { APP_VERSION } from '../constants/defaultTags';
 import { Palette, ThemeMode, useTheme } from '../constants/theme';
 import { LANGUAGES, LanguageCode, resolveLanguage } from '../i18n';
+import {
+  CONTACT_EMAIL,
+  PROJECT_URL,
+  ZONACALCIOLAB_URL,
+  currentDeviceInfo,
+  problemReportMailto,
+} from '../services/contact';
 import { useConfigStore } from '../store/configStore';
 import { useMatchStore } from '../store/matchStore';
 import { RootStackParamList } from '../types';
@@ -34,6 +50,20 @@ export function HomeScreen({ navigation }: Props) {
 
   const matchActive = phase !== 'idle';
   const currentLanguage = resolveLanguage(language);
+
+  // The links only hand over to the mail app or the browser (#54).
+  const reportProblem = () =>
+    Linking.openURL(
+      problemReportMailto(currentDeviceInfo(APP_VERSION), t('home.reportIntro'))
+    ).catch(() =>
+      Alert.alert(
+        t('home.noMailTitle'),
+        t('home.noMailBody', { email: CONTACT_EMAIL })
+      )
+    );
+
+  const openLink = (url: string) =>
+    Linking.openURL(url).catch(() => Alert.alert(t('home.linkFailed'), url));
 
   return (
     <ScrollView
@@ -151,6 +181,32 @@ export function HomeScreen({ navigation }: Props) {
           );
         })}
       </View>
+
+      <Text style={styles.themeLabel}>{t('home.about')}</Text>
+      <View style={styles.links}>
+        <Pressable onPress={reportProblem} accessibilityRole="link" hitSlop={6}>
+          <Text style={styles.link}>{t('home.reportProblem')}</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => openLink(PROJECT_URL)}
+          accessibilityRole="link"
+          hitSlop={6}
+        >
+          <Text style={styles.link}>{t('home.projectPage')}</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => openLink(ZONACALCIOLAB_URL)}
+          accessibilityRole="link"
+          hitSlop={6}
+        >
+          <Text style={styles.link}>ZonaCalcioLab</Text>
+        </Pressable>
+      </View>
+
+      {/* The same value the export writes as app_version (#53). */}
+      <Text style={styles.version}>
+        PlayTrace · {t('home.version', { version: APP_VERSION })}
+      </Text>
     </ScrollView>
   );
 }
@@ -282,6 +338,20 @@ const makeStyles = (c: Palette) =>
     color: c.textMuted,
     fontSize: 14,
     fontWeight: '600',
+  },
+  links: {
+    gap: 12,
+  },
+  link: {
+    color: c.accent,
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  version: {
+    color: c.textMuted,
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 28,
   },
   themeBtnTextActive: {
     color: c.onAccent,

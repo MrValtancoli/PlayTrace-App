@@ -31,7 +31,15 @@
       "half_time": "Partita in corso — intervallo",
       "second_half": "Partita in corso — 2° tempo",
       "ended": "Partita terminata — pronta per l'esportazione"
-    }
+    },
+    "about": "Informazioni",
+    "reportProblem": "Segnala un problema",
+    "projectPage": "Pagina del progetto",
+    "version": "Versione {{version}}",
+    "reportIntro": "Descrivi il problema e cosa stavi facendo quando si è verificato:",
+    "noMailTitle": "Nessuna app di posta trovata",
+    "noMailBody": "Scrivi a {{email}}",
+    "linkFailed": "Impossibile aprire il link."
   },
   "theme": {
     "system": "Sistema",

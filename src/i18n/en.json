@@ -31,7 +31,15 @@
       "half_time": "Match in progress — half time",
       "second_half": "Match in progress — 2nd half",
       "ended": "Match ended — ready to export"
-    }
+    },
+    "about": "About",
+    "reportProblem": "Report a problem",
+    "projectPage": "Project page",
+    "version": "Version {{version}}",
+    "reportIntro": "Describe the problem, and what you were doing when it happened:",
+    "noMailTitle": "No mail app found",
+    "noMailBody": "Write to {{email}}",
+    "linkFailed": "The link could not be opened."
   },
   "theme": {
     "system": "System",

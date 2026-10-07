@@ -31,7 +31,15 @@
       "half_time": "Match en cours — mi-temps",
       "second_half": "Match en cours — 2e mi-temps",
       "ended": "Match terminé — prêt à exporter"
-    }
+    },
+    "about": "À propos",
+    "reportProblem": "Signaler un problème",
+    "projectPage": "Page du projet",
+    "version": "Version {{version}}",
+    "reportIntro": "Décrivez le problème et ce que vous faisiez quand il s'est produit :",
+    "noMailTitle": "Aucune app de messagerie trouvée",
+    "noMailBody": "Écrivez à {{email}}",
+    "linkFailed": "Impossible d'ouvrir le lien."
   },
   "theme": {
     "system": "Système",
