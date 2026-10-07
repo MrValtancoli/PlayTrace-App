@@ -93,8 +93,11 @@ Planned work is tracked in
 
 **v1.3**
 - [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [ ] Smaller, optimised Android build: R8 and resource shrinking ([#52](https://github.com/MrValtancoli/PlayTrace-App/issues/52))
 - [x] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [x] Multi-language support: English, Italian, Spanish, Portuguese (Brazil), French, German ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
+- [x] App version shown on the Home screen ([#53](https://github.com/MrValtancoli/PlayTrace-App/issues/53))
+- [x] Report a problem by email, and links to the project and ZonaCalcioLab ([#54](https://github.com/MrValtancoli/PlayTrace-App/issues/54))
 
 **v1.4**
 - [ ] Note tags: attach free text to an event ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))

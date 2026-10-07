@@ -76,10 +76,13 @@ attribution is an idea not yet scheduled ([#33](https://github.com/MrValtancoli/
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
 | **Localization** | ✅ Done ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39)) | The app interface is translated into English, Italian, Spanish, Portuguese (Brazil), French and German, with a language picker on the Home screen. The README is available in the same languages. The Spanish, Portuguese, French and German translations await native-speaker review ([#51](https://github.com/MrValtancoli/PlayTrace-App/issues/51)). | High |
+| **Version on Home** | ✅ Done ([#53](https://github.com/MrValtancoli/PlayTrace-App/issues/53)) | The installed version is shown at the bottom of the Home screen, read from `app.json` like the export's `app_version`. | Low |
+| **Contact and Links** | ✅ Done ([#54](https://github.com/MrValtancoli/PlayTrace-App/issues/54)) | "Report a problem" opens the mail app with a message to support@zonacalciolab.it, pre-filled with app version, Android version and device model; links to the GitHub project and zonacalciolab.it. No network call from the app. | Medium |
 | **Input Validation** | 📅 Planned | Formal checks on input data to prevent errors in reports. | Low |
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
 | **Device Rotation** | 📅 v2.0 ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35)) | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
 | **iOS Support Validation** | 🔄 In Progress | Verify layout, share sheet, and timing behavior on iOS devices. The codebase already builds for iOS; what is missing is validation on real hardware. | High |
+| **Optimised Release Build** | 📅 v1.3 ([#52](https://github.com/MrValtancoli/PlayTrace-App/issues/52)) | Enable R8 and resource shrinking in Android release builds, for a smaller app and faster start-up. Needs a full check on a release build before production. | Medium |
 | **Automated Tests** | ✅ Done | Jest suite covering the four time references and the JSON/CSV export schema, run with `npm test`. | High |
 
 ---
