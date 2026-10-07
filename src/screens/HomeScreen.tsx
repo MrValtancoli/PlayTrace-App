@@ -199,7 +199,7 @@ export function HomeScreen({ navigation }: Props) {
           accessibilityRole="link"
           hitSlop={6}
         >
-          <Text style={styles.link}>ZonaCalcioLab</Text>
+          <Text style={styles.link}>ZonaCalcioLab.it</Text>
         </Pressable>
       </View>
 
