@@ -13,7 +13,7 @@
     },
     "android": {
       "package": "it.zonacalciolab.playtrace",
-      "versionCode": 4,
+      "versionCode": 5,
       "adaptiveIcon": {
         "backgroundColor": "#00BF63",
         "foregroundImage": "./assets/android-icon-foreground.png",
