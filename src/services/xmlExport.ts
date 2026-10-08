@@ -95,14 +95,12 @@ export function buildXML(input: XmlInput, window: ClipWindow): string {
     return lines.join('\n');
   });
 
-  // One row per enabled tag, plus any code only found in the events (a tag
-  // renamed or disabled after tagging): every instance code must have a row
-  // with exactly the same text.
+  // One row per code used in the instances, with exactly the same text, in
+  // tag order. Rows for unused tags would only add empty lines to the
+  // imported timeline. The colour comes from the tag's current configuration.
   const rowColors = new Map<string, string>();
-  for (const tag of tags) {
-    if (tag.enabled && !rowColors.has(tag.name)) rowColors.set(tag.name, tag.color);
-  }
-  for (const { event } of timed) {
+  const used = [...timed].sort((a, b) => a.event.tag_id - b.event.tag_id || a.index - b.index);
+  for (const { event } of used) {
     if (!rowColors.has(event.tag_name)) {
       const tag = tags.find((t) => t.id === event.tag_id);
       rowColors.set(event.tag_name, tag?.color ?? '');

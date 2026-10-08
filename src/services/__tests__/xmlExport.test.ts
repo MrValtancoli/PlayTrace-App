@@ -1,3 +1,5 @@
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import { EventRecord, MatchConfig, TagConfig } from '../../types';
 import {
   buildXML,
@@ -125,19 +127,64 @@ describe('buildXML', () => {
     expect(doc).toContain('<text>Inter &amp; Co</text>');
   });
 
-  it('writes one row per enabled tag with its colour as R/G/B', () => {
-    expect(rows(xml([]))).toEqual([
+  it('writes one row per used code, in tag order, with its colour as R/G/B', () => {
+    const doc = xml([event(2, 'Corner', '20:00'), event(1, 'Goal', '30:00')]);
+    expect(rows(doc)).toEqual([
       { code: 'Goal', rgb: [0, 255, 0] },
       { code: 'Corner', rgb: [30, 144, 255] },
     ]);
   });
 
-  it('adds a row for every code only found in the events', () => {
+  it('writes no rows when nothing was tagged', () => {
+    expect(rows(xml([]))).toEqual([]);
+  });
+
+  it('gives a renamed or disabled tag a row matching its instances', () => {
     // Tag 1 renamed after tagging, tag 3 disabled after tagging.
     const doc = xml([event(1, 'Gol', '10:00'), event(3, 'Foul', '20:00')]);
     const codes = rows(doc).map((r) => r.code);
-    expect(codes).toEqual(['Goal', 'Corner', 'Gol', 'Foul']);
+    expect(codes).toEqual(['Gol', 'Foul']);
     expect(rows(doc).find((r) => r.code === 'Foul')!.rgb).toEqual([255, 0, 0]);
     for (const i of instances(doc)) expect(codes).toContain(i.code);
+  });
+});
+
+describe('buildXML against a file Once Sport Analyser accepted', () => {
+  const fixture = readFileSync(
+    join(__dirname, 'fixtures', 'sportscode-once-accepted.xml'),
+    'utf8'
+  ).replace(/\r\n/g, '\n');
+
+  // The default tags, with the team names left empty so the labels fall back
+  // to Home / Away, as in the hand-written file.
+  const defaults: TagConfig[] = [
+    { id: 1, name: 'Goal', color: '#00FF00', enabled: true },
+    { id: 2, name: 'Shot on Target', color: '#FFD700', enabled: true },
+    { id: 4, name: 'Corner', color: '#1E90FF', enabled: true },
+    { id: 6, name: 'Foul', color: '#FF0000', enabled: true },
+  ];
+  const noNames = { ...matchConfig, homeTeam: '', awayTeam: '' };
+
+  it('reproduces it, except the Foul clip, which sits on a half second', () => {
+    const doc = buildXML(
+      {
+        matchConfig: noNames,
+        tags: defaults,
+        events: [
+          event(4, 'Corner', '00:30', 'home'),
+          event(2, 'Shot on Target', '01:10', 'away'),
+          event(6, 'Foul', '01:45'),
+          event(1, 'Goal', '02:25', 'home'),
+          event(4, 'Corner', '03:00', 'away'),
+        ],
+      },
+      { lead: 5, lag: 3 }
+    );
+    // time_continuous has whole seconds, so 100.5-108.5 cannot be produced:
+    // the nearest output is 100.0-108.0.
+    const expected = fixture
+      .replace('<start>100.5</start>', '<start>100.0</start>')
+      .replace('<end>108.5</end>', '<end>108.0</end>');
+    expect(doc).toBe(expected);
   });
 });
