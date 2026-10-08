@@ -108,8 +108,9 @@
     "summary_one": "{{count}} event · injury time {{first}}' + {{second}}'",
     "summary_other": "{{count}} events · injury time {{first}}' + {{second}}'",
     "partialWarning": "Match not ended yet — export will contain partial data.",
-    "json": "Export JSON",
-    "csv": "Export CSV",
+    "json": "JSON",
+    "csv": "CSV",
+    "xml": "XML",
     "empty": "No events tagged yet.",
     "failed": "Export failed",
     "unknownError": "Unknown error",
@@ -120,7 +121,10 @@
     "listHint": "Long-press an event to delete it.",
     "eventTimes": "{{match}} · continuous {{continuous}}",
     "shareUnavailable": "Sharing is not available on this device",
-    "shareTitle": "Share PlayTrace {{format}} export"
+    "shareTitle": "Share PlayTrace {{format}} export",
+    "clipWindow": "XML clips:",
+    "clipBefore": "s before",
+    "clipAfter": "s after"
   },
   "startModal": {
     "subtitle": "What time is the half already at?",

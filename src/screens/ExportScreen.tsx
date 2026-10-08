@@ -5,12 +5,13 @@ import {
   Pressable,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { Palette, useTheme } from '../constants/theme';
-import { exportAndShare } from '../services/exportService';
+import { ExportFormat, exportAndShare } from '../services/exportService';
 import { buildPeriods } from '../services/periods';
 import { teamLabel } from '../services/teamSelection';
 import { useConfigStore } from '../store/configStore';
@@ -49,11 +50,26 @@ export function ExportScreen() {
     );
   const matchConfig = useConfigStore((s) => s.matchConfig);
   const tags = useConfigStore((s) => s.tags);
+  const clipWindow = useConfigStore((s) => s.clipWindow);
+  const setClipWindow = useConfigStore((s) => s.setClipWindow);
+
+  // Edited as text so the field can be emptied while typing; stored as a
+  // clamped number once the edit ends.
+  const [leadText, setLeadText] = useState(String(clipWindow.lead));
+  const [lagText, setLagText] = useState(String(clipWindow.lag));
+  const commitWindow = () => {
+    setClipWindow({ lead: Number(leadText) || 0, lag: Number(lagText) || 0 });
+    const { clipWindow: saved } = useConfigStore.getState();
+    setLeadText(String(saved.lead));
+    setLagText(String(saved.lag));
+  };
 
   const [busy, setBusy] = useState(false);
 
-  const doExport = async (format: 'json' | 'csv') => {
+  const doExport = async (format: ExportFormat) => {
     if (busy) return;
+    // A value still being typed counts, even if the field has not lost focus.
+    if (format === 'xml') commitWindow();
     setBusy(true);
     try {
       const periodSource = {
@@ -73,7 +89,8 @@ export function ExportScreen() {
           secondHalfElapsed,
           events,
         },
-        format
+        format,
+        useConfigStore.getState().clipWindow
       );
     } catch (err) {
       Alert.alert(
@@ -158,6 +175,40 @@ export function ExportScreen() {
         >
           <Text style={styles.btnText}>{t('export.csv')}</Text>
         </Pressable>
+        <Pressable
+          style={[styles.btn, (busy || events.length === 0) && styles.btnDisabled]}
+          disabled={busy || events.length === 0}
+          onPress={() => doExport('xml')}
+        >
+          <Text style={styles.btnText}>{t('export.xml')}</Text>
+        </Pressable>
+      </View>
+
+      {/* XML clips are windows around each instant, set at export time (#40). */}
+      <View style={styles.clipRow}>
+        <Text style={styles.clipLabel}>{t('export.clipWindow')}</Text>
+        <TextInput
+          style={styles.clipInput}
+          value={leadText}
+          onChangeText={setLeadText}
+          onEndEditing={commitWindow}
+          keyboardType="number-pad"
+          maxLength={2}
+          selectTextOnFocus
+          accessibilityLabel={t('export.clipBefore')}
+        />
+        <Text style={styles.clipUnit}>{t('export.clipBefore')}</Text>
+        <TextInput
+          style={styles.clipInput}
+          value={lagText}
+          onChangeText={setLagText}
+          onEndEditing={commitWindow}
+          keyboardType="number-pad"
+          maxLength={2}
+          selectTextOnFocus
+          accessibilityLabel={t('export.clipAfter')}
+        />
+        <Text style={styles.clipUnit}>{t('export.clipAfter')}</Text>
       </View>
 
       <FlatList
@@ -215,6 +266,37 @@ const makeStyles = (c: Palette) =>
     flexDirection: 'row',
     gap: 10,
     padding: 16,
+  },
+  clipRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: 6,
+    paddingHorizontal: 16,
+    marginTop: -6,
+    marginBottom: 8,
+  },
+  clipLabel: {
+    color: c.textMuted,
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  clipInput: {
+    minWidth: 40,
+    backgroundColor: c.card,
+    color: c.text,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: c.border,
+    paddingVertical: 4,
+    paddingHorizontal: 6,
+    fontSize: 15,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  clipUnit: {
+    color: c.textMuted,
+    fontSize: 13,
   },
   btn: {
     flex: 1,

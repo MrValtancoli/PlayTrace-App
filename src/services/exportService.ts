@@ -6,6 +6,21 @@ import { APP_VERSION } from '../constants/defaultTags';
 import i18n from '../i18n';
 import { exportBaseName, formatMMSS, formatTimestampAbsolute } from './timeFormat';
 import { measuredDurationSeconds } from './periods';
+import { buildXML, ClipWindow, DEFAULT_CLIP_WINDOW } from './xmlExport';
+
+export type ExportFormat = 'json' | 'csv' | 'xml';
+
+const MIME_TYPES: Record<ExportFormat, string> = {
+  json: 'application/json',
+  csv: 'text/csv',
+  xml: 'application/xml',
+};
+
+const UTIS: Record<ExportFormat, string> = {
+  json: 'public.json',
+  csv: 'public.comma-separated-values-text',
+  xml: 'public.xml',
+};
 
 export interface ExportInput {
   matchConfig: MatchConfig;
@@ -176,9 +191,15 @@ export function buildCSV(input: ExportInput): string {
 /** Writes the export to the cache directory and opens the share sheet. */
 export async function exportAndShare(
   input: ExportInput,
-  format: 'json' | 'csv'
+  format: ExportFormat,
+  clipWindow: ClipWindow = DEFAULT_CLIP_WINDOW
 ): Promise<void> {
-  const content = format === 'json' ? buildJSON(input) : buildCSV(input);
+  const content =
+    format === 'json'
+      ? buildJSON(input)
+      : format === 'csv'
+        ? buildCSV(input)
+        : buildXML(input, clipWindow);
   const fileName = `${exportBaseName(new Date())}.${format}`;
 
   const file = new File(Paths.cache, fileName);
@@ -194,8 +215,8 @@ export async function exportAndShare(
   }
 
   await Sharing.shareAsync(file.uri, {
-    mimeType: format === 'json' ? 'application/json' : 'text/csv',
+    mimeType: MIME_TYPES[format],
     dialogTitle: i18n.t('export.shareTitle', { format: format.toUpperCase() }),
-    UTI: format === 'json' ? 'public.json' : 'public.comma-separated-values-text',
+    UTI: UTIS[format],
   });
 }

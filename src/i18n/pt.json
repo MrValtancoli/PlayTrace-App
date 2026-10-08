@@ -108,8 +108,9 @@
     "summary_one": "{{count}} evento · acréscimos {{first}}' + {{second}}'",
     "summary_other": "{{count}} eventos · acréscimos {{first}}' + {{second}}'",
     "partialWarning": "Partida ainda não encerrada — a exportação terá dados parciais.",
-    "json": "Exportar JSON",
-    "csv": "Exportar CSV",
+    "json": "JSON",
+    "csv": "CSV",
+    "xml": "XML",
     "empty": "Nenhum evento marcado ainda.",
     "failed": "Falha na exportação",
     "unknownError": "Erro desconhecido",
@@ -120,7 +121,10 @@
     "listHint": "Mantenha um evento pressionado para excluí-lo.",
     "eventTimes": "{{match}} · contínuo {{continuous}}",
     "shareUnavailable": "O compartilhamento não está disponível neste dispositivo",
-    "shareTitle": "Compartilhar exportação {{format}} do PlayTrace"
+    "shareTitle": "Compartilhar exportação {{format}} do PlayTrace",
+    "clipWindow": "Clipes XML:",
+    "clipBefore": "s antes",
+    "clipAfter": "s depois"
   },
   "startModal": {
     "subtitle": "Em que minuto o tempo já está?",

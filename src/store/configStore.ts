@@ -5,6 +5,7 @@ import { ThemeMode } from '../constants/theme';
 import { MatchConfig, TagConfig } from '../types';
 import { DEFAULT_MATCH_CONFIG, defaultTags } from '../constants/defaultTags';
 import { deviceLanguage, resolveLanguage } from '../i18n';
+import { ClipWindow, DEFAULT_CLIP_WINDOW, clampWindowSeconds } from '../services/xmlExport';
 
 interface ConfigState {
   matchConfig: MatchConfig;
@@ -12,9 +13,12 @@ interface ConfigState {
   themeMode: ThemeMode;
   /** The picked UI language, or null to follow the device (#39). */
   language: string | null;
+  /** Lead and lag of the XML clips, remembered between exports (#40). */
+  clipWindow: ClipWindow;
   setMatchConfig: (patch: Partial<MatchConfig>) => void;
   setThemeMode: (mode: ThemeMode) => void;
   setLanguage: (language: string | null) => void;
+  setClipWindow: (patch: Partial<ClipWindow>) => void;
   updateTag: (id: number, patch: Partial<Omit<TagConfig, 'id'>>) => void;
   resetTags: () => void;
   /** Replaces the whole board, e.g. with an imported tag set (#34). */
@@ -28,11 +32,23 @@ export const useConfigStore = create<ConfigState>()(
       tags: defaultTags(deviceLanguage()),
       themeMode: 'system',
       language: null,
+      clipWindow: { ...DEFAULT_CLIP_WINDOW },
 
       setThemeMode: (themeMode) => set({ themeMode }),
 
       // Tag names are user data: changing language never renames them.
       setLanguage: (language) => set({ language }),
+
+      setClipWindow: (patch) =>
+        set((s) => {
+          const next = { ...s.clipWindow, ...patch };
+          return {
+            clipWindow: {
+              lead: clampWindowSeconds(next.lead),
+              lag: clampWindowSeconds(next.lag),
+            },
+          };
+        }),
 
       setMatchConfig: (patch) =>
         set((s) => ({ matchConfig: { ...s.matchConfig, ...patch } })),
