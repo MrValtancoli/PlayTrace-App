@@ -43,7 +43,9 @@ Android o un simulador de iOS.
 - ⏱️ **Cronómetro del partido** con pausa/reanudación, flujo de 1.ª/2.ª parte e introducción del tiempo añadido
 - 🏷️ **Botones de etiqueta personalizables** (nombre, color, activar/desactivar)
 - 📊 **4 formatos de referencia temporal** registrados para cada evento
-- 📤 **Exportación a JSON/CSV** con opción de compartir
+- 📤 **Exportación a JSON, CSV y XML** con opción de compartir — XML para software de videoanálisis
+- 🔁 **Comparte tus etiquetas** con un compañero, como archivo
+- 🌍 **Seis idiomas:** español, inglés, italiano, portugués (Brasil), francés, alemán
 - ⚙️ **Datos del partido configurables** (competición, fecha, estadio, equipos, duración de cada parte)
 - 📴 **Funciona sin conexión** — no necesita internet
 
@@ -70,6 +72,7 @@ calcular su duración real.
 
 - **JSON** — formato estructurado, ideal para el análisis de datos con Python/R
 - **CSV** — listo para hojas de cálculo, se abre directamente en Excel
+- **XML** — línea de tiempo estilo Sportscode para Once, Hudl Sportscode, Nacsport, LongoMatch: cada evento se convierte en un clip alrededor de su `time_continuous`
 
 ## 🗺️ Hoja de ruta
 

@@ -42,7 +42,9 @@ Poi apri il progetto in Expo Go, oppure premi `a` per un emulatore Android.
 - ⏱️ **Timer partita** con pausa/ripresa, gestione primo/secondo tempo e inserimento dei minuti di recupero
 - 🏷️ **Pulsanti tag personalizzabili** (nome, colore, attivazione/disattivazione)
 - 📊 **4 formati di riferimento temporale** registrati per ogni evento
-- 📤 **Esportazione in JSON/CSV** con funzionalità di condivisione
+- 📤 **Esportazione in JSON, CSV e XML** con funzionalità di condivisione — XML per i software di videoanalisi
+- 🔁 **Condivisione del set di tag** con un collega, tramite file
+- 🌍 **Sei lingue:** italiano, inglese, spagnolo, portoghese (Brasile), francese, tedesco
 - ⚙️ **Informazioni sulla partita configurabili** (competizione, data, luogo, squadre, durata del tempo)
 - 📴 **Funziona offline** — non è richiesta una connessione a Internet
 
@@ -69,6 +71,7 @@ può calcolare la durata effettiva.
 
 - **JSON** — formato strutturato, ideale per l'analisi dati con Python/R
 - **CSV** — pronto per i fogli di calcolo, si apre direttamente in Excel
+- **XML** — timeline in stile Sportscode per Once, Hudl Sportscode, Nacsport, LongoMatch: ogni evento diventa una clip attorno al suo `time_continuous`
 
 ## 🗺️ Roadmap
 

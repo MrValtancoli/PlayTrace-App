@@ -44,7 +44,9 @@ iOS simulator.
 - ⏱️ **Match timer** with pause/resume, 1st/2nd half flow, and injury time entry
 - 🏷️ **Customizable tag buttons** (name, color, enable/disable)
 - 📊 **4 time reference formats** recorded for every event
-- 📤 **Export to JSON/CSV** with share functionality
+- 📤 **Export to JSON, CSV and XML** with share functionality — XML for video analysis software
+- 🔁 **Share a tag set** with a colleague, as a file
+- 🌍 **Six languages:** English, Italian, Spanish, Portuguese (Brazil), French, German
 - ⚙️ **Configurable match info** (competition, date, venue, teams, half duration)
 - 📴 **Works offline** — no internet required
 
@@ -70,6 +72,7 @@ match can be segmented and its true duration computed.
 
 - **JSON** — structured format, ideal for data analysis with Python/R
 - **CSV** — spreadsheet-ready, opens directly in Excel
+- **XML** — Sportscode-style timeline for Once, Hudl Sportscode, Nacsport, LongoMatch: each event becomes a clip around its `time_continuous`
 
 ## 🗺️ Roadmap
 
@@ -91,9 +94,9 @@ Planned work is tracked in
 - [x] Attributed side shown in the export list ([#47](https://github.com/MrValtancoli/PlayTrace-App/issues/47))
 - [x] Text fields no longer hidden by the on-screen keyboard ([#48](https://github.com/MrValtancoli/PlayTrace-App/issues/48))
 
-**v1.3**
-- [ ] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
-- [ ] Smaller, optimised Android build: R8 and resource shrinking ([#52](https://github.com/MrValtancoli/PlayTrace-App/issues/52))
+**v1.3** — [released](https://github.com/MrValtancoli/PlayTrace-App/releases/tag/v1.3.0)
+- [x] XML export for video analysis software ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40))
+- [x] Smaller, optimised Android build: R8 and resource shrinking ([#52](https://github.com/MrValtancoli/PlayTrace-App/issues/52))
 - [x] Sharing a tag set between devices ([#34](https://github.com/MrValtancoli/PlayTrace-App/issues/34))
 - [x] Multi-language support: English, Italian, Spanish, Portuguese (Brazil), French, German ([#39](https://github.com/MrValtancoli/PlayTrace-App/issues/39))
 - [x] App version shown on the Home screen ([#53](https://github.com/MrValtancoli/PlayTrace-App/issues/53))

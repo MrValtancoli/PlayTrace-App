@@ -42,7 +42,9 @@ Android-Emulator oder iOS-Simulator.
 - ⏱️ **Spieluhr** mit Pause/Fortsetzen, Ablauf 1./2. Halbzeit und Eingabe der Nachspielzeit
 - 🏷️ **Anpassbare Tag-Buttons** (Name, Farbe, aktivieren/deaktivieren)
 - 📊 **4 Zeitreferenz-Formate** für jedes Ereignis
-- 📤 **Export als JSON/CSV** mit Teilen-Funktion
+- 📤 **Export als JSON, CSV und XML** mit Teilen-Funktion — XML für Videoanalyse-Software
+- 🔁 **Tag-Set teilen** mit Kollegen, als Datei
+- 🌍 **Sechs Sprachen:** Deutsch, Englisch, Italienisch, Spanisch, Portugiesisch (Brasilien), Französisch
 - ⚙️ **Konfigurierbare Spieldaten** (Wettbewerb, Datum, Stadion, Mannschaften, Halbzeitdauer)
 - 📴 **Funktioniert offline** — kein Internet nötig
 
@@ -69,6 +71,7 @@ Dauer berechnen.
 
 - **JSON** — strukturiertes Format, ideal für Datenanalyse mit Python/R
 - **CSV** — bereit für Tabellenkalkulationen, öffnet sich direkt in Excel
+- **XML** — Timeline im Sportscode-Format für Once, Hudl Sportscode, Nacsport, LongoMatch: Jedes Ereignis wird zu einem Clip um seine `time_continuous`
 
 ## 🗺️ Roadmap
 

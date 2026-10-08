@@ -43,7 +43,9 @@ Ouvrez ensuite le projet dans Expo Go, ou appuyez sur `a` / `i` pour un
 - ⏱️ **Chronomètre de match** avec pause/reprise, enchaînement 1re/2e mi-temps et saisie du temps additionnel
 - 🏷️ **Boutons de tag personnalisables** (nom, couleur, activation/désactivation)
 - 📊 **4 formats de référence temporelle** enregistrés pour chaque événement
-- 📤 **Export JSON/CSV** avec partage
+- 📤 **Export JSON, CSV et XML** avec partage — XML pour les logiciels d'analyse vidéo
+- 🔁 **Partage du jeu de tags** avec un collègue, sous forme de fichier
+- 🌍 **Six langues :** français, anglais, italien, espagnol, portugais (Brésil), allemand
 - ⚙️ **Infos du match configurables** (compétition, date, stade, équipes, durée d'une mi-temps)
 - 📴 **Fonctionne hors ligne** — aucune connexion internet requise
 
@@ -70,6 +72,7 @@ durée réelle calculée.
 
 - **JSON** — format structuré, idéal pour l'analyse de données avec Python/R
 - **CSV** — prêt pour les tableurs, s'ouvre directement dans Excel
+- **XML** — timeline au format Sportscode pour Once, Hudl Sportscode, Nacsport, LongoMatch : chaque événement devient un clip autour de son `time_continuous`
 
 ## 🗺️ Feuille de route
 

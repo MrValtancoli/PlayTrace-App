@@ -64,6 +64,7 @@ attribution is an idea not yet scheduled ([#33](https://github.com/MrValtancoli/
 | Feature | Status | Description | Priority |
 | --- | --- | --- | --- |
 | **JSON/CSV Export** | ✅ Done | Data export for advanced analysis in Python, R, or Excel. | High |
+| **XML Export** | ✅ Done ([#40](https://github.com/MrValtancoli/PlayTrace-App/issues/40)) | Sportscode-style timeline for Once, Hudl Sportscode, Nacsport, LongoMatch: each event becomes a clip around its `time_continuous`, with seconds before and after set at export time. Verified by importing into Once Sport Analyser. | High |
 | **Match Configuration** | ✅ Done | Management of metadata: teams, date, competition, and venue. | Medium |
 | **Offline Engine** | ✅ Done | Full functionality without requiring an internet connection. | High |
 | **Local Persistence** | ✅ Done | Match state survives app restarts and backgrounding. | High |
@@ -82,8 +83,8 @@ attribution is an idea not yet scheduled ([#33](https://github.com/MrValtancoli/
 | **Mobile-First UI** | ✅ Done | Modern interface optimized for quick thumb-use on mobile devices. | Medium |
 | **Device Rotation** | 📅 v2.0 ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35)) | Support landscape and auto-rotation, for tablets and for phones held sideways. The app is currently locked to portrait. Requires reworking the 4-column tag grid and the timer layout, not just unlocking the orientation. | High |
 | **iOS Support Validation** | 🔄 In Progress | Verify layout, share sheet, and timing behavior on iOS devices. The codebase already builds for iOS; what is missing is validation on real hardware. | High |
-| **Optimised Release Build** | 📅 v1.3 ([#52](https://github.com/MrValtancoli/PlayTrace-App/issues/52)) | Enable R8 and resource shrinking in Android release builds, for a smaller app and faster start-up. Needs a full check on a release build before production. | Medium |
-| **Automated Tests** | ✅ Done | Jest suite covering the four time references and the JSON/CSV export schema, run with `npm test`. | High |
+| **Optimised Release Build** | ✅ Done ([#52](https://github.com/MrValtancoli/PlayTrace-App/issues/52)) | Enable R8 and resource shrinking in Android release builds, for a smaller app and faster start-up. Needs a full check on a release build before production. | Medium |
+| **Automated Tests** | ✅ Done | Jest suite covering the four time references and the JSON, CSV and XML exports, the tag set file and the translations, run with `npm test`. | High |
 
 ---
 
