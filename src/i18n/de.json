@@ -108,8 +108,9 @@
     "summary_one": "{{count}} Ereignis · Nachspielzeit {{first}}' + {{second}}'",
     "summary_other": "{{count}} Ereignisse · Nachspielzeit {{first}}' + {{second}}'",
     "partialWarning": "Spiel noch nicht beendet — der Export enthält unvollständige Daten.",
-    "json": "Als JSON exportieren",
-    "csv": "Als CSV exportieren",
+    "json": "JSON",
+    "csv": "CSV",
+    "xml": "XML",
     "empty": "Noch keine Ereignisse getaggt.",
     "failed": "Export fehlgeschlagen",
     "unknownError": "Unbekannter Fehler",
@@ -120,7 +121,10 @@
     "listHint": "Ein Ereignis lange drücken, um es zu löschen.",
     "eventTimes": "{{match}} · fortlaufend {{continuous}}",
     "shareUnavailable": "Teilen ist auf diesem Gerät nicht verfügbar",
-    "shareTitle": "PlayTrace-{{format}}-Export teilen"
+    "shareTitle": "PlayTrace-{{format}}-Export teilen",
+    "clipWindow": "XML-Clips:",
+    "clipBefore": "s davor",
+    "clipAfter": "s danach"
   },
   "startModal": {
     "subtitle": "Bei welcher Spielzeit ist die Halbzeit bereits?",

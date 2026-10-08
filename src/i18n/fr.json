@@ -108,8 +108,9 @@
     "summary_one": "{{count}} événement · temps add. {{first}}' + {{second}}'",
     "summary_other": "{{count}} événements · temps add. {{first}}' + {{second}}'",
     "partialWarning": "Match pas encore terminé — l'export contiendra des données partielles.",
-    "json": "Exporter en JSON",
-    "csv": "Exporter en CSV",
+    "json": "JSON",
+    "csv": "CSV",
+    "xml": "XML",
     "empty": "Aucun événement tagué pour l'instant.",
     "failed": "Échec de l'export",
     "unknownError": "Erreur inconnue",
@@ -120,7 +121,10 @@
     "listHint": "Appui long sur un événement pour le supprimer.",
     "eventTimes": "{{match}} · continu {{continuous}}",
     "shareUnavailable": "Le partage n'est pas disponible sur cet appareil",
-    "shareTitle": "Partager l'export {{format}} de PlayTrace"
+    "shareTitle": "Partager l'export {{format}} de PlayTrace",
+    "clipWindow": "Clips XML :",
+    "clipBefore": "s avant",
+    "clipAfter": "s après"
   },
   "startModal": {
     "subtitle": "À quelle minute la mi-temps en est-elle déjà ?",
