@@ -122,9 +122,11 @@
     "eventTimes": "{{match}} · continuo {{continuous}}",
     "shareUnavailable": "Compartir no está disponible en este dispositivo",
     "shareTitle": "Compartir exportación {{format}} de PlayTrace",
-    "clipWindow": "Clips XML:",
+    "clipWindow": "Clips:",
     "clipBefore": "s antes",
-    "clipAfter": "s después"
+    "clipAfter": "s después",
+    "xmlTitle": "XML SportsCode",
+    "xmlCompat": "Para {{programs}}."
   },
   "startModal": {
     "subtitle": "¿En qué minuto va ya la parte?",

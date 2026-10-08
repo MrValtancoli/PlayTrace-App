@@ -184,31 +184,40 @@ export function ExportScreen() {
         </Pressable>
       </View>
 
-      {/* XML clips are windows around each instant, set at export time (#40). */}
-      <View style={styles.clipRow}>
-        <Text style={styles.clipLabel}>{t('export.clipWindow')}</Text>
-        <TextInput
-          style={styles.clipInput}
-          value={leadText}
-          onChangeText={setLeadText}
-          onEndEditing={commitWindow}
-          keyboardType="number-pad"
-          maxLength={2}
-          selectTextOnFocus
-          accessibilityLabel={t('export.clipBefore')}
-        />
-        <Text style={styles.clipUnit}>{t('export.clipBefore')}</Text>
-        <TextInput
-          style={styles.clipInput}
-          value={lagText}
-          onChangeText={setLagText}
-          onEndEditing={commitWindow}
-          keyboardType="number-pad"
-          maxLength={2}
-          selectTextOnFocus
-          accessibilityLabel={t('export.clipAfter')}
-        />
-        <Text style={styles.clipUnit}>{t('export.clipAfter')}</Text>
+      {/* What the XML is for, and its clips: windows around each instant,
+          set at export time (#40). */}
+      <View style={styles.xmlBox}>
+        <Text style={styles.xmlTitle}>{t('export.xmlTitle')}</Text>
+        <Text style={styles.xmlCompat}>
+          {t('export.xmlCompat', {
+            programs: 'Once, Hudl Sportscode, Nacsport, LongoMatch',
+          })}
+        </Text>
+        <View style={styles.clipRow}>
+          <Text style={styles.clipLabel}>{t('export.clipWindow')}</Text>
+          <TextInput
+            style={styles.clipInput}
+            value={leadText}
+            onChangeText={setLeadText}
+            onEndEditing={commitWindow}
+            keyboardType="number-pad"
+            maxLength={2}
+            selectTextOnFocus
+            accessibilityLabel={t('export.clipBefore')}
+          />
+          <Text style={styles.clipUnit}>{t('export.clipBefore')}</Text>
+          <TextInput
+            style={styles.clipInput}
+            value={lagText}
+            onChangeText={setLagText}
+            onEndEditing={commitWindow}
+            keyboardType="number-pad"
+            maxLength={2}
+            selectTextOnFocus
+            accessibilityLabel={t('export.clipAfter')}
+          />
+          <Text style={styles.clipUnit}>{t('export.clipAfter')}</Text>
+        </View>
       </View>
 
       <FlatList
@@ -267,14 +276,31 @@ const makeStyles = (c: Palette) =>
     gap: 10,
     padding: 16,
   },
+  xmlBox: {
+    marginHorizontal: 16,
+    marginTop: -6,
+    marginBottom: 8,
+    padding: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: c.border,
+    gap: 4,
+  },
+  xmlTitle: {
+    color: c.text,
+    fontSize: 13,
+    fontWeight: '700',
+  },
+  xmlCompat: {
+    color: c.textMuted,
+    fontSize: 12,
+  },
   clipRow: {
     flexDirection: 'row',
     alignItems: 'center',
     flexWrap: 'wrap',
     gap: 6,
-    paddingHorizontal: 16,
-    marginTop: -6,
-    marginBottom: 8,
+    marginTop: 4,
   },
   clipLabel: {
     color: c.textMuted,

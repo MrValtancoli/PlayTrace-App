@@ -122,9 +122,11 @@
     "eventTimes": "{{match}} · continuous {{continuous}}",
     "shareUnavailable": "Sharing is not available on this device",
     "shareTitle": "Share PlayTrace {{format}} export",
-    "clipWindow": "XML clips:",
+    "clipWindow": "Clips:",
     "clipBefore": "s before",
-    "clipAfter": "s after"
+    "clipAfter": "s after",
+    "xmlTitle": "SportsCode XML",
+    "xmlCompat": "For {{programs}}."
   },
   "startModal": {
     "subtitle": "What time is the half already at?",

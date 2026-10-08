@@ -122,9 +122,11 @@
     "eventTimes": "{{match}} · fortlaufend {{continuous}}",
     "shareUnavailable": "Teilen ist auf diesem Gerät nicht verfügbar",
     "shareTitle": "PlayTrace-{{format}}-Export teilen",
-    "clipWindow": "XML-Clips:",
+    "clipWindow": "Clips:",
     "clipBefore": "s davor",
-    "clipAfter": "s danach"
+    "clipAfter": "s danach",
+    "xmlTitle": "SportsCode-XML",
+    "xmlCompat": "Für {{programs}}."
   },
   "startModal": {
     "subtitle": "Bei welcher Spielzeit ist die Halbzeit bereits?",

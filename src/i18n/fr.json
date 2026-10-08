@@ -122,9 +122,11 @@
     "eventTimes": "{{match}} · continu {{continuous}}",
     "shareUnavailable": "Le partage n'est pas disponible sur cet appareil",
     "shareTitle": "Partager l'export {{format}} de PlayTrace",
-    "clipWindow": "Clips XML :",
+    "clipWindow": "Clips :",
     "clipBefore": "s avant",
-    "clipAfter": "s après"
+    "clipAfter": "s après",
+    "xmlTitle": "XML SportsCode",
+    "xmlCompat": "Pour {{programs}}."
   },
   "startModal": {
     "subtitle": "À quelle minute la mi-temps en est-elle déjà ?",
