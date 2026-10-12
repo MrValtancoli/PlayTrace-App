@@ -20,8 +20,9 @@ precisão em marcar tempos.
 
 ## 📲 Download
 
-**[Baixe no Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)**: o jeito mais fácil, com atualizações
-automáticas.
+<a href="https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace"><img alt="Disponível no Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png" width="200"></a>
+
+O jeito mais fácil, com atualizações automáticas.
 
 Prefere o APK? Baixe o mais recente na [página de releases](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) e abra-o no
 seu aparelho Android. O Android vai pedir autorização para instalar de fontes
@@ -103,6 +104,8 @@ Aceitamos contribuições da comunidade de análise de futebol!
 ## 📄 Licença
 
 [Licença MIT](LICENSE) - Livre para usar, modificar e distribuir.
+
+Google Play e o logotipo do Google Play são marcas da Google LLC.
 
 ## 👤 Autor
 

@@ -20,8 +20,9 @@ dati precisi.
 
 ## 📲 Download
 
-**[Scaricala da Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)**: il modo più semplice, con gli
-aggiornamenti automatici.
+<a href="https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace"><img alt="Disponibile su Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png" width="200"></a>
+
+Il modo più semplice, con gli aggiornamenti automatici.
 
 Preferisci l'APK? Scarica l'ultimo dalla [pagina delle release](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) e aprilo
 sul tuo dispositivo Android. Android chiederà di autorizzare l'installazione
@@ -103,6 +104,8 @@ Aree in cui abbiamo particolare bisogno (cerca l'etichetta `help wanted`):
 ## 📄 Licenza
 
 [MIT License](LICENSE) - Gratuito da usare, modificare e distribuire.
+
+Google Play e il logo Google Play sono marchi di Google LLC.
 
 ## 👤 Autore
 

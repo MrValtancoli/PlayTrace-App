@@ -19,8 +19,9 @@ für Trainer, Videoanalysten und Scouts, die präzise Zeitdaten brauchen.
 
 ## 📲 Download
 
-**[Bei Google Play herunterladen](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)** – am einfachsten, mit
-automatischen Updates.
+<a href="https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace"><img alt="Jetzt bei Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" width="200"></a>
+
+Am einfachsten, mit automatischen Updates.
 
 Lieber die APK? Lade die neueste von der [Release-Seite](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) herunter und
 öffne sie auf deinem Android-Gerät. Android fragt nach der Erlaubnis, Apps aus
@@ -103,6 +104,8 @@ Bereiche, in denen wir besonders Hilfe brauchen (Label `help wanted`):
 ## 📄 Lizenz
 
 [MIT-Lizenz](LICENSE) - Frei nutzbar, veränderbar und weitergebbar.
+
+Google Play und das Google Play-Logo sind Marken von Google LLC.
 
 ## 👤 Autor
 

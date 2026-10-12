@@ -19,7 +19,9 @@ coaches, video analysts, and scouts who need precise event timing data.
 
 ## 📲 Download
 
-**[Get it on Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)** — the easiest way, with automatic updates.
+<a href="https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="200"></a>
+
+The easiest way, with automatic updates.
 
 Prefer an APK? Grab the latest one from the
 [releases page](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) and open it on your Android device. Android will ask
@@ -140,6 +142,8 @@ Areas where we especially need help (look for the `help wanted` label):
 ## 📄 License
 
 [MIT License](LICENSE) - Free to use, modify, and distribute.
+
+Google Play and the Google Play logo are trademarks of Google LLC.
 
 ## 👤 Author
 

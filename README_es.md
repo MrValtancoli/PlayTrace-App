@@ -20,8 +20,9 @@ ojeadores que necesitan datos de tiempo precisos.
 
 ## 📲 Descarga
 
-**[Descárgala en Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)**: la forma más sencilla, con
-actualizaciones automáticas.
+<a href="https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace"><img alt="Disponible en Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" width="200"></a>
+
+La forma más sencilla, con actualizaciones automáticas.
 
 ¿Prefieres el APK? Descarga el último desde la [página de releases](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) y
 ábrelo en tu dispositivo Android. Android te pedirá permitir la instalación
@@ -104,6 +105,8 @@ quedarse desactualizada.
 ## 📄 Licencia
 
 [Licencia MIT](LICENSE) - Libre para usar, modificar y distribuir.
+
+Google Play y el logotipo de Google Play son marcas de Google LLC.
 
 ## 👤 Autor
 

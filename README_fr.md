@@ -20,8 +20,9 @@ recruteurs qui ont besoin de données de temps précises.
 
 ## 📲 Téléchargement
 
-**[Téléchargez-la sur Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)** : le plus simple, avec les mises
-à jour automatiques.
+<a href="https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace"><img alt="Disponible sur Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png" width="200"></a>
+
+Le plus simple, avec les mises à jour automatiques.
 
 Vous préférez l'APK ? Téléchargez le dernier depuis la
 [page des releases](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) et ouvrez-le sur votre appareil Android. Android
@@ -104,6 +105,8 @@ Domaines où nous avons particulièrement besoin d'aide (cherchez le label `help
 ## 📄 Licence
 
 [Licence MIT](LICENSE) - Libre d'utilisation, de modification et de distribution.
+
+Google Play et le logo Google Play sont des marques de Google LLC.
 
 ## 👤 Auteur
 
