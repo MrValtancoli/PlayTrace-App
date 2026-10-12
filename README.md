@@ -14,16 +14,19 @@
 Free, open-source mobile app for real-time football match tagging. Perfect for
 coaches, video analysts, and scouts who need precise event timing data.
 
-> **Status:** available for Android —
-> [download the latest version](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
-> iOS is not validated yet.
+> **Status:** available on [Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace) and as an
+> [APK](https://github.com/MrValtancoli/PlayTrace-App/releases/latest). iOS is not validated yet.
 
 ## 📲 Download
 
-Grab the latest APK from the
-[releases page](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) and open it on your
-Android device. Android will ask you to allow installation from unknown
-sources, which is expected for an app distributed outside the Play Store.
+**[Get it on Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)** — the easiest way, with automatic updates.
+
+Prefer an APK? Grab the latest one from the
+[releases page](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) and open it on your Android device. Android will ask
+you to allow installation from unknown sources, which is expected outside the
+Play Store. The APK and the Play Store app are signed with different keys:
+to switch from one to the other, uninstall first — this deletes the match in
+progress, so export it beforehand.
 
 ## 🛠️ Running from source
 

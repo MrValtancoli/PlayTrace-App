@@ -14,16 +14,20 @@
 Kostenlose Open-Source-App zum Taggen von Fußballspielen in Echtzeit. Ideal
 für Trainer, Videoanalysten und Scouts, die präzise Zeitdaten brauchen.
 
-> **Status:** für Android verfügbar — lade die
-> [neueste Version](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) herunter.
-> Der Code ist plattformübergreifend, iOS ist aber noch nicht validiert.
+> **Status:** verfügbar bei [Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace) und als
+> [APK](https://github.com/MrValtancoli/PlayTrace-App/releases/latest). iOS ist noch nicht validiert.
 
 ## 📲 Download
 
-Lade die neueste APK von der
-[Release-Seite](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) herunter und öffne sie auf deinem
-Android-Gerät. Android fragt nach der Erlaubnis, Apps aus unbekannten Quellen
-zu installieren — das ist bei einer App außerhalb des Play Store normal.
+**[Bei Google Play herunterladen](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)** – am einfachsten, mit
+automatischen Updates.
+
+Lieber die APK? Lade die neueste von der [Release-Seite](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) herunter und
+öffne sie auf deinem Android-Gerät. Android fragt nach der Erlaubnis, Apps aus
+unbekannten Quellen zu installieren – das ist außerhalb des Play Store normal.
+APK und Play-Store-App sind mit unterschiedlichen Schlüsseln signiert: Für
+einen Wechsel musst du zuerst deinstallieren, wodurch das laufende Spiel
+gelöscht wird – exportiere es vorher.
 
 ## 🛠️ Aus dem Quellcode starten
 

@@ -15,16 +15,20 @@ App móvel gratuito e open-source para marcação de partidas em tempo real.
 Perfeito para treinadores, analistas de vídeo e olheiros que necessitam de mais
 precisão em marcar tempos.
 
-> **Status:** disponível para Android — baixe a
-> [versão mais recente](https://github.com/MrValtancoli/PlayTrace-App/releases/latest).
-> O código é multiplataforma, mas o iOS ainda não foi validado.
+> **Status:** disponível no [Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace) e como
+> [APK](https://github.com/MrValtancoli/PlayTrace-App/releases/latest). O iOS ainda não foi validado.
 
 ## 📲 Download
 
-Baixe o APK mais recente na
-[página de releases](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) e abra-o no seu
-aparelho Android. O Android vai pedir autorização para instalar de fontes
-desconhecidas, o que é esperado para um app distribuído fora da Play Store.
+**[Baixe no Google Play](https://play.google.com/store/apps/details?id=it.zonacalciolab.playtrace)**: o jeito mais fácil, com atualizações
+automáticas.
+
+Prefere o APK? Baixe o mais recente na [página de releases](https://github.com/MrValtancoli/PlayTrace-App/releases/latest) e abra-o no
+seu aparelho Android. O Android vai pedir autorização para instalar de fontes
+desconhecidas, o que é esperado fora da Play Store. O APK e o app da Play
+Store são assinados com chaves diferentes: para trocar de um para o outro é
+preciso desinstalar antes, o que apaga a partida em andamento, então exporte-a
+primeiro.
 
 ## 🛠️ Executando a partir do código-fonte
 
