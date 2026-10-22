@@ -108,9 +108,9 @@ Planned work is tracked in
 **v1.4**
 - [ ] Note tags: attach free text to an event ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
 - [ ] Reorder the tag buttons ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
-
-**v2.0**
 - [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
+- [ ] XML export for video editors: Premiere, DaVinci Resolve ([#56](https://github.com/MrValtancoli/PlayTrace-App/issues/56))
+- [ ] Export in the Zona Calcio Lab clip format ([#60](https://github.com/MrValtancoli/PlayTrace-App/issues/60))
 
 **In progress**
 - [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
