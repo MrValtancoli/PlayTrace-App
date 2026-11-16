@@ -46,11 +46,42 @@ export function rowHeight(
   return (totalHeight - gap * (rows - 1)) / rows;
 }
 
+/** Horizontal padding inside a tag button, on each side (TagGrid styles). */
+export const BUTTON_PADDING = 6;
+
+/**
+ * Average width of a bold glyph as a fraction of the font size. An estimate:
+ * the real width is only known after layout, which is too late to size by.
+ */
+const GLYPH_WIDTH = 0.6;
+
+/** Characters in the longest word of a label; words break only at spaces. */
+export function longestWordLength(label: string): number {
+  return label
+    .trim()
+    .split(/\s+/)
+    .reduce((max, word) => Math.max(max, Array.from(word).length), 0);
+}
+
 /**
  * Label size for a button of this size. Scales with the smaller side so text
  * grows with the button, within limits that stay readable and never overflow.
+ *
+ * With a label, the size also lets its longest word fit the button width on
+ * one line: Android otherwise breaks a long single word mid-word on big
+ * buttons, "Interceptio / n" (#58). Several words still use two lines.
  */
-export function labelFontSize(buttonWidth: number, buttonHeight: number): number {
+export function labelFontSize(
+  buttonWidth: number,
+  buttonHeight: number,
+  label = ''
+): number {
   const side = Math.min(buttonWidth, buttonHeight);
-  return Math.max(11, Math.min(24, Math.round(side * 0.17)));
+  let size = Math.min(24, Math.round(side * 0.17));
+  const longest = longestWordLength(label);
+  if (longest > 0) {
+    const available = buttonWidth - BUTTON_PADDING * 2;
+    size = Math.min(size, Math.floor(available / (longest * GLYPH_WIDTH)));
+  }
+  return Math.max(11, size);
 }

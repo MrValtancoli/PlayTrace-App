@@ -11,6 +11,7 @@ import { Palette, useTheme } from '../constants/theme';
 import {
   gridHeight,
   gridShape,
+  BUTTON_PADDING,
   labelFontSize,
   rowCounts,
   rowHeight,
@@ -57,7 +58,6 @@ export function TagGrid({ tags, disabled, onTagPress }: Props) {
       {measured &&
         perRow.map((count, rowIndex) => {
           const buttonWidth = (width - GAP * (count - 1)) / count;
-          const fontSize = labelFontSize(buttonWidth, rowH);
           const row = enabled.slice(index, index + count);
           index += count;
 
@@ -84,7 +84,10 @@ export function TagGrid({ tags, disabled, onTagPress }: Props) {
                   ]}
                 >
                   <Text
-                    style={[styles.label, { fontSize }]}
+                    style={[
+                      styles.label,
+                      { fontSize: labelFontSize(buttonWidth, rowH, tag.name) },
+                    ]}
                     numberOfLines={2}
                     adjustsFontSizeToFit
                     minimumFontScale={0.7}
@@ -120,7 +123,7 @@ const makeStyles = (c: Palette) =>
       borderRadius: 12,
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 6,
+      padding: BUTTON_PADDING,
     },
     buttonDisabled: {
       opacity: 0.35,

@@ -2,6 +2,7 @@ import {
   gridHeight,
   gridShape,
   labelFontSize,
+  longestWordLength,
   rowCounts,
   rowHeight,
 } from '../tagGridLayout';
@@ -122,5 +123,50 @@ describe('labelFontSize', () => {
   it('stays within readable limits', () => {
     expect(labelFontSize(20, 20)).toBe(11);
     expect(labelFontSize(900, 900)).toBe(24);
+  });
+});
+
+describe('labelFontSize with the label (#58)', () => {
+  // Phone width ~360 dp: 2 columns on a reduced grid, 4 on the full one.
+  const big = 174;
+  const small = 83;
+  // The longest word, at the chosen size, fits the width inside the padding.
+  const fits = (width: number, label: string) =>
+    longestWordLength(label) * 0.6 * labelFontSize(width, width, label) <=
+    width - 12;
+
+  it.each([
+    'Interception', // en, fr
+    'Dégagement', // fr
+    'Interceptação', // pt
+    'Intercepción', // es
+    'Sostituzione', // it
+    'Auswechslung', // de
+    'Gewonnener Zweikampf', // de, two words
+  ])('fits the longest word of "%s" on one line of a big button', (label) => {
+    expect(fits(big, label)).toBe(true);
+  });
+
+  it('shrinks a long single word below the size of the button alone', () => {
+    expect(labelFontSize(big, big, 'Interception')).toBeLessThan(labelFontSize(big, big));
+  });
+
+  it('leaves short labels and words as before', () => {
+    expect(labelFontSize(big, big, 'Goal')).toBe(labelFontSize(big, big));
+    expect(labelFontSize(big, big, 'Shot on Target')).toBe(labelFontSize(big, big));
+  });
+
+  it('sizes by the longest word, not the whole label', () => {
+    expect(labelFontSize(big, big, 'Tir non cadré')).toBe(labelFontSize(big, big, 'cadré'));
+  });
+
+  it('never goes below the readable minimum, even at 20 characters', () => {
+    expect(labelFontSize(small, small, 'Abcdefghijklmnopqrst')).toBe(11);
+  });
+
+  it('counts accented letters once', () => {
+    expect(longestWordLength('Dégagement')).toBe(10);
+    expect(longestWordLength('  Tiro   in porta ')).toBe(5);
+    expect(longestWordLength('')).toBe(0);
   });
 });
