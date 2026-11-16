@@ -111,6 +111,7 @@
     "json": "JSON",
     "csv": "CSV",
     "xml": "XML",
+    "zcl": "ZCL",
     "empty": "Noch keine Ereignisse getaggt.",
     "failed": "Export fehlgeschlagen",
     "unknownError": "Unbekannter Fehler",
@@ -125,8 +126,7 @@
     "clipWindow": "Clips:",
     "clipBefore": "s davor",
     "clipAfter": "s danach",
-    "xmlTitle": "SportsCode-XML",
-    "xmlCompat": "Für {{programs}}."
+    "clipExports": "Clip-Exporte"
   },
   "startModal": {
     "subtitle": "Bei welcher Spielzeit ist die Halbzeit bereits?",

@@ -69,7 +69,7 @@ export function ExportScreen() {
   const doExport = async (format: ExportFormat) => {
     if (busy) return;
     // A value still being typed counts, even if the field has not lost focus.
-    if (format === 'xml') commitWindow();
+    if (format === 'xml' || format === 'zcl') commitWindow();
     setBusy(true);
     try {
       const periodSource = {
@@ -182,17 +182,24 @@ export function ExportScreen() {
         >
           <Text style={styles.btnText}>{t('export.xml')}</Text>
         </Pressable>
+        <Pressable
+          style={[styles.btn, (busy || events.length === 0) && styles.btnDisabled]}
+          disabled={busy || events.length === 0}
+          onPress={() => doExport('zcl')}
+        >
+          <Text style={styles.btnText}>{t('export.zcl')}</Text>
+        </Pressable>
       </View>
 
-      {/* What the XML is for, and its clips: windows around each instant,
-          set at export time (#40). */}
+      {/* What the clip exports are for, and their clips: windows around each
+          instant, set at export time (#40, #60). Program names are not
+          translated. */}
       <View style={styles.xmlBox}>
-        <Text style={styles.xmlTitle}>{t('export.xmlTitle')}</Text>
+        <Text style={styles.xmlTitle}>{t('export.clipExports')}</Text>
         <Text style={styles.xmlCompat}>
-          {t('export.xmlCompat', {
-            programs: 'Once, Hudl Sportscode, Nacsport, LongoMatch',
-          })}
+          XML — Once, Hudl Sportscode, Nacsport, LongoMatch
         </Text>
+        <Text style={styles.xmlCompat}>ZCL — ClipTrimmer, MatchRazor</Text>
         <View style={styles.clipRow}>
           <Text style={styles.clipLabel}>{t('export.clipWindow')}</Text>
           <TextInput

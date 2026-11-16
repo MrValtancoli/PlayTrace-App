@@ -1,0 +1,22 @@
+{
+  "format": "zcl-clips",
+  "version": 1,
+  "generator": {"name": "PlayTrace", "version": "1.4.0"},
+  "match": {
+    "competition": "Promozione",
+    "date": "2026-10-11",
+    "venue": "Stadio Comunale",
+    "home": "Home FC",
+    "away": "Away FC",
+    "period_duration": 45
+  },
+  "sources": [
+    {"id": "live", "title": "Live tagging, no video yet"}
+  ],
+  "clips": [
+    {"source": "live", "period": 1, "t": 1425, "pre": 5, "post": 3, "label": "Shot", "team": "home",
+     "extra": {"playtrace": {"tag_id": 3, "timestamp_absolute": "11/10/26 15:23:45"}}},
+    {"source": "live", "period": 1, "t": 2820, "pre": 5, "post": 3, "label": "Corner", "team": "away"},
+    {"source": "live", "period": 2, "t": 1350, "pre": 5, "post": 3, "label": "Goal", "team": "home"}
+  ]
+}

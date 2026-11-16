@@ -111,6 +111,7 @@
     "json": "JSON",
     "csv": "CSV",
     "xml": "XML",
+    "zcl": "ZCL",
     "empty": "Aún no hay eventos etiquetados.",
     "failed": "Error al exportar",
     "unknownError": "Error desconocido",
@@ -125,8 +126,7 @@
     "clipWindow": "Clips:",
     "clipBefore": "s antes",
     "clipAfter": "s después",
-    "xmlTitle": "XML SportsCode",
-    "xmlCompat": "Para {{programs}}."
+    "clipExports": "Exportación en clips"
   },
   "startModal": {
     "subtitle": "¿En qué minuto va ya la parte?",

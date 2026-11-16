@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ZonaCalcioLab/zcl-clips/schema/zcl-clips-1.schema.json",
+  "title": "Zona Calcio Lab clip format, version 1",
+  "type": "object",
+  "required": ["format", "version", "sources", "clips"],
+  "properties": {
+    "format": {"const": "zcl-clips"},
+    "version": {"const": 1},
+    "generator": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"}
+      }
+    },
+    "match": {
+      "type": "object",
+      "properties": {
+        "competition": {"type": "string"},
+        "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "venue": {"type": "string"},
+        "home": {"type": "string"},
+        "away": {"type": "string"},
+        "period_duration": {"type": "number", "exclusiveMinimum": 0},
+        "observed": {"enum": ["home", "away"]}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "uri": {"type": "string", "minLength": 1},
+          "title": {"type": "string"},
+          "kickoffs": {
+            "type": "object",
+            "propertyNames": {"enum": ["1", "2", "3", "4"]},
+            "additionalProperties": {"type": "number", "minimum": 0}
+          },
+          "ends": {
+            "type": "object",
+            "propertyNames": {"enum": ["1", "2", "3", "4"]},
+            "additionalProperties": {"type": "number", "minimum": 0}
+          }
+        }
+      }
+    },
+    "clips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source"],
+        "properties": {
+          "source": {"type": "string", "minLength": 1},
+          "period": {"enum": [1, 2, 3, 4]},
+          "t": {"type": "number", "minimum": 0},
+          "pre": {"type": "number", "minimum": 0},
+          "post": {"type": "number", "minimum": 0},
+          "start": {"type": "number", "minimum": 0},
+          "end": {"type": "number", "minimum": 0},
+          "label": {"type": "string"},
+          "team": {"enum": ["home", "away"]},
+          "name": {"type": "string"},
+          "note": {"type": "string"},
+          "favorite": {"type": "boolean"},
+          "restart": {"enum": ["kick_off", "goal_kick", "throw_in", "free_kick", "corner", "penalty"]},
+          "origin": {
+            "type": "object",
+            "required": ["column", "row"],
+            "properties": {
+              "column": {"enum": [1, 2, 3, 4]},
+              "row": {"enum": ["A", "B", "C", "D"]}
+            }
+          },
+          "extra": {"type": "object"}
+        },
+        "oneOf": [
+          {"required": ["t"], "not": {"anyOf": [{"required": ["start"]}, {"required": ["end"]}]}},
+          {"required": ["start", "end"], "not": {"anyOf": [{"required": ["t"]}, {"required": ["pre"]}, {"required": ["post"]}]}}
+        ]
+      }
+    }
+  }
+}

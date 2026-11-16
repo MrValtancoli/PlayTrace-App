@@ -7,19 +7,22 @@ import i18n from '../i18n';
 import { exportBaseName, formatMMSS, formatTimestampAbsolute } from './timeFormat';
 import { measuredDurationSeconds } from './periods';
 import { buildXML, ClipWindow, DEFAULT_CLIP_WINDOW } from './xmlExport';
+import { buildZclClips } from './zclClips';
 
-export type ExportFormat = 'json' | 'csv' | 'xml';
+export type ExportFormat = 'json' | 'csv' | 'xml' | 'zcl';
 
 const MIME_TYPES: Record<ExportFormat, string> = {
   json: 'application/json',
   csv: 'text/csv',
   xml: 'application/xml',
+  zcl: 'application/json',
 };
 
 const UTIS: Record<ExportFormat, string> = {
   json: 'public.json',
   csv: 'public.comma-separated-values-text',
   xml: 'public.xml',
+  zcl: 'public.json',
 };
 
 export interface ExportInput {
@@ -199,8 +202,12 @@ export async function exportAndShare(
       ? buildJSON(input)
       : format === 'csv'
         ? buildCSV(input)
-        : buildXML(input, clipWindow);
-  const fileName = `${exportBaseName(new Date())}.${format}`;
+        : format === 'xml'
+          ? buildXML(input, clipWindow)
+          : buildZclClips(input, clipWindow, APP_VERSION);
+  // zcl-clips files carry their own double extension (#60).
+  const extension = format === 'zcl' ? 'zclclips.json' : format;
+  const fileName = `${exportBaseName(new Date())}.${extension}`;
 
   const file = new File(Paths.cache, fileName);
   if (file.exists) {

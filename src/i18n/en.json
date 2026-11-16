@@ -111,6 +111,7 @@
     "json": "JSON",
     "csv": "CSV",
     "xml": "XML",
+    "zcl": "ZCL",
     "empty": "No events tagged yet.",
     "failed": "Export failed",
     "unknownError": "Unknown error",
@@ -125,8 +126,7 @@
     "clipWindow": "Clips:",
     "clipBefore": "s before",
     "clipAfter": "s after",
-    "xmlTitle": "SportsCode XML",
-    "xmlCompat": "For {{programs}}."
+    "clipExports": "Clip exports"
   },
   "startModal": {
     "subtitle": "What time is the half already at?",
