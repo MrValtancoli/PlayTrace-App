@@ -199,7 +199,9 @@ export function ExportScreen() {
         <Text style={styles.xmlCompat}>
           XML — Once, Hudl Sportscode, Nacsport, LongoMatch
         </Text>
-        <Text style={styles.xmlCompat}>ZCL — ClipTrimmer, MatchRazor</Text>
+        <Text style={styles.xmlCompat}>
+          ZCL — ClipTrimmer, MatchRazor, ZclClipViewer, FootballDataHub
+        </Text>
         <View style={styles.clipRow}>
           <Text style={styles.clipLabel}>{t('export.clipWindow')}</Text>
           <TextInput
