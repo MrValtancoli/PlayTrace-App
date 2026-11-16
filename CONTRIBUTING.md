@@ -56,7 +56,7 @@ still to align.
 ### 💻 Code Contributions
 
 **Development Setup:**
-1. Install [Node.js](https://nodejs.org/) LTS (>= 20.19.4, required by Expo SDK 57) and npm
+1. Install [Node.js](https://nodejs.org/) 22.13+ or 24.3+ (required by Expo SDK 58) and npm
 2. Fork this repository and clone your fork
 3. Run `npm ci` to install the exact dependency versions from the lockfile
 4. Run `npx expo start` to launch the development server

@@ -214,7 +214,7 @@ export async function exportAndShare(
     file.delete();
   }
   file.create();
-  file.write(content);
+  await file.write(content);
 
   const available = await Sharing.isAvailableAsync();
   if (!available) {

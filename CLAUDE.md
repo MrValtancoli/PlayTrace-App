@@ -14,7 +14,7 @@ Do not reintroduce B4A patterns, code, or documentation references.
 
 ## Stack
 
-- React Native + Expo (SDK 57, RN 0.86), TypeScript (strict)
+- React Native + Expo (SDK 58, RN 0.88), TypeScript (strict)
 - State: Zustand, with `persist` middleware on both stores
 - Local persistence: AsyncStorage (`@react-native-async-storage/async-storage`)
 - Navigation: React Navigation, native stack (not expo-router)
@@ -32,7 +32,7 @@ npm run typecheck       # tsc --noEmit
 npm test                # jest: time formats and export schema
 ```
 
-Node LTS >= 20.19.4 is required by Expo SDK 57.
+Node 22.13+ or 24.3+ (even-numbered releases) is required by Expo SDK 58.
 There is no lint setup yet — do not reference `npm run lint`.
 
 Tests live in `src/**/__tests__`. The time-format and export cases encode the

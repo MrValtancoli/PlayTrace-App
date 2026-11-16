@@ -240,7 +240,7 @@ export function ExportScreen() {
         ListHeaderComponent={
           events.length > 0 ? (
             <Text style={styles.hint}>{t('export.listHint')}</Text>
-          ) : null
+          ) : undefined
         }
         ListEmptyComponent={
           <Text style={styles.empty}>{t('export.empty')}</Text>

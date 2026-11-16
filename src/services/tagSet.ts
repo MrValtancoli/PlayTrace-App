@@ -106,7 +106,7 @@ export async function shareTagSet(tags: TagConfig[]): Promise<void> {
     file.delete();
   }
   file.create();
-  file.write(buildTagSet(tags));
+  await file.write(buildTagSet(tags));
 
   if (!(await Sharing.isAvailableAsync())) {
     throw new Error(i18n.t('export.shareUnavailable'));

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TextInputInstance,
   View,
 } from 'react-native';
 import { KEYBOARD_BEHAVIOR } from '../constants/keyboard';
@@ -36,7 +37,7 @@ export function StartTimeModal({
   const { t } = useTranslation();
   const styles = useMemo(() => makeStyles(c), [c]);
 
-  const minutesRef = useRef<TextInput>(null);
+  const minutesRef = useRef<TextInputInstance>(null);
   const [minutes, setMinutes] = useState('');
   const [seconds, setSeconds] = useState('');
 
