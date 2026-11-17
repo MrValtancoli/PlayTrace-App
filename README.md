@@ -106,14 +106,19 @@ Planned work is tracked in
 - [x] Report a problem by email, and links to the project and ZonaCalcioLab ([#54](https://github.com/MrValtancoli/PlayTrace-App/issues/54))
 
 **v1.4**
+- [x] Export in the Zona Calcio Lab clip format ([#60](https://github.com/MrValtancoli/PlayTrace-App/issues/60))
+- [x] Long words on the tag buttons no longer split mid-word ([#58](https://github.com/MrValtancoli/PlayTrace-App/issues/58))
+- [x] Upgrade to Expo SDK 58 ([#62](https://github.com/MrValtancoli/PlayTrace-App/issues/62))
+- [ ] iOS validation and TestFlight release ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] Note tags: attach free text to an event ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
 - [ ] Reorder the tag buttons ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
-- [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
-- [ ] XML export for video editors: Premiere, DaVinci Resolve ([#56](https://github.com/MrValtancoli/PlayTrace-App/issues/56))
-- [ ] Export in the Zona Calcio Lab clip format ([#60](https://github.com/MrValtancoli/PlayTrace-App/issues/60))
+- [ ] "Rate PlayTrace" link ([#61](https://github.com/MrValtancoli/PlayTrace-App/issues/61))
 
-**In progress**
-- [ ] iOS validation on real devices ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
+**v1.5**
+- [ ] XML export for video editors: Premiere, DaVinci Resolve ([#56](https://github.com/MrValtancoli/PlayTrace-App/issues/56))
+
+**v1.6**
+- [ ] Landscape and tablet layouts ([#35](https://github.com/MrValtancoli/PlayTrace-App/issues/35))
 
 **Ideas** — not scheduled yet: their priority depends on feedback from the
 people using PlayTrace.
