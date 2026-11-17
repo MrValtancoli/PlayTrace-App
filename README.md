@@ -112,6 +112,7 @@ Planned work is tracked in
 - [ ] iOS validation and TestFlight release ([#24](https://github.com/MrValtancoli/PlayTrace-App/issues/24))
 - [ ] Note tags: attach free text to an event ([#49](https://github.com/MrValtancoli/PlayTrace-App/issues/49))
 - [ ] Reorder the tag buttons ([#43](https://github.com/MrValtancoli/PlayTrace-App/issues/43))
+- [ ] zcl-clips: continuous-recording kick-offs written on the live source ([#63](https://github.com/MrValtancoli/PlayTrace-App/issues/63))
 - [ ] "Rate PlayTrace" link ([#61](https://github.com/MrValtancoli/PlayTrace-App/issues/61))
 
 **v1.5**
