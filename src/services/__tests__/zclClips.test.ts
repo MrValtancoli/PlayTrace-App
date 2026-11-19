@@ -89,9 +89,9 @@ describe('buildZclClips', () => {
       event(4, 'Corner', '47:00 (1T)', 'away'),
       event(1, 'Goal', '67:30 (2T)', 'home'),
     ]);
-    // The example carries extra only on its first clip; compare the rest.
+    // The example carries extra only on its first clip and no uid; compare the rest.
     const strip = (clips: Record<string, unknown>[]) =>
-      clips.map(({ extra, ...rest }) => rest);
+      clips.map(({ extra, uid, ...rest }) => rest);
     expect(doc.format).toBe(example.format);
     expect(doc.version).toBe(example.version);
     expect(doc.generator).toEqual(example.generator);
@@ -119,6 +119,24 @@ describe('buildZclClips', () => {
       )
     );
     expect(doc.clips[0]).toMatchObject({ pre: 60, post: 0 });
+  });
+
+  it('gives every clip a uid that is the same in every export (#64)', () => {
+    const events = [
+      event(3, 'Shot', '23:45 (1T)', 'home'),
+      event(3, 'Shot', '23:45 (1T)', 'home'), // two taps in the same second
+      event(1, 'Goal', '67:30 (2T)', 'home', '11/10/26 16:10:02'),
+    ];
+    const uids = build(events).clips.map((c: { uid: string }) => c.uid);
+    expect(new Set(uids).size).toBe(3);
+    uids.forEach((u: string) =>
+      expect(u).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/)
+    );
+    expect(build(events).clips.map((c: { uid: string }) => c.uid)).toEqual(uids);
+    // a later tag does not change the uids of the earlier ones
+    const more = build([...events, event(4, 'Corner', '80:00 (2T)')]).clips;
+    expect(more.slice(0, 3).map((c: { uid: string }) => c.uid)).toEqual(uids);
+    expect(validate(build(events))).toBe(true);
   });
 
   it('skips events whose time cannot be read', () => {

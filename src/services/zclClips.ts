@@ -1,10 +1,11 @@
 import { EventRecord, MatchConfig } from '../types';
+import { eventUids } from './clipUid';
 import { ClipWindow, clampWindowSeconds, parseMMSS } from './xmlExport';
 
 /**
  * Zona Calcio Lab clip format, version 1 (#60): the JSON exchange format
  * shared with ClipTrimmer and MatchRazor.
- * Specification: https://github.com/ZonaCalcioLab/clip-format
+ * Specification: https://github.com/ZonaCalcioLab/zcl-clips
  *
  * PlayTrace tags live and has no video, so every event becomes an instant
  * clip in **period time** — seconds from that half's kick-off — on a single
@@ -22,6 +23,8 @@ interface ZclInput {
 }
 
 interface ZclClip {
+  /** Stable identifier of the clip (zcl-clips `uid`, #64). */
+  uid: string;
   source: string;
   period: 1 | 2;
   t: number;
@@ -78,10 +81,12 @@ export function buildZclClips(
 
   // Tagging order, as recorded: the format shows clips in file order.
   const clips: ZclClip[] = [];
-  for (const event of events) {
+  const uids = eventUids(events);
+  events.forEach((event, i) => {
     const time = periodSeconds(event.time_match, matchConfig.halfDuration);
-    if (time === null) continue;
+    if (time === null) return;
     const clip: ZclClip = {
+      uid: uids[i],
       source: ZCL_SOURCE_ID,
       period: time.period,
       t: time.t,
@@ -98,7 +103,7 @@ export function buildZclClips(
     };
     if (event.team) clip.team = event.team;
     clips.push(clip);
-  }
+  });
 
   const file = {
     format: ZCL_FORMAT,

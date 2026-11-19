@@ -55,6 +55,8 @@
         "required": ["source"],
         "properties": {
           "source": {"type": "string", "minLength": 1},
+          "uid": {"type": "string",
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"},
           "period": {"enum": [1, 2, 3, 4]},
           "t": {"type": "number", "minimum": 0},
           "pre": {"type": "number", "minimum": 0},
